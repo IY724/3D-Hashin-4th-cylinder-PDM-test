@@ -74,7 +74,7 @@
 | **B 版能量软化整瓶试跑** | [test/B_energy_softening/runs/](./test/B_energy_softening/runs/) | `B_20260927_150554/`（正式版，约 0.170 停止）、`B_20260927_153131_fallback/`（即时完成试验版，0.4428 停止）；保留 `.sta` / `.dat` 收敛历史与提交清单，**均未完成整瓶** |
 | **B 版加密网格断裂能对照** | [remesh_energy_tests_20260927/](./remesh_energy_tests_20260927/) | `runs/B_remesh_M21_*`（M21 断裂能组三次提交 214056 / 215350 / 221738）、`runs/B_remesh_Gft300_*`、`runs/B_remesh_span_stab_*`（跨度口径软化 + 稳定化，最新一次）；`latest_run.json` 记录四组 G 值、黏性、刚度上限、SHA-256 与终止状态；`tools/submit_remesh.py` 为提交脚本 |
 | 网格相关性与特征长度研究 | [wcm_hashin_umat_B_candidate/runs/](./wcm_hashin_umat_B_candidate/runs/) | `mesh_block_*`（G=40/150 与不同特征长度组合的单块试验）、`mesh_survey_20260927/`（临界 ρ 扫描 `rho_critical.csv`）、`material_onset/matrix/energy/reproduce`、`core_*`、`g4_fixture_*`、`abaqus_elastic/rotation/damage/completion_*` 等材料点与单元级验证运行 |
-| 编译与小模型接口验证 | `wcm_hashin_umat/runs/` | 两版 UMAT 的 Abaqus 小模型与整瓶 Data Check 记录（`tank_B_*` 等），以及旧 84 项接口时期的历史运行 |
+| 编译与小模型接口验证 | `wcm_hashin_umat/runs/` | 两版 UMAT 的 Abaqus 小模型运行记录（`abaqus_completion_*`、`g4_fixture_*` 类）与整瓶 `tank_B_*` 等历史运行；同期的 `datacheck_*` 目录只留下重启动二进制、未收录本库，其结论以 `validation/*.json` 与 `audit_20260927/*` 记录为准 |
 
 **当前结论（务必连同状态一起读）**：两版 UMAT 均已编译并通过小模型；整瓶 B 版 Data Check 通过，A 版因 C3D8R 零沙漏刚度失败；**尚无任何一版取得完整整瓶求解结果**，本库不提供"标定后的爆破压力"。能量法遗留的核心障碍是断裂能与单元特征长度的相容性（在首轮复盘中列为长度范围不相容），而非单纯的求解器参数问题。
 
