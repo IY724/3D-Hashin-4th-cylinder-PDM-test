@@ -1,6 +1,6 @@
 # 3D Hashin IV 型气瓶渐进损伤 · 测试库（test）
 
-本仓库是 [IY724/3D-Hashin-4th-cylinder-PDM](https://github.com/IY724/3D-Hashin-4th-cylinder-PDM) 的**独立测试库（私有）**。原库继续作为工作库，这里按三类内容归档，便于下载复现与审查：
+本仓库是 [IY724/3D-Hashin-4th-cylinder-PDM](https://github.com/IY724/3D-Hashin-4th-cylinder-PDM) 的**独立公开测试库**。原库继续作为工作库，这里按三类内容归档，便于下载复现与审查：
 
 1. **旧的代码案例说明** —— 原始单层 3D Hashin 子程序及其整瓶输入与说明；
 2. **新的渐进损伤代码及其修改说明** —— WCM 等效层 + 双角度 Hashin 的 A/B 两套 UMAT、逐项变更记录；
