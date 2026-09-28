@@ -1,0 +1,23 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB fixture
+Abaqus 2025
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server localhost.
+<9994 out of 9999 licenses remain available>.
+Begin Compiling Abaqus/Standard User Subroutines
+9/27/2026 7:14:20 PM
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0 Build 20220726_000000
+Copyright (C) 1985-2022 Intel Corporation.  All rights reserved.
+
+hashin_energy_wcm.for(638): error #6385: The highest data type rank permitted is INTEGER(KIND=8).   [GV]
+              IF(NEW(I+8).LT.1D0.AND.FI(I).GE.1D0.AND.GV) THEN
+------------------------------------------------------^
+hashin_energy_wcm.for(638): error #6385: The highest data type rank permitted is INTEGER(KIND=8).
+              IF(NEW(I+8).LT.1D0.AND.FI(I).GE.1D0.AND.GV) THEN
+-------------------------------------------------^
+hashin_energy_wcm.for(638): error #6341: A logical data type is required in this context.
+              IF(NEW(I+8).LT.1D0.AND.FI(I).GE.1D0.AND.GV) THEN
+-------------------------------------------------^
+compilation aborted for hashin_energy_wcm.for (code 1)
+Abaqus Error: Problem during compilation - hashin_energy_wcm.for
+Abaqus/Analysis exited with errors

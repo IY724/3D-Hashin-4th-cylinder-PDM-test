@@ -1,0 +1,24 @@
+{
+  "A": {
+    "depvar": 20,
+    "output_count": 8,
+    "protected_input_equal": true,
+    "material_count": 131,
+    "files": {
+      "Job2_PDM_A.inp": "13420f7e8260270f08235ef88e863ea415910dfdfda0179f6979f9b8cce9c874",
+      "hashin_constant_wcm.for": "adf48da7a2702d7aa61fad76ad2dd127c71b69c8e416f8c49f5915246a70a67b"
+    },
+    "changes": "SDV allocation/output; B stiffness caps .95/.85 -> 1/1"
+  },
+  "B": {
+    "depvar": 62,
+    "output_count": 10,
+    "protected_input_equal": true,
+    "material_count": 131,
+    "files": {
+      "Job2_PDM_B.inp": "a08b6526fb2500315bef82e18ccd27669278c72c1363547b2c8bb76096aa8f3c",
+      "hashin_energy_wcm.for": "887e0302e950d1610a494d8c2dcfe966f40bba1cbc0ce09032166de992f78cca"
+    },
+    "changes": "SDV allocation/output; B stiffness caps .95/.85 -> 1/1"
+  }
+}

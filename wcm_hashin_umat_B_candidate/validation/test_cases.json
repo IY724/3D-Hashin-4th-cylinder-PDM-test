@@ -1,0 +1,1845 @@
+{
+  "source_inp": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_joint_rebuild\\WCM_Job.inp",
+  "source_sha256": "a2231b90da11e5662c4ef3d364aff486541e0f62f6936b52ffeb2e5e031d73a6",
+  "source_ang_sha256": "b8188f77187891a045441c925fb7d750b00977a40173adadf05215a9e77e1abb",
+  "line_endings": "CRLF",
+  "baseline": "geometry_zhuning_joint_rebuild（旧 10deg Job-2 已废弃）",
+  "cases": {
+    "A": {
+      "inp": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\generated\\A_stiffness_reduction\\Rebuild_PDM_A.inp",
+      "umat": "hashin_constant_wcm.for",
+      "inp_sha256": "094ab4aabc29afbed216ec9d7e7d99c84be25011ee7a0f4fc036dce7470a8986",
+      "umat_sha256": "57012bb5f86800ba0e3118d43d91ca13a77326517cf00c03166d029becc98804",
+      "protected_source_sha256": "f93fdf2e5e34528c855e3f06eab18bdf5acf8267ff588bbb8d513b4ce5343613",
+      "protected_output_sha256": "f93fdf2e5e34528c855e3f06eab18bdf5acf8267ff588bbb8d513b4ce5343613",
+      "materials": [
+        {
+          "material": "WCM_Tank1_Mat1_Bin0",
+          "angle_deg": 15.0,
+          "ply": "t-700",
+          "elastic_error": 2.211860274720224e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin1",
+          "angle_deg": 15.5,
+          "ply": "t-700",
+          "elastic_error": 1.8667889033934461e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin2",
+          "angle_deg": 16.0,
+          "ply": "t-700",
+          "elastic_error": 3.228749367605542e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin3",
+          "angle_deg": 16.5,
+          "ply": "t-700",
+          "elastic_error": 2.016044102637559e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin4",
+          "angle_deg": 17.0,
+          "ply": "t-700",
+          "elastic_error": 1.8168892247148052e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin5",
+          "angle_deg": 17.5,
+          "ply": "t-700",
+          "elastic_error": 1.0268315792342035e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin6",
+          "angle_deg": 18.0,
+          "ply": "t-700",
+          "elastic_error": 2.283944656489303e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin7",
+          "angle_deg": 18.5,
+          "ply": "t-700",
+          "elastic_error": 2.398838990987851e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin8",
+          "angle_deg": 19.0,
+          "ply": "t-700",
+          "elastic_error": 6.840702664042071e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin9",
+          "angle_deg": 19.5,
+          "ply": "t-700",
+          "elastic_error": 5.285586494659775e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin10",
+          "angle_deg": 20.0,
+          "ply": "t-700",
+          "elastic_error": 1.4235515136361952e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin11",
+          "angle_deg": 20.5,
+          "ply": "t-700",
+          "elastic_error": 8.948078881651088e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin12",
+          "angle_deg": 21.0,
+          "ply": "t-700",
+          "elastic_error": 1.465305990996801e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin13",
+          "angle_deg": 21.5,
+          "ply": "t-700",
+          "elastic_error": 1.0428667853642084e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin14",
+          "angle_deg": 22.0,
+          "ply": "t-700",
+          "elastic_error": 1.5736409669716324e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin15",
+          "angle_deg": 22.5,
+          "ply": "t-700",
+          "elastic_error": 1.0199959983508369e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin16",
+          "angle_deg": 23.0,
+          "ply": "t-700",
+          "elastic_error": 4.0614382104781654e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin17",
+          "angle_deg": 23.5,
+          "ply": "t-700",
+          "elastic_error": 5.63540208341906e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin18",
+          "angle_deg": 24.0,
+          "ply": "t-700",
+          "elastic_error": 2.090356465802798e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin19",
+          "angle_deg": 24.5,
+          "ply": "t-700",
+          "elastic_error": 2.118971313747267e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin20",
+          "angle_deg": 25.0,
+          "ply": "t-700",
+          "elastic_error": 4.011209484446707e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin21",
+          "angle_deg": 25.5,
+          "ply": "t-700",
+          "elastic_error": 1.8065869978812805e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin22",
+          "angle_deg": 26.0,
+          "ply": "t-700",
+          "elastic_error": 1.6331341444974017e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin23",
+          "angle_deg": 26.5,
+          "ply": "t-700",
+          "elastic_error": 6.547314708975195e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin24",
+          "angle_deg": 27.0,
+          "ply": "t-700",
+          "elastic_error": 1.281276062125669e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin25",
+          "angle_deg": 27.5,
+          "ply": "t-700",
+          "elastic_error": 8.845312792154136e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin26",
+          "angle_deg": 28.0,
+          "ply": "t-700",
+          "elastic_error": 1.6670830675202286e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin27",
+          "angle_deg": 28.5,
+          "ply": "t-700",
+          "elastic_error": 2.9197025537015512e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin28",
+          "angle_deg": 29.0,
+          "ply": "t-700",
+          "elastic_error": 3.205377452605056e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin29",
+          "angle_deg": 29.5,
+          "ply": "t-700",
+          "elastic_error": 4.100391960800655e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin30",
+          "angle_deg": 30.0,
+          "ply": "t-700",
+          "elastic_error": 4.051265009692526e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin31",
+          "angle_deg": 30.5,
+          "ply": "t-700",
+          "elastic_error": 3.058238089859067e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin32",
+          "angle_deg": 31.0,
+          "ply": "t-700",
+          "elastic_error": 5.67052369716987e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin33",
+          "angle_deg": 31.5,
+          "ply": "t-700",
+          "elastic_error": 1.8634589667600935e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin34",
+          "angle_deg": 32.0,
+          "ply": "t-700",
+          "elastic_error": 1.959046048211942e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin35",
+          "angle_deg": 32.5,
+          "ply": "t-700",
+          "elastic_error": 2.215581099923266e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin36",
+          "angle_deg": 33.0,
+          "ply": "t-700",
+          "elastic_error": 4.60537261685455e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin37",
+          "angle_deg": 33.5,
+          "ply": "t-700",
+          "elastic_error": 2.8410548008500274e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin38",
+          "angle_deg": 34.0,
+          "ply": "t-700",
+          "elastic_error": 1.0674225483618455e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin39",
+          "angle_deg": 34.5,
+          "ply": "t-700",
+          "elastic_error": 6.657588175855714e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin40",
+          "angle_deg": 35.0,
+          "ply": "t-700",
+          "elastic_error": 2.5199587511103154e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin41",
+          "angle_deg": 35.5,
+          "ply": "t-700",
+          "elastic_error": 6.808461904109211e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin42",
+          "angle_deg": 36.0,
+          "ply": "t-700",
+          "elastic_error": 1.6583932485345256e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin43",
+          "angle_deg": 36.5,
+          "ply": "t-700",
+          "elastic_error": 2.7359404397905805e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin44",
+          "angle_deg": 37.0,
+          "ply": "t-700",
+          "elastic_error": 2.420136809061676e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin45",
+          "angle_deg": 37.5,
+          "ply": "t-700",
+          "elastic_error": 2.5898183813642227e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin46",
+          "angle_deg": 38.0,
+          "ply": "t-700",
+          "elastic_error": 2.1466748766825845e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin47",
+          "angle_deg": 38.5,
+          "ply": "t-700",
+          "elastic_error": 2.2131055557790284e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin48",
+          "angle_deg": 39.0,
+          "ply": "t-700",
+          "elastic_error": 1.4458784770001937e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin49",
+          "angle_deg": 39.5,
+          "ply": "t-700",
+          "elastic_error": 3.049474569496293e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin50",
+          "angle_deg": 40.0,
+          "ply": "t-700",
+          "elastic_error": 1.1973726337500999e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin51",
+          "angle_deg": 40.5,
+          "ply": "t-700",
+          "elastic_error": 2.268959865424846e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin52",
+          "angle_deg": 41.0,
+          "ply": "t-700",
+          "elastic_error": 2.7313154115671492e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin53",
+          "angle_deg": 41.5,
+          "ply": "t-700",
+          "elastic_error": 1.2161960653864953e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin54",
+          "angle_deg": 42.0,
+          "ply": "t-700",
+          "elastic_error": 9.267762377142161e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin55",
+          "angle_deg": 42.5,
+          "ply": "t-700",
+          "elastic_error": 8.431088398975744e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin56",
+          "angle_deg": 43.0,
+          "ply": "t-700",
+          "elastic_error": 2.7655210064864504e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin57",
+          "angle_deg": 43.5,
+          "ply": "t-700",
+          "elastic_error": 2.244626681069329e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin58",
+          "angle_deg": 44.0,
+          "ply": "t-700",
+          "elastic_error": 2.9202024336984742e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin59",
+          "angle_deg": 44.5,
+          "ply": "t-700",
+          "elastic_error": 2.666103406036732e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin60",
+          "angle_deg": 45.0,
+          "ply": "t-700",
+          "elastic_error": 6.892937167073778e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin61",
+          "angle_deg": 45.5,
+          "ply": "t-700",
+          "elastic_error": 2.3999382594056403e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin62",
+          "angle_deg": 46.0,
+          "ply": "t-700",
+          "elastic_error": 3.0251530333409626e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin63",
+          "angle_deg": 46.5,
+          "ply": "t-700",
+          "elastic_error": 2.2446033322405466e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin64",
+          "angle_deg": 47.0,
+          "ply": "t-700",
+          "elastic_error": 1.2329617736182106e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin65",
+          "angle_deg": 47.5,
+          "ply": "t-700",
+          "elastic_error": 1.8508491228721109e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin66",
+          "angle_deg": 48.0,
+          "ply": "t-700",
+          "elastic_error": 1.7000600704883512e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin67",
+          "angle_deg": 48.5,
+          "ply": "t-700",
+          "elastic_error": 6.642247164771753e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin68",
+          "angle_deg": 49.0,
+          "ply": "t-700",
+          "elastic_error": 3.458816189473168e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin69",
+          "angle_deg": 49.5,
+          "ply": "t-700",
+          "elastic_error": 8.878947463243796e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin70",
+          "angle_deg": 50.0,
+          "ply": "t-700",
+          "elastic_error": 6.827833317177933e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin71",
+          "angle_deg": 50.5,
+          "ply": "t-700",
+          "elastic_error": 4.369096549161513e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin72",
+          "angle_deg": 51.0,
+          "ply": "t-700",
+          "elastic_error": 4.097322720023787e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin73",
+          "angle_deg": 51.5,
+          "ply": "t-700",
+          "elastic_error": 1.2564895159129575e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin74",
+          "angle_deg": 52.0,
+          "ply": "t-700",
+          "elastic_error": 2.155625302968833e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin75",
+          "angle_deg": 52.5,
+          "ply": "t-700",
+          "elastic_error": 5.19378515948037e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin76",
+          "angle_deg": 53.0,
+          "ply": "t-700",
+          "elastic_error": 3.7803874286864554e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin77",
+          "angle_deg": 53.5,
+          "ply": "t-700",
+          "elastic_error": 2.8164726852180288e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin78",
+          "angle_deg": 54.0,
+          "ply": "t-700",
+          "elastic_error": 9.509722774321981e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin79",
+          "angle_deg": 54.5,
+          "ply": "t-700",
+          "elastic_error": 5.739585566422633e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin80",
+          "angle_deg": 55.0,
+          "ply": "t-700",
+          "elastic_error": 4.036387241342689e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin81",
+          "angle_deg": 55.5,
+          "ply": "t-700",
+          "elastic_error": 4.881402012357105e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin82",
+          "angle_deg": 56.0,
+          "ply": "t-700",
+          "elastic_error": 4.833533992263278e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin83",
+          "angle_deg": 56.5,
+          "ply": "t-700",
+          "elastic_error": 2.4435214139782837e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin84",
+          "angle_deg": 57.0,
+          "ply": "t-700",
+          "elastic_error": 1.4228708830158487e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin85",
+          "angle_deg": 57.5,
+          "ply": "t-700",
+          "elastic_error": 1.3209573774130234e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin86",
+          "angle_deg": 58.0,
+          "ply": "t-700",
+          "elastic_error": 1.525961218962817e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin87",
+          "angle_deg": 58.5,
+          "ply": "t-700",
+          "elastic_error": 1.9535624141306252e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin88",
+          "angle_deg": 59.0,
+          "ply": "t-700",
+          "elastic_error": 4.421453095131246e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin89",
+          "angle_deg": 59.5,
+          "ply": "t-700",
+          "elastic_error": 1.2636364183693392e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin90",
+          "angle_deg": 60.0,
+          "ply": "t-700",
+          "elastic_error": 1.4418962017571327e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin91",
+          "angle_deg": 60.5,
+          "ply": "t-700",
+          "elastic_error": 5.384010999795405e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin92",
+          "angle_deg": 61.0,
+          "ply": "t-700",
+          "elastic_error": 1.2452617635345454e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin94",
+          "angle_deg": 62.0,
+          "ply": "t-700",
+          "elastic_error": 7.573926374494853e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin95",
+          "angle_deg": 62.5,
+          "ply": "t-700",
+          "elastic_error": 4.308723943353348e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin96",
+          "angle_deg": 63.0,
+          "ply": "t-700",
+          "elastic_error": 4.833891722407484e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin97",
+          "angle_deg": 63.5,
+          "ply": "t-700",
+          "elastic_error": 3.345814643594673e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin98",
+          "angle_deg": 64.0,
+          "ply": "t-700",
+          "elastic_error": 4.915186747541222e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin99",
+          "angle_deg": 64.5,
+          "ply": "t-700",
+          "elastic_error": 3.486707309830046e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin100",
+          "angle_deg": 65.0,
+          "ply": "t-700",
+          "elastic_error": 9.007403837604242e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin101",
+          "angle_deg": 65.5,
+          "ply": "t-700",
+          "elastic_error": 1.6610525793914147e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin102",
+          "angle_deg": 66.0,
+          "ply": "t-700",
+          "elastic_error": 6.670501257295387e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin103",
+          "angle_deg": 66.5,
+          "ply": "t-700",
+          "elastic_error": 9.843859657096453e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin104",
+          "angle_deg": 67.0,
+          "ply": "t-700",
+          "elastic_error": 1.0049373190058404e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin105",
+          "angle_deg": 67.5,
+          "ply": "t-700",
+          "elastic_error": 3.859354338323369e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin106",
+          "angle_deg": 68.0,
+          "ply": "t-700",
+          "elastic_error": 5.292816611125164e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin108",
+          "angle_deg": 69.0,
+          "ply": "t-700",
+          "elastic_error": 5.04371704102103e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin109",
+          "angle_deg": 69.5,
+          "ply": "t-700",
+          "elastic_error": 1.2780328074363858e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin110",
+          "angle_deg": 70.0,
+          "ply": "t-700",
+          "elastic_error": 5.366919333334893e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin111",
+          "angle_deg": 70.5,
+          "ply": "t-700",
+          "elastic_error": 5.230953507299967e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin112",
+          "angle_deg": 71.0,
+          "ply": "t-700",
+          "elastic_error": 8.203406166817615e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin113",
+          "angle_deg": 71.5,
+          "ply": "t-700",
+          "elastic_error": 3.3086853821729903e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin114",
+          "angle_deg": 72.0,
+          "ply": "t-700",
+          "elastic_error": 2.3223578674182925e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin115",
+          "angle_deg": 72.5,
+          "ply": "t-700",
+          "elastic_error": 2.4612128385189504e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin116",
+          "angle_deg": 73.0,
+          "ply": "t-700",
+          "elastic_error": 2.2705523431838387e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin117",
+          "angle_deg": 73.5,
+          "ply": "t-700",
+          "elastic_error": 3.5884846285441494e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin118",
+          "angle_deg": 74.0,
+          "ply": "t-700",
+          "elastic_error": 3.586062761780032e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin119",
+          "angle_deg": 74.5,
+          "ply": "t-700",
+          "elastic_error": 2.136162802940017e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin120",
+          "angle_deg": 75.0,
+          "ply": "t-700",
+          "elastic_error": 2.7139903489390507e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin121",
+          "angle_deg": 75.5,
+          "ply": "t-700",
+          "elastic_error": 2.5417152667956725e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin122",
+          "angle_deg": 76.0,
+          "ply": "t-700",
+          "elastic_error": 4.002693696148334e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin124",
+          "angle_deg": 77.0,
+          "ply": "t-700",
+          "elastic_error": 3.2536857190319173e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin125",
+          "angle_deg": 77.5,
+          "ply": "t-700",
+          "elastic_error": 1.9886738320317507e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin126",
+          "angle_deg": 78.0,
+          "ply": "t-700",
+          "elastic_error": 2.4729890346393838e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin127",
+          "angle_deg": 78.5,
+          "ply": "t-700",
+          "elastic_error": 3.8033166662786812e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin129",
+          "angle_deg": 79.5,
+          "ply": "t-700",
+          "elastic_error": 9.114892318963835e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin130",
+          "angle_deg": 80.0,
+          "ply": "t-700",
+          "elastic_error": 1.9507954852206725e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin133",
+          "angle_deg": 81.5,
+          "ply": "t-700",
+          "elastic_error": 8.936381283945098e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin134",
+          "angle_deg": 82.0,
+          "ply": "t-700",
+          "elastic_error": 3.118383737652591e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin135",
+          "angle_deg": 82.5,
+          "ply": "t-700",
+          "elastic_error": 5.701374704875537e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin136",
+          "angle_deg": 83.0,
+          "ply": "t-700",
+          "elastic_error": 1.5438793310856618e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin137",
+          "angle_deg": 83.5,
+          "ply": "t-700",
+          "elastic_error": 3.4178272943065317e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin138",
+          "angle_deg": 84.0,
+          "ply": "t-700",
+          "elastic_error": 1.05058075969464e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin139",
+          "angle_deg": 84.5,
+          "ply": "t-700",
+          "elastic_error": 2.9484821368713265e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin150",
+          "angle_deg": 90.0,
+          "ply": "t-700",
+          "elastic_error": 2.3616227663781505e-09
+        }
+      ],
+      "state_variables": 20,
+      "output_sdvs": [
+        "SDV1",
+        "SDV2",
+        "SDV3",
+        "SDV4",
+        "SDV5",
+        "SDV6",
+        "SDV7",
+        "SDV8"
+      ],
+      "static": [
+        0.01,
+        1.0,
+        1e-20,
+        0.1
+      ],
+      "element_output": [
+        "LE",
+        "PE",
+        "PEEQ",
+        "PEMAG",
+        "S",
+        "S",
+        "SDV1",
+        "SDV2",
+        "SDV3",
+        "SDV4",
+        "SDV5",
+        "SDV6",
+        "SDV7",
+        "SDV8"
+      ],
+      "node_output": [
+        "U"
+      ],
+      "material_cards": 135,
+      "props_constants": 25,
+      "composite_elements": 51558,
+      "material_bins": 135,
+      "sections_checked": 391,
+      "element_types": {
+        "C3D8": 636,
+        "C3D6": 6,
+        "C3D8R": 50916
+      },
+      "bin_minus_ang_deg_min": -0.49833585440093486,
+      "bin_minus_ang_deg_max": 0.0009492143893083949,
+      "addrot_defined": 51558,
+      "hourglass_enhanced_sections": 0,
+      "max_relative_elastic_error": 6.808461904109211e-06
+    },
+    "B": {
+      "inp": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\generated\\B_energy_softening\\Rebuild_PDM_B.inp",
+      "umat": "hashin_energy_wcm.for",
+      "inp_sha256": "435e31cf314e767a53770044be5f62dcbc563b42165303105c3cc0fa9d9befc3",
+      "umat_sha256": "19f1e57ea1ffb96ef80bbd43e663fe2d59c26a41e9e3335e5da4039564c9361a",
+      "protected_source_sha256": "f93fdf2e5e34528c855e3f06eab18bdf5acf8267ff588bbb8d513b4ce5343613",
+      "protected_output_sha256": "f93fdf2e5e34528c855e3f06eab18bdf5acf8267ff588bbb8d513b4ce5343613",
+      "materials": [
+        {
+          "material": "WCM_Tank1_Mat1_Bin0",
+          "angle_deg": 15.0,
+          "ply": "t-700",
+          "elastic_error": 2.211860274720224e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin1",
+          "angle_deg": 15.5,
+          "ply": "t-700",
+          "elastic_error": 1.8667889033934461e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin2",
+          "angle_deg": 16.0,
+          "ply": "t-700",
+          "elastic_error": 3.228749367605542e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin3",
+          "angle_deg": 16.5,
+          "ply": "t-700",
+          "elastic_error": 2.016044102637559e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin4",
+          "angle_deg": 17.0,
+          "ply": "t-700",
+          "elastic_error": 1.8168892247148052e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin5",
+          "angle_deg": 17.5,
+          "ply": "t-700",
+          "elastic_error": 1.0268315792342035e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin6",
+          "angle_deg": 18.0,
+          "ply": "t-700",
+          "elastic_error": 2.283944656489303e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin7",
+          "angle_deg": 18.5,
+          "ply": "t-700",
+          "elastic_error": 2.398838990987851e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin8",
+          "angle_deg": 19.0,
+          "ply": "t-700",
+          "elastic_error": 6.840702664042071e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin9",
+          "angle_deg": 19.5,
+          "ply": "t-700",
+          "elastic_error": 5.285586494659775e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin10",
+          "angle_deg": 20.0,
+          "ply": "t-700",
+          "elastic_error": 1.4235515136361952e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin11",
+          "angle_deg": 20.5,
+          "ply": "t-700",
+          "elastic_error": 8.948078881651088e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin12",
+          "angle_deg": 21.0,
+          "ply": "t-700",
+          "elastic_error": 1.465305990996801e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin13",
+          "angle_deg": 21.5,
+          "ply": "t-700",
+          "elastic_error": 1.0428667853642084e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin14",
+          "angle_deg": 22.0,
+          "ply": "t-700",
+          "elastic_error": 1.5736409669716324e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin15",
+          "angle_deg": 22.5,
+          "ply": "t-700",
+          "elastic_error": 1.0199959983508369e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin16",
+          "angle_deg": 23.0,
+          "ply": "t-700",
+          "elastic_error": 4.0614382104781654e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin17",
+          "angle_deg": 23.5,
+          "ply": "t-700",
+          "elastic_error": 5.63540208341906e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin18",
+          "angle_deg": 24.0,
+          "ply": "t-700",
+          "elastic_error": 2.090356465802798e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin19",
+          "angle_deg": 24.5,
+          "ply": "t-700",
+          "elastic_error": 2.118971313747267e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin20",
+          "angle_deg": 25.0,
+          "ply": "t-700",
+          "elastic_error": 4.011209484446707e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin21",
+          "angle_deg": 25.5,
+          "ply": "t-700",
+          "elastic_error": 1.8065869978812805e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin22",
+          "angle_deg": 26.0,
+          "ply": "t-700",
+          "elastic_error": 1.6331341444974017e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin23",
+          "angle_deg": 26.5,
+          "ply": "t-700",
+          "elastic_error": 6.547314708975195e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin24",
+          "angle_deg": 27.0,
+          "ply": "t-700",
+          "elastic_error": 1.281276062125669e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin25",
+          "angle_deg": 27.5,
+          "ply": "t-700",
+          "elastic_error": 8.845312792154136e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin26",
+          "angle_deg": 28.0,
+          "ply": "t-700",
+          "elastic_error": 1.6670830675202286e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin27",
+          "angle_deg": 28.5,
+          "ply": "t-700",
+          "elastic_error": 2.9197025537015512e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin28",
+          "angle_deg": 29.0,
+          "ply": "t-700",
+          "elastic_error": 3.205377452605056e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin29",
+          "angle_deg": 29.5,
+          "ply": "t-700",
+          "elastic_error": 4.100391960800655e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin30",
+          "angle_deg": 30.0,
+          "ply": "t-700",
+          "elastic_error": 4.051265009692526e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin31",
+          "angle_deg": 30.5,
+          "ply": "t-700",
+          "elastic_error": 3.058238089859067e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin32",
+          "angle_deg": 31.0,
+          "ply": "t-700",
+          "elastic_error": 5.67052369716987e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin33",
+          "angle_deg": 31.5,
+          "ply": "t-700",
+          "elastic_error": 1.8634589667600935e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin34",
+          "angle_deg": 32.0,
+          "ply": "t-700",
+          "elastic_error": 1.959046048211942e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin35",
+          "angle_deg": 32.5,
+          "ply": "t-700",
+          "elastic_error": 2.215581099923266e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin36",
+          "angle_deg": 33.0,
+          "ply": "t-700",
+          "elastic_error": 4.60537261685455e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin37",
+          "angle_deg": 33.5,
+          "ply": "t-700",
+          "elastic_error": 2.8410548008500274e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin38",
+          "angle_deg": 34.0,
+          "ply": "t-700",
+          "elastic_error": 1.0674225483618455e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin39",
+          "angle_deg": 34.5,
+          "ply": "t-700",
+          "elastic_error": 6.657588175855714e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin40",
+          "angle_deg": 35.0,
+          "ply": "t-700",
+          "elastic_error": 2.5199587511103154e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin41",
+          "angle_deg": 35.5,
+          "ply": "t-700",
+          "elastic_error": 6.808461904109211e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin42",
+          "angle_deg": 36.0,
+          "ply": "t-700",
+          "elastic_error": 1.6583932485345256e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin43",
+          "angle_deg": 36.5,
+          "ply": "t-700",
+          "elastic_error": 2.7359404397905805e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin44",
+          "angle_deg": 37.0,
+          "ply": "t-700",
+          "elastic_error": 2.420136809061676e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin45",
+          "angle_deg": 37.5,
+          "ply": "t-700",
+          "elastic_error": 2.5898183813642227e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin46",
+          "angle_deg": 38.0,
+          "ply": "t-700",
+          "elastic_error": 2.1466748766825845e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin47",
+          "angle_deg": 38.5,
+          "ply": "t-700",
+          "elastic_error": 2.2131055557790284e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin48",
+          "angle_deg": 39.0,
+          "ply": "t-700",
+          "elastic_error": 1.4458784770001937e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin49",
+          "angle_deg": 39.5,
+          "ply": "t-700",
+          "elastic_error": 3.049474569496293e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin50",
+          "angle_deg": 40.0,
+          "ply": "t-700",
+          "elastic_error": 1.1973726337500999e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin51",
+          "angle_deg": 40.5,
+          "ply": "t-700",
+          "elastic_error": 2.268959865424846e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin52",
+          "angle_deg": 41.0,
+          "ply": "t-700",
+          "elastic_error": 2.7313154115671492e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin53",
+          "angle_deg": 41.5,
+          "ply": "t-700",
+          "elastic_error": 1.2161960653864953e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin54",
+          "angle_deg": 42.0,
+          "ply": "t-700",
+          "elastic_error": 9.267762377142161e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin55",
+          "angle_deg": 42.5,
+          "ply": "t-700",
+          "elastic_error": 8.431088398975744e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin56",
+          "angle_deg": 43.0,
+          "ply": "t-700",
+          "elastic_error": 2.7655210064864504e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin57",
+          "angle_deg": 43.5,
+          "ply": "t-700",
+          "elastic_error": 2.244626681069329e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin58",
+          "angle_deg": 44.0,
+          "ply": "t-700",
+          "elastic_error": 2.9202024336984742e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin59",
+          "angle_deg": 44.5,
+          "ply": "t-700",
+          "elastic_error": 2.666103406036732e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin60",
+          "angle_deg": 45.0,
+          "ply": "t-700",
+          "elastic_error": 6.892937167073778e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin61",
+          "angle_deg": 45.5,
+          "ply": "t-700",
+          "elastic_error": 2.3999382594056403e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin62",
+          "angle_deg": 46.0,
+          "ply": "t-700",
+          "elastic_error": 3.0251530333409626e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin63",
+          "angle_deg": 46.5,
+          "ply": "t-700",
+          "elastic_error": 2.2446033322405466e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin64",
+          "angle_deg": 47.0,
+          "ply": "t-700",
+          "elastic_error": 1.2329617736182106e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin65",
+          "angle_deg": 47.5,
+          "ply": "t-700",
+          "elastic_error": 1.8508491228721109e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin66",
+          "angle_deg": 48.0,
+          "ply": "t-700",
+          "elastic_error": 1.7000600704883512e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin67",
+          "angle_deg": 48.5,
+          "ply": "t-700",
+          "elastic_error": 6.642247164771753e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin68",
+          "angle_deg": 49.0,
+          "ply": "t-700",
+          "elastic_error": 3.458816189473168e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin69",
+          "angle_deg": 49.5,
+          "ply": "t-700",
+          "elastic_error": 8.878947463243796e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin70",
+          "angle_deg": 50.0,
+          "ply": "t-700",
+          "elastic_error": 6.827833317177933e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin71",
+          "angle_deg": 50.5,
+          "ply": "t-700",
+          "elastic_error": 4.369096549161513e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin72",
+          "angle_deg": 51.0,
+          "ply": "t-700",
+          "elastic_error": 4.097322720023787e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin73",
+          "angle_deg": 51.5,
+          "ply": "t-700",
+          "elastic_error": 1.2564895159129575e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin74",
+          "angle_deg": 52.0,
+          "ply": "t-700",
+          "elastic_error": 2.155625302968833e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin75",
+          "angle_deg": 52.5,
+          "ply": "t-700",
+          "elastic_error": 5.19378515948037e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin76",
+          "angle_deg": 53.0,
+          "ply": "t-700",
+          "elastic_error": 3.7803874286864554e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin77",
+          "angle_deg": 53.5,
+          "ply": "t-700",
+          "elastic_error": 2.8164726852180288e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin78",
+          "angle_deg": 54.0,
+          "ply": "t-700",
+          "elastic_error": 9.509722774321981e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin79",
+          "angle_deg": 54.5,
+          "ply": "t-700",
+          "elastic_error": 5.739585566422633e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin80",
+          "angle_deg": 55.0,
+          "ply": "t-700",
+          "elastic_error": 4.036387241342689e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin81",
+          "angle_deg": 55.5,
+          "ply": "t-700",
+          "elastic_error": 4.881402012357105e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin82",
+          "angle_deg": 56.0,
+          "ply": "t-700",
+          "elastic_error": 4.833533992263278e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin83",
+          "angle_deg": 56.5,
+          "ply": "t-700",
+          "elastic_error": 2.4435214139782837e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin84",
+          "angle_deg": 57.0,
+          "ply": "t-700",
+          "elastic_error": 1.4228708830158487e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin85",
+          "angle_deg": 57.5,
+          "ply": "t-700",
+          "elastic_error": 1.3209573774130234e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin86",
+          "angle_deg": 58.0,
+          "ply": "t-700",
+          "elastic_error": 1.525961218962817e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin87",
+          "angle_deg": 58.5,
+          "ply": "t-700",
+          "elastic_error": 1.9535624141306252e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin88",
+          "angle_deg": 59.0,
+          "ply": "t-700",
+          "elastic_error": 4.421453095131246e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin89",
+          "angle_deg": 59.5,
+          "ply": "t-700",
+          "elastic_error": 1.2636364183693392e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin90",
+          "angle_deg": 60.0,
+          "ply": "t-700",
+          "elastic_error": 1.4418962017571327e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin91",
+          "angle_deg": 60.5,
+          "ply": "t-700",
+          "elastic_error": 5.384010999795405e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin92",
+          "angle_deg": 61.0,
+          "ply": "t-700",
+          "elastic_error": 1.2452617635345454e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin94",
+          "angle_deg": 62.0,
+          "ply": "t-700",
+          "elastic_error": 7.573926374494853e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin95",
+          "angle_deg": 62.5,
+          "ply": "t-700",
+          "elastic_error": 4.308723943353348e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin96",
+          "angle_deg": 63.0,
+          "ply": "t-700",
+          "elastic_error": 4.833891722407484e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin97",
+          "angle_deg": 63.5,
+          "ply": "t-700",
+          "elastic_error": 3.345814643594673e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin98",
+          "angle_deg": 64.0,
+          "ply": "t-700",
+          "elastic_error": 4.915186747541222e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin99",
+          "angle_deg": 64.5,
+          "ply": "t-700",
+          "elastic_error": 3.486707309830046e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin100",
+          "angle_deg": 65.0,
+          "ply": "t-700",
+          "elastic_error": 9.007403837604242e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin101",
+          "angle_deg": 65.5,
+          "ply": "t-700",
+          "elastic_error": 1.6610525793914147e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin102",
+          "angle_deg": 66.0,
+          "ply": "t-700",
+          "elastic_error": 6.670501257295387e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin103",
+          "angle_deg": 66.5,
+          "ply": "t-700",
+          "elastic_error": 9.843859657096453e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin104",
+          "angle_deg": 67.0,
+          "ply": "t-700",
+          "elastic_error": 1.0049373190058404e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin105",
+          "angle_deg": 67.5,
+          "ply": "t-700",
+          "elastic_error": 3.859354338323369e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin106",
+          "angle_deg": 68.0,
+          "ply": "t-700",
+          "elastic_error": 5.292816611125164e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin108",
+          "angle_deg": 69.0,
+          "ply": "t-700",
+          "elastic_error": 5.04371704102103e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin109",
+          "angle_deg": 69.5,
+          "ply": "t-700",
+          "elastic_error": 1.2780328074363858e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin110",
+          "angle_deg": 70.0,
+          "ply": "t-700",
+          "elastic_error": 5.366919333334893e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin111",
+          "angle_deg": 70.5,
+          "ply": "t-700",
+          "elastic_error": 5.230953507299967e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin112",
+          "angle_deg": 71.0,
+          "ply": "t-700",
+          "elastic_error": 8.203406166817615e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin113",
+          "angle_deg": 71.5,
+          "ply": "t-700",
+          "elastic_error": 3.3086853821729903e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin114",
+          "angle_deg": 72.0,
+          "ply": "t-700",
+          "elastic_error": 2.3223578674182925e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin115",
+          "angle_deg": 72.5,
+          "ply": "t-700",
+          "elastic_error": 2.4612128385189504e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin116",
+          "angle_deg": 73.0,
+          "ply": "t-700",
+          "elastic_error": 2.2705523431838387e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin117",
+          "angle_deg": 73.5,
+          "ply": "t-700",
+          "elastic_error": 3.5884846285441494e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin118",
+          "angle_deg": 74.0,
+          "ply": "t-700",
+          "elastic_error": 3.586062761780032e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin119",
+          "angle_deg": 74.5,
+          "ply": "t-700",
+          "elastic_error": 2.136162802940017e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin120",
+          "angle_deg": 75.0,
+          "ply": "t-700",
+          "elastic_error": 2.7139903489390507e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin121",
+          "angle_deg": 75.5,
+          "ply": "t-700",
+          "elastic_error": 2.5417152667956725e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin122",
+          "angle_deg": 76.0,
+          "ply": "t-700",
+          "elastic_error": 4.002693696148334e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin124",
+          "angle_deg": 77.0,
+          "ply": "t-700",
+          "elastic_error": 3.2536857190319173e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin125",
+          "angle_deg": 77.5,
+          "ply": "t-700",
+          "elastic_error": 1.9886738320317507e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin126",
+          "angle_deg": 78.0,
+          "ply": "t-700",
+          "elastic_error": 2.4729890346393838e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin127",
+          "angle_deg": 78.5,
+          "ply": "t-700",
+          "elastic_error": 3.8033166662786812e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin129",
+          "angle_deg": 79.5,
+          "ply": "t-700",
+          "elastic_error": 9.114892318963835e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin130",
+          "angle_deg": 80.0,
+          "ply": "t-700",
+          "elastic_error": 1.9507954852206725e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin133",
+          "angle_deg": 81.5,
+          "ply": "t-700",
+          "elastic_error": 8.936381283945098e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin134",
+          "angle_deg": 82.0,
+          "ply": "t-700",
+          "elastic_error": 3.118383737652591e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin135",
+          "angle_deg": 82.5,
+          "ply": "t-700",
+          "elastic_error": 5.701374704875537e-07
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin136",
+          "angle_deg": 83.0,
+          "ply": "t-700",
+          "elastic_error": 1.5438793310856618e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin137",
+          "angle_deg": 83.5,
+          "ply": "t-700",
+          "elastic_error": 3.4178272943065317e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin138",
+          "angle_deg": 84.0,
+          "ply": "t-700",
+          "elastic_error": 1.05058075969464e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin139",
+          "angle_deg": 84.5,
+          "ply": "t-700",
+          "elastic_error": 2.9484821368713265e-06
+        },
+        {
+          "material": "WCM_Tank1_Mat1_Bin150",
+          "angle_deg": 90.0,
+          "ply": "t-700",
+          "elastic_error": 2.3616227663781505e-09
+        }
+      ],
+      "state_variables": 62,
+      "output_sdvs": [
+        "SDV1",
+        "SDV2",
+        "SDV3",
+        "SDV4",
+        "SDV5",
+        "SDV6",
+        "SDV7",
+        "SDV8",
+        "SDV9",
+        "SDV10"
+      ],
+      "static": [
+        0.01,
+        1.0,
+        1e-20,
+        0.1
+      ],
+      "element_output": [
+        "LE",
+        "PE",
+        "PEEQ",
+        "PEMAG",
+        "S",
+        "S",
+        "SDV1",
+        "SDV2",
+        "SDV3",
+        "SDV4",
+        "SDV5",
+        "SDV6",
+        "SDV7",
+        "SDV8",
+        "SDV9",
+        "SDV10"
+      ],
+      "node_output": [
+        "U"
+      ],
+      "material_cards": 135,
+      "props_constants": 30,
+      "composite_elements": 51558,
+      "material_bins": 135,
+      "sections_checked": 391,
+      "element_types": {
+        "C3D8": 636,
+        "C3D6": 6,
+        "C3D8R": 50916
+      },
+      "bin_minus_ang_deg_min": -0.49833585440093486,
+      "bin_minus_ang_deg_max": 0.0009492143893083949,
+      "addrot_defined": 51558,
+      "hourglass_enhanced_sections": 391,
+      "max_relative_elastic_error": 6.808461904109211e-06
+    }
+  },
+  "sdv_labels": {
+    "A": {
+      "1": "MAX_FI_FT",
+      "2": "MAX_FI_FC",
+      "3": "MAX_FI_MT",
+      "4": "MAX_FI_MC",
+      "5": "MAX_COMPLETE_F",
+      "6": "MAX_COMPLETE_M",
+      "7": "MAX_USED_DF",
+      "8": "MAX_USED_DM",
+      "9": "PLUS_INIT_FT",
+      "10": "PLUS_INIT_FC",
+      "11": "PLUS_INIT_MT",
+      "12": "PLUS_INIT_MC",
+      "13": "MINUS_INIT_FT",
+      "14": "MINUS_INIT_FC",
+      "15": "MINUS_INIT_MT",
+      "16": "MINUS_INIT_MC",
+      "17": "THETA_DEG",
+      "18": "WEIGHT_PLUS",
+      "19": "MODEL_ID",
+      "20": "SCHEMA"
+    },
+    "B": {
+      "1": "MAX_FI_FT",
+      "2": "MAX_FI_FC",
+      "3": "MAX_FI_MT",
+      "4": "MAX_FI_MC",
+      "5": "MAX_COMPLETE_F",
+      "6": "MAX_COMPLETE_M",
+      "7": "MAX_DVF",
+      "8": "MAX_DVM",
+      "9": "MAX_USED_DF",
+      "10": "MAX_USED_DM",
+      "11": "PLUS_D_FT",
+      "12": "PLUS_D_FC",
+      "13": "PLUS_D_MT",
+      "14": "PLUS_D_MC",
+      "15": "PLUS_KAPPA_FT",
+      "16": "PLUS_KAPPA_FC",
+      "17": "PLUS_KAPPA_MT",
+      "18": "PLUS_KAPPA_MC",
+      "19": "PLUS_INIT_FT",
+      "20": "PLUS_INIT_FC",
+      "21": "PLUS_INIT_MT",
+      "22": "PLUS_INIT_MC",
+      "23": "PLUS_DELTA0_FT",
+      "24": "PLUS_DELTA0_FC",
+      "25": "PLUS_DELTA0_MT",
+      "26": "PLUS_DELTA0_MC",
+      "27": "PLUS_SIGMA0_FT",
+      "28": "PLUS_SIGMA0_FC",
+      "29": "PLUS_SIGMA0_MT",
+      "30": "PLUS_SIGMA0_MC",
+      "31": "PLUS_DV_FT",
+      "32": "PLUS_DV_FC",
+      "33": "PLUS_DV_MT",
+      "34": "PLUS_DV_MC",
+      "35": "MINUS_D_FT",
+      "36": "MINUS_D_FC",
+      "37": "MINUS_D_MT",
+      "38": "MINUS_D_MC",
+      "39": "MINUS_KAPPA_FT",
+      "40": "MINUS_KAPPA_FC",
+      "41": "MINUS_KAPPA_MT",
+      "42": "MINUS_KAPPA_MC",
+      "43": "MINUS_INIT_FT",
+      "44": "MINUS_INIT_FC",
+      "45": "MINUS_INIT_MT",
+      "46": "MINUS_INIT_MC",
+      "47": "MINUS_DELTA0_FT",
+      "48": "MINUS_DELTA0_FC",
+      "49": "MINUS_DELTA0_MT",
+      "50": "MINUS_DELTA0_MC",
+      "51": "MINUS_SIGMA0_FT",
+      "52": "MINUS_SIGMA0_FC",
+      "53": "MINUS_SIGMA0_MT",
+      "54": "MINUS_SIGMA0_MC",
+      "55": "MINUS_DV_FT",
+      "56": "MINUS_DV_FC",
+      "57": "MINUS_DV_MT",
+      "58": "MINUS_DV_MC",
+      "59": "THETA_DEG",
+      "60": "WEIGHT_PLUS",
+      "61": "MODEL_ID",
+      "62": "SCHEMA"
+    }
+  },
+  "written": true,
+  "note": "A 版按用户口径不加沙漏控制；PE/PEEQ/PEMAG 由 UMAT 不返回非弹性应变，预期为零值，仅供与 WCM 弹性基准对照。"
+}

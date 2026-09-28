@@ -1,0 +1,38 @@
+{
+  "flag": "UNRESOLVED_1022",
+  "time": "2026-09-27",
+  "scope": "只读现有日志/ODB取证（规划5.2），未重新提交求解，未做instrumented取证。",
+  "strict_run": {
+    "directory": "PROJECT/test/B_energy_softening/runs/B_20260927_150554",
+    "last_attempt_step_time": 0.17,
+    "last_attempt_pressure_mpa": 42.5,
+    "wcm_error_histogram": {"1033": 181, "2033": 3},
+    "last_printed_elements": [4879, 4880, 4881, 4882],
+    "note": "严格版在42.5MPa附近因族1/族2基体拉伸deltaf<=delta0终止。msg只保留最后若干打印，ODB不含被拒绝Newton试算的完整应变/应力状态。"
+  },
+  "fallback_run": {
+    "directory": "PROJECT/test/B_energy_softening/runs/B_20260927_153131_fallback",
+    "nature": "即时完成分支历史实验取证（DFINAL<=DELTA0时损伤直接置1），不作为正式修复候选。",
+    "wcm_error_histogram": {"1022": 20857},
+    "call_log_total": 709867,
+    "unique_elements_in_call_log": 28393,
+    "plan_elements_first_record": {
+      "13426": {"bin": 112, "L_mm": 2.3046, "delta0_mm": 0.01773, "deltaf_mm": 0.01343, "family": 1, "mode": 3},
+      "13499": {"bin": 112, "L_mm": 2.3125, "delta0_mm": 0.01775, "deltaf_mm": 0.01350, "family": 1, "mode": 3},
+      "13572": {"bin": 112, "L_mm": 2.3046, "delta0_mm": 0.01773, "deltaf_mm": 0.01343, "family": 1, "mode": 3},
+      "50964": {"bin": 129, "L_mm": 2.2777, "delta0_mm": 0.01997, "deltaf_mm": 0.01151, "family": 1, "mode": 3},
+      "51037": {"bin": 129, "L_mm": 2.3050, "delta0_mm": 0.02008, "deltaf_mm": 0.01163, "family": 1, "mode": 3},
+      "51110": {"bin": 150, "L_mm": 2.3410, "delta0_mm": 0.01524, "deltaf_mm": 0.01395, "family": 1, "mode": 3},
+      "13574": {"bin": 102, "L_mm": 2.3087, "delta0_mm": 0.02962, "deltaf_mm": 0.00937, "family": 1, "mode": 3},
+      "13428": {"bin": 102, "L_mm": 2.3087, "delta0_mm": 0.02961, "deltaf_mm": 0.00937, "family": 1, "mode": 3},
+      "13501": {"bin": 102, "L_mm": 2.3011, "delta0_mm": 0.02950, "deltaf_mm": 0.00938, "family": 1, "mode": 3}
+    },
+    "interpretation": "9个规划单元均为族1模式3（基体拉伸）起始量已记录且deltaf<delta0；Lc≈2.28-2.34mm远超该模式纯剪路径的Lc_crit≈0.5868mm，属固有长度/能量不相容，与材料点复现一致。"
+  },
+  "unresolved_1022": {
+    "code_meaning": "族1模式2（纤维压缩）起始等效量非正：FC判据由EFF11<0触发，而等效位移取LC*max(-EL11,0)；三维泊松耦合下试应力为压而EL11非负时，delta0/sigma0无法定义。",
+    "evidence_gap": "20,857条1022均来自被拒绝试算；现有ODB与日志未记录失败试算的完整应变/应力，无法从最后收敛帧反推失败增量状态。",
+    "hypothesis_status": "泊松符号错配是instant_fallback/README.md记录的机制假设，现场根因未证实；合成反例见onset套件，不得当作现场根因。",
+    "conclusion": "UNRESOLVED_1022保留。若后续获准instrumented取证，需记录OLD、E0、DE、局部EL/EFF、FI、DEL/SIG、起始/终止量、LC、DT、族/模式、步/增量及材料/点标识。"
+  }
+}

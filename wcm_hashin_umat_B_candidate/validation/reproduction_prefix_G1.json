@@ -1,0 +1,97 @@
+{
+  "stage": "1_reproduce",
+  "gate": "G1",
+  "compiler": "gfortran（版本见validation/environment.json与编译日志）",
+  "dll_note": "本套件在唯一运行目录重新编译候选src/wcm_core.for与baseline/hashin.for，未加载任何历史DLL。",
+  "analytic": {
+    "gamma0_23shear": 0.015492957746478873,
+    "gamma0_reference": 0.015492957746478873,
+    "lc_crit_mt_pure_shear_mm": 0.5867768595041323,
+    "lc_crit_reference": 0.5867768595041323,
+    "note": "Lc_crit 是纯剪基体拉伸路径的条件，不是全瓶网格建议。"
+  },
+  "paths": {
+    "single_increment_gamma12_0.0155": {
+      "ierr": 1033,
+      "expected_ierr": 1033,
+      "ply_forensics": {
+        "ierr": 33,
+        "init_FT": 1.0,
+        "init_MT": 1.0,
+        "delta0_FT_mm": 0.034565,
+        "delta0_MT_mm": 0.034565,
+        "sigma0_FT_mpa": 110.05,
+        "sigma0_MT_mpa": 110.05,
+        "kappa_MT_mm": 0.0,
+        "tau_mpa": 110.05
+      },
+      "sigma0_mt_mpa": 110.05,
+      "delta0_mt_mm": 0.034565,
+      "deltaf_mt_mm": 0.009086778736937756,
+      "match_documented_example": true
+    },
+    "ramp_gamma12_0.006": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": null,
+      "rows": "运行目录 material_reproduce_20260927_172135_200495/ramp_gamma12_0.006.csv"
+    },
+    "ramp_gamma12_0.01": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": null,
+      "rows": "运行目录 material_reproduce_20260927_172135_200495/ramp_gamma12_0.01.csv"
+    },
+    "ramp_gamma12_0.0155": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": 1033,
+      "rows": "运行目录 material_reproduce_20260927_172135_200495/ramp_gamma12_0.0155.csv"
+    },
+    "fine_ramp_gamma12_onset_location": {
+      "increments": 2000,
+      "ierr_final": 1033,
+      "first_crossing_increment": 1937,
+      "gamma_at_error": 0.015496,
+      "gamma0": 0.015492957746478873,
+      "onset_located_at_threshold": true
+    },
+    "legacy_silent_skip_gamma12_0.0155": {
+      "legacy_d_mt": 0.0,
+      "legacy_init_mt": 1.0,
+      "legacy_delta0_mt": 0.034565,
+      "legacy_sigma0_mt": 110.05,
+      "legacy_kappa_mt": 0.034565,
+      "legacy_tau": 110.05,
+      "silent_skip": true
+    },
+    "endpoint_onset_step_dependence": {
+      "1_step": {
+        "delta0_mt_mm": 0.006,
+        "sigma0_mt_mpa": 142.0,
+        "d_mt": 0.0,
+        "ierr": 0
+      },
+      "20_step": {
+        "delta0_mt_mm": 0.004800000000000002,
+        "sigma0_mt_mpa": 113.60000000000004,
+        "d_mt": 0.43983110485573584,
+        "ierr": null
+      },
+      "onset_differs": true
+    }
+  },
+  "checks": {
+    "strict_1033_reproduced_with_documented_onset": true,
+    "onset_located_at_analytic_gamma0": true,
+    "legacy_silent_skip_confirmed": true,
+    "endpoint_onset_step_dependent": true,
+    "analytic_baselines_exact": true
+  },
+  "unresolved_1022": "见validation/forensics_1022.json：实际失败试算状态不可从现有ODB/日志取得，保持UNRESOLVED_1022。",
+  "status": "PASS",
+  "suite": "reproduce",
+  "run_dir": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\material_reproduce_20260927_172135_200495",
+  "core_src_sha256": "bb110de14a9e61e8d0c70a42bd0856d81d3037bb0d55046d5724d5f199d8dc58",
+  "dist_umat_sha256": "19f1e57ea1ffb96ef80bbd43e663fe2d59c26a41e9e3335e5da4039564c9361a"
+}

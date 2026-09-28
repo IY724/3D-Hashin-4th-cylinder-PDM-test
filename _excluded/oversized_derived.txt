@@ -1,0 +1,4 @@
+23.6MB wcm_hashin_umat_B_candidate\runs\mesh_survey_20260927\strain_field.json
+11.8MB wcm_hashin_umat_B_candidate\runs\mesh_block_40_0p3536_20260927_210407_362681\actual.json
+28.1MB wcm_hashin_umat_B_candidate\runs\mesh_block_40_0p2500_20260927_210407_362681\actual.json
+6.9MB wcm_hashin_umat_B_candidate\runs\mesh_block_150_1p2000_20260927_210745_081951\actual.json

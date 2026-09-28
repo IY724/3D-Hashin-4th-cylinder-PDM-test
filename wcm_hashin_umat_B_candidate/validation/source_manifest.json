@@ -1,0 +1,155 @@
+{
+  "created": "2026-09-27T16:57:26",
+  "project": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM",
+  "candidate": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate",
+  "parent_source": "wcm_hashin_umat",
+  "candidate_parent_version_note": "本候选由 PROJECT/wcm_hashin_umat 于 2026-09-27 复制隔离；此后仅候选内文件允许修改。",
+  "formal_protected": {
+    "wcm_hashin_umat/src/wcm_core.for": {
+      "sha256": "bb110de14a9e61e8d0c70a42bd0856d81d3037bb0d55046d5724d5f199d8dc58",
+      "bytes": 14844
+    },
+    "wcm_hashin_umat/src/umat_entry.for.in": {
+      "sha256": "88e541cf7eb5a0bacc0e6800e848d369a657f13fae1207dd50131c99ac6cd89e",
+      "bytes": 5657
+    },
+    "wcm_hashin_umat/tools/bootstrap.py": {
+      "sha256": "7a22b3d4e9530139104754ec0b3d5c5aee9f7bdf6254bb07b9d68c0c169d6857",
+      "bytes": 1517
+    },
+    "wcm_hashin_umat/tools/build.py": {
+      "sha256": "855c02739eb32baf70d01ac39a2c73d6465d3ccfd2212ddab3ecc21785eb8368",
+      "bytes": 2593
+    },
+    "wcm_hashin_umat/tools/abaqus_verify.py": {
+      "sha256": "369ad4474187ed461301629754307380085c12bee421d41595516604cbcde6e7",
+      "bytes": 13662
+    },
+    "wcm_hashin_umat/tools/convert_wcm_inp.py": {
+      "sha256": "7b334aa413ebf7f0dfc73c7fa21488a06b5bfa64a3e5790dce85cd5d94ef059c",
+      "bytes": 13294
+    },
+    "wcm_hashin_umat/tools/extract_failure.py": {
+      "sha256": "4265cb2754559fdd3ef2c1266c94c1cd58d61879aeafda9ac1a3e546f203f275",
+      "bytes": 4485
+    },
+    "wcm_hashin_umat/tools/model.py": {
+      "sha256": "faa22248ec0ded47d98d6adde95c54546835494916bff39b3fcad76c2d3fdbb9",
+      "bytes": 6401
+    },
+    "wcm_hashin_umat/tools/prepare_test_cases.py": {
+      "sha256": "3d5e580e60d6a71dc9acc576f427635daad80b219b29c8714a5d1ce0a18f8e93",
+      "bytes": 21449
+    },
+    "wcm_hashin_umat/tools/run_job.py": {
+      "sha256": "e1d2bced5c369f70205c516bbaf87df872b2deb2d5307eb817cf18bc185639ea",
+      "bytes": 3864
+    },
+    "wcm_hashin_umat/tools/run_tests.py": {
+      "sha256": "a36f22346a9da302ea4d98b14c0c11b1787e182d136ad59ae5273a94b0a542ca",
+      "bytes": 16238
+    },
+    "wcm_hashin_umat/tests/baseline_driver.for": {
+      "sha256": "27758e99d32506a7ef6d0d4f45d1ca72e41f30461e47f688b8cd2ecbe44c172c",
+      "bytes": 1605
+    },
+    "wcm_hashin_umat/tests/extract_odb.py": {
+      "sha256": "090ae34a57ddfe1af8ab8fec0bb6f8457cf698ee6828c6426dc8c0de9c47d812",
+      "bytes": 1100
+    },
+    "wcm_hashin_umat/config/project.json": {
+      "sha256": "dab4e5d397da81af5faab854147144ae5598c5c0cbd0082e5500b12baeeda250",
+      "bytes": 1426
+    },
+    "wcm_hashin_umat/config/failure_thresholds_A.json": {
+      "sha256": "e8c03d05b0dc74af6e3734149e16f68799125e74aee3edb40a784c825a51c959",
+      "bytes": 431
+    },
+    "wcm_hashin_umat/config/failure_thresholds_B.json": {
+      "sha256": "9f32fc12891f244815f6898982dc7ff06532c2ffddbb87472ac5101233ac7871",
+      "bytes": 431
+    },
+    "wcm_hashin_umat/baseline/hashin.for": {
+      "sha256": "98d4d8a0cf19a06474030ab2d0da6463e7584e8824b3cde79011bc6ac6598f02",
+      "bytes": 14824
+    },
+    "wcm_hashin_umat/baseline/hashin_constant.for": {
+      "sha256": "b37a097918a4c30d7af0f68e98d18229a1f8d8156b48fb1e90bd9b3b530d076b",
+      "bytes": 6341
+    },
+    "wcm_hashin_umat/baseline/source_manifest.json": {
+      "sha256": "2595bd81581585c66c1bbc239bd8c226cd7b0d268f6e8c3401aaf11e15a46b9e",
+      "bytes": 580
+    },
+    "test/A_stiffness_reduction/Rebuild_PDM_A.inp": {
+      "sha256": "094ab4aabc29afbed216ec9d7e7d99c84be25011ee7a0f4fc036dce7470a8986",
+      "bytes": 15381490
+    },
+    "test/A_stiffness_reduction/hashin_constant_wcm.for": {
+      "sha256": "57012bb5f86800ba0e3118d43d91ca13a77326517cf00c03166d029becc98804",
+      "bytes": 20185
+    },
+    "test/B_energy_softening/Rebuild_PDM_B.inp": {
+      "sha256": "435e31cf314e767a53770044be5f62dcbc563b42165303105c3cc0fa9d9befc3",
+      "bytes": 15391429
+    },
+    "test/B_energy_softening/hashin_energy_wcm.for": {
+      "sha256": "19f1e57ea1ffb96ef80bbd43e663fe2d59c26a41e9e3335e5da4039564c9361a",
+      "bytes": 20340
+    },
+    "geometry_zhuning_joint_rebuild/WCM_Job.inp": {
+      "sha256": "a2231b90da11e5662c4ef3d364aff486541e0f62f6936b52ffeb2e5e031d73a6",
+      "bytes": 15395095
+    },
+    "geometry_zhuning_joint_rebuild/WCM_Zhuning_Joint_Rebuilt_WindAngles.ang": {
+      "sha256": "b8188f77187891a045441c925fb7d750b00977a40173adadf05215a9e77e1abb",
+      "bytes": 1744605
+    }
+  },
+  "candidate_copied_provenance": {
+    "src/wcm_core.for": {
+      "parent_sha256": "bb110de14a9e61e8d0c70a42bd0856d81d3037bb0d55046d5724d5f199d8dc58",
+      "parent": "wcm_hashin_umat/src/wcm_core.for"
+    },
+    "src/umat_entry.for.in": {
+      "parent_sha256": "88e541cf7eb5a0bacc0e6800e848d369a657f13fae1207dd50131c99ac6cd89e",
+      "parent": "wcm_hashin_umat/src/umat_entry.for.in"
+    },
+    "tools/bootstrap.py": {
+      "parent_sha256": "7a22b3d4e9530139104754ec0b3d5c5aee9f7bdf6254bb07b9d68c0c169d6857",
+      "parent": "wcm_hashin_umat/tools/bootstrap.py"
+    },
+    "tools/convert_wcm_inp.py": {
+      "parent_sha256": "7b334aa413ebf7f0dfc73c7fa21488a06b5bfa64a3e5790dce85cd5d94ef059c",
+      "parent": "wcm_hashin_umat/tools/convert_wcm_inp.py"
+    },
+    "tests/baseline_driver.for": {
+      "parent_sha256": "27758e99d32506a7ef6d0d4f45d1ca72e41f30461e47f688b8cd2ecbe44c172c",
+      "parent": "wcm_hashin_umat/tests/baseline_driver.for"
+    },
+    "config/project.json": {
+      "parent_sha256": "dab4e5d397da81af5faab854147144ae5598c5c0cbd0082e5500b12baeeda250",
+      "parent": "wcm_hashin_umat/config/project.json"
+    },
+    "config/failure_thresholds_A.json": {
+      "parent_sha256": "e8c03d05b0dc74af6e3734149e16f68799125e74aee3edb40a784c825a51c959",
+      "parent": "wcm_hashin_umat/config/failure_thresholds_A.json"
+    },
+    "config/failure_thresholds_B.json": {
+      "parent_sha256": "9f32fc12891f244815f6898982dc7ff06532c2ffddbb87472ac5101233ac7871",
+      "parent": "wcm_hashin_umat/config/failure_thresholds_B.json"
+    },
+    "baseline/hashin.for": {
+      "parent_sha256": "98d4d8a0cf19a06474030ab2d0da6463e7584e8824b3cde79011bc6ac6598f02",
+      "parent": "wcm_hashin_umat/baseline/hashin.for"
+    },
+    "baseline/hashin_constant.for": {
+      "parent_sha256": "b37a097918a4c30d7af0f68e98d18229a1f8d8156b48fb1e90bd9b3b530d076b",
+      "parent": "wcm_hashin_umat/baseline/hashin_constant.for"
+    },
+    "baseline/source_manifest.json": {
+      "parent_sha256": "2595bd81581585c66c1bbc239bd8c226cd7b0d268f6e8c3401aaf11e15a46b9e",
+      "parent": "wcm_hashin_umat/baseline/source_manifest.json"
+    }
+  }
+}

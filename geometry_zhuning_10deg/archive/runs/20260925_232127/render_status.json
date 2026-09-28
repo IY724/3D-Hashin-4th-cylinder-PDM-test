@@ -1,0 +1,11 @@
+{
+  "source_cae": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260925_232127\\zhuning_base_10deg.cae",
+  "renderer": "Abaqus/CAE native viewport",
+  "ai_generated": false,
+  "images": [
+    "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260925_232127\\abaqus_section_full.png",
+    "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260925_232127\\abaqus_section_joint.png",
+    "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260925_232127\\abaqus_sector_3d.png"
+  ],
+  "status": "COMPLETE"
+}

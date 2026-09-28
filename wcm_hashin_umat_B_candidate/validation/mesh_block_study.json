@@ -1,0 +1,131 @@
+{
+ "time": "2026-09-27",
+ "umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121",
+ "design": "均匀应变代表性材料块：全部节点按 u=t·(ε_target·x) 约束，物理块体/材料/路径不随网格变，仅CELENT=h随档变；C3D8R+Enhanced；B版生产参数（强度/G/黏性/UPDATE=0不变）",
+ "studies": {
+  "MC_bin40": {
+   "bin": 40,
+   "mode": "MC",
+   "theta": 35.0,
+   "element_survey": 2260,
+   "rho_survey": 0.1911,
+   "eps_target": [
+    0.00442861,
+    0.00811406,
+    -0.038559,
+    0.0,
+    -2.3e-07,
+    0.0
+   ],
+   "levels": [
+    {
+     "h": 0.5,
+     "h_effective": 0.5,
+     "n": 4,
+     "completed": false,
+     "abort": "1034 x64单元x26次（增量18）",
+     "run_dir": "runs/mesh_block_40_0p5000_20260927_210407_362681"
+    },
+    {
+     "h": 0.3536,
+     "h_effective": 0.3333,
+     "n": 6,
+     "completed": true,
+     "frames": 18,
+     "W_density": 8.225647714989336,
+     "D_density": 5.909227396959359,
+     "t_onset": 0.7512890696525574,
+     "d_mc_final": 1.0,
+     "ALLAE_over_ALLIE_max": 1.6e-27,
+     "run_dir": "runs/mesh_block_40_0p3536_20260927_210407_362681"
+    },
+    {
+     "h": 0.25,
+     "h_effective": 0.25,
+     "n": 8,
+     "completed": true,
+     "frames": 18,
+     "W_density": 9.281228920876362,
+     "D_density": 5.094720331204988,
+     "t_onset": 0.7512890696525574,
+     "d_mc_final": 0.905,
+     "ALLAE_over_ALLIE_max": 1.9e-27,
+     "run_dir": "runs/mesh_block_40_0p2500_20260927_210407_362681"
+    }
+   ],
+   "predicted_rho_at_target": [
+    0.845,
+    1.193,
+    1.69
+   ],
+   "abort_validation": "h=0.5 在 rho<1 预测位置恰好1034中止（64单元全部同时）——rho判据端到端验证",
+   "response_comparison_fine_two": {
+    "onset_time_diff": 0.0,
+    "W_density_diff": 0.1137,
+    "D_density_diff": 0.1599
+   }
+  },
+  "MT_bin150": {
+   "bin": 150,
+   "mode": "MT",
+   "theta": 90.0,
+   "element_survey": 4563,
+   "rho_survey": 0.0026,
+   "levels": [
+    {
+     "h": 2.4,
+     "h_effective": 3.0,
+     "n": 2,
+     "completed": true,
+     "frames": 18,
+     "W_density": 5.868147409592142,
+     "D_density": 0.3878294275629397,
+     "t_onset": 0.1658593714237213,
+     "d_mt_final": 1.0,
+     "ALLAE_over_ALLIE_max": 1.8e-28,
+     "run_dir": "runs/mesh_block_150_2p4000_20260927_210745_081951"
+    },
+    {
+     "h": 1.7,
+     "h_effective": 1.5,
+     "n": 4,
+     "completed": true,
+     "frames": 18,
+     "W_density": 6.128173432954618,
+     "D_density": 0.6478554449837102,
+     "t_onset": 0.1658593714237213,
+     "d_mt_final": 1.0,
+     "ALLAE_over_ALLIE_max": 7.2e-28,
+     "run_dir": "runs/mesh_block_150_1p7000_20260927_210745_081951"
+    },
+    {
+     "h": 1.2,
+     "h_effective": 1.2,
+     "n": 5,
+     "completed": true,
+     "frames": 18,
+     "W_density": 6.237733050093559,
+     "D_density": 0.7574149382438309,
+     "t_onset": 0.1658593714237213,
+     "d_mt_final": 1.0,
+     "ALLAE_over_ALLIE_max": 4.9e-28,
+     "run_dir": "runs/mesh_block_150_1p2000_20260927_210745_081951"
+    }
+   ],
+   "response_comparison_fine_two": {
+    "onset_time_diff": 0.0,
+    "W_density_diff": 0.0176,
+    "D_density_diff": 0.1446
+   }
+  }
+ },
+ "findings": {
+  "rho_criterion_validated": "h=0.5（rho_target=0.845<1）在预测位置恰好1034中止；h=0.333/0.25干净完成——rho判据端到端成立",
+  "onset_time_celemt_independent": "各档起始时刻逐位一致（FI与CELENT无关，理论预期）",
+  "mc_compatible_size": "<=0.333mm（0.5mm中止）；中位数要求0.504mm、p90=2.09mm（普查）",
+  "mt_compatible_size": "<=3.0mm（三档全通过）；rho<=1子集 LC_req p50=1.90mm",
+  "energy_metric_scope": "均匀块体内损伤无处局部化，D密度不含裂缝面能意义——其档间差异（11-16%/14.5%）是正则化物理而非网格缺陷；5%结构响应收敛门需带局部化+边界传递的热点子模型（下一步授权）",
+  "ALLAE_ALLIE": "全部档位 <=5e-27（Enhanced沙漏在均匀应变下无伪应变能）"
+ },
+ "verdict": "LOCAL_COMPATIBILITY_PASS（MC区<=0.35mm、MT区<=3.0mm；普查地图已出）；结构级5%收敛门与整瓶重建=下一轮授权"
+}

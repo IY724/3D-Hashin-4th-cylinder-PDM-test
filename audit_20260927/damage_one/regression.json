@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "increment_comparisons": 504,
+  "max_stress_difference": 0.0,
+  "scope": "Compiled pack/unpack versus retained 84-state core; both timing modes, angles, zero-weight families, unload/reversal",
+  "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\compact_20260927_123143"
+}

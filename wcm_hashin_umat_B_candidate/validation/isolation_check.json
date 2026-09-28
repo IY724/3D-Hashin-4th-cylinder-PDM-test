@@ -1,0 +1,63 @@
+{
+  "time": "2026-09-27T21:11:50",
+  "formal_hash_zero_change": true,
+  "formal_changed": [],
+  "formal_missing": [],
+  "escape_tests": [
+    {
+      "case": "dotdot_escape",
+      "rejected": true,
+      "expected_reject": true,
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "dotdot_inside",
+      "rejected": false,
+      "expected_reject": false,
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "junction_escape",
+      "rejected": true,
+      "expected_reject": true,
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "prefix_trap",
+      "rejected": true,
+      "expected_reject": true,
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "absolute_outside",
+      "rejected": true,
+      "expected_reject": true,
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "case": "normal_inside",
+      "rejected": false,
+      "expected_reject": false,
+      "pass": true,
+      "detail": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\_isolation_tmp_20260927_211150_268551\\normal.txt"
+    }
+  ],
+  "escape_all_rejected": true,
+  "environment": {
+    "python": "E:\\python\\python.exe",
+    "python_version": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "numpy_version": "2.3.5",
+    "gfortran": "F:\\documents\\x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0\\mingw64\\bin\\gfortran.EXE",
+    "gfortran_version": "GNU Fortran (x86_64-win32-seh-rev0, Built by MinGW-Builds project) 15.2.0",
+    "abaqus_bat": "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "cand_root": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate",
+    "project_root": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM"
+  },
+  "gate_G0_pass": true
+}

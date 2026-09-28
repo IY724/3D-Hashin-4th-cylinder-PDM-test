@@ -1,0 +1,16 @@
+{
+  "input_source": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\generated\\Job_wcm_B.inp",
+  "variant": "B",
+  "command": [
+    "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "job=tank",
+    "input=tank.inp",
+    "user=hashin_energy_wcm.for",
+    "cpus=2",
+    "scratch=F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\tank_B_20260925_231822_819372\\scratch",
+    "interactive"
+  ],
+  "cwd": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\tank_B_20260925_231822_819372",
+  "input_sha256": "c97ae8b7d4b73aaec2cd119a6067c951e09dc8d6c2b7b29e6e1b43f0021f994e",
+  "umat_sha256": "747d3e27bcc073741192ff09c3c80f0a5fc5fb0e008800222f6ced9589f1d3e7"
+}

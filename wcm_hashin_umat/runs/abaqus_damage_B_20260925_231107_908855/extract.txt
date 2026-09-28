@@ -1,0 +1,5 @@
+ERROR: Slice for an ODB Sequence is not supported.
+Traceback (most recent call last):
+  File "F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\tests\extract_odb.py", line 10, in <module>
+    for frame in step.frames[-1:]:
+<unknown>.OdbError: Slice for an ODB Sequence is not supported.

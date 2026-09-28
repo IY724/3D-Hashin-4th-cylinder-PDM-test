@@ -1,0 +1,6 @@
+# 本目录原为独立仓库，旧 .gitignore 把 runs/ 与 generated/ 整目录以及
+# *.log / *.sta / *.dat 等证据文件全部屏蔽。在本归档库里这些运行记录属于
+# "已做案例"的一部分，因此只保留真正无用的本地缓存规则。
+__pycache__/
+*.pyc
+abq.app_cache/

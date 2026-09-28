@@ -1,0 +1,25 @@
+{
+  "tests_run": 15,
+  "passed": true,
+  "failures": [],
+  "errors": [],
+  "build_directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\core_20260927_225703_285013",
+  "metrics": {
+    "bin_count_each": 138,
+    "max_wcm_elastic_error": 6.808461904109211e-06,
+    "gft300_uniaxial_softening": {
+      "length_mm": 14.3205413972228,
+      "delta0_mm": 0.21125337663988242,
+      "deltaf_mm": 0.28846153846153844,
+      "final_damage": 0.6226922380042733,
+      "final_stress_mpa": 1073.6116753633462,
+      "time_increments": [
+        0.01,
+        0.1
+      ]
+    },
+    "rebuild_bin_count_each": 135,
+    "rebuild_max_wcm_elastic_error": 6.808461904109211e-06
+  },
+  "scope": "实际Fortran核心及原版回归，非Abaqus求解验证"
+}

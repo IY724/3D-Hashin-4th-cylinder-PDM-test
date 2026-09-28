@@ -1,0 +1,12 @@
+{
+  "A": {
+    "executable_lines_unchanged": true,
+    "before_sha256": "06d3f262730fb70ef628a61d3ec13fadca206866c5beaf4d5fbf814fe2d493cd",
+    "after_sha256": "635f8575f5548786922b6a9f3206d87e870788e3e24da1a89bceae9849c33f88"
+  },
+  "B": {
+    "executable_lines_unchanged": true,
+    "before_sha256": "7d3da6a133b2cb8e10cd198306b92a862fa2a7d987028c791ceb5e0f511282c1",
+    "after_sha256": "9b7afb5245d3cf5e8d1f76234fd499bebf0a506a35dc453c0a2a5cc0f71bd8bd"
+  }
+}

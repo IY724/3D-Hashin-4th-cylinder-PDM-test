@@ -1,0 +1,120 @@
+{
+  "stage": "3B_energy",
+  "gate": "G3",
+  "analytic_target_N_per_mm": 0.45,
+  "delta0_mm": 0.004647887323943662,
+  "deltaf_mm": 0.00909090909090909,
+  "gamma_f": 0.030303030303030304,
+  "interpretation": "0.45=0.9*Gmt 是当前退化式(1-0.9dmt)决定的连续极限；Gmt=0.5 的输入名义值与实际耗能差10%，属模型定义层面（剪切通道共享），不是数值误差（规划8.2）。",
+  "rows": {
+    "traction_checked_points": 263,
+    "update1_eta0": {
+      "100": {
+        "n": 100,
+        "lc": 0.3,
+        "update": 1,
+        "W_density": 2.2187026530259364,
+        "psi_final": 0.718874999999999,
+        "D_density": 1.4998276530259373,
+        "D_crack_N_per_mm": 0.4499482959077812,
+        "rel_error_vs_target": 0.00011489798270850984,
+        "min_step_dD": -1.3183898417423734e-16,
+        "family_symmetric": true
+      },
+      "200": {
+        "n": 200,
+        "lc": 0.3,
+        "update": 1,
+        "W_density": 2.2188713918407794,
+        "psi_final": 0.718875000000002,
+        "D_density": 1.4999963918407793,
+        "D_crack_N_per_mm": 0.44999891755223376,
+        "rel_error_vs_target": 2.4054394805646715e-06,
+        "min_step_dD": -1.5959455978986625e-16,
+        "family_symmetric": true
+      },
+      "400": {
+        "n": 400,
+        "lc": 0.3,
+        "update": 1,
+        "W_density": 2.2188678958708525,
+        "psi_final": 0.7188750000000057,
+        "D_density": 1.4999928958708477,
+        "D_crack_N_per_mm": 0.4499978687612543,
+        "rel_error_vs_target": 4.73608610156933e-06,
+        "min_step_dD": -1.986258379993444e-16,
+        "family_symmetric": true
+      }
+    },
+    "traction_identity_worst": 4.5067574036357557e-14,
+    "psi_explicit_worst": 8.319458788354386e-15,
+    "refinement_gap": 0.00011249254322794518,
+    "update0_eta0": {
+      "100": {
+        "n": 100,
+        "lc": 0.3,
+        "update": 0,
+        "W_density": 2.280499108555416,
+        "psi_final": 0.718874999999999,
+        "D_density": 1.5616241085554174,
+        "D_crack_N_per_mm": 0.4684872325666252,
+        "rel_error_vs_target": 0.04108273903694491,
+        "min_step_dD": -1.3183898417423734e-16,
+        "family_symmetric": true
+      },
+      "400": {
+        "n": 400,
+        "lc": 0.3,
+        "update": 0,
+        "W_density": 2.2341962919701,
+        "psi_final": 0.7188750000000057,
+        "D_density": 1.515321291970093,
+        "D_crack_N_per_mm": 0.45459638759102783,
+        "rel_error_vs_target": 0.010214194646728483,
+        "min_step_dD": -1.986258379993444e-16,
+        "family_symmetric": true
+      }
+    },
+    "production_eta_update0": {
+      "n": 400,
+      "lc": 0.3,
+      "update": 0,
+      "W_density": 2.2419211450978462,
+      "psi_final": 0.7188750000000057,
+      "D_density": 1.5230461450978396,
+      "D_crack_N_per_mm": 0.4569138435293519,
+      "rel_error_vs_target": 0.015364096731893045,
+      "min_step_dD": -1.986258379993444e-16,
+      "family_symmetric": true
+    },
+    "lc056_update1_eta0": {
+      "n": 200,
+      "lc": 0.56,
+      "update": 1,
+      "W_density": 1.522445012500001,
+      "psi_final": 0.718875000000002,
+      "D_density": 0.8035700124999993,
+      "D_crack_N_per_mm": 0.4499992069999996,
+      "rel_error_vs_target": 1.762222223083359e-06,
+      "min_step_dD": -1.5959455978986625e-16,
+      "family_symmetric": true
+    },
+    "notes": "SPD/SSE为umat_entry有符号诊断输出，Abaqus级SPD核对属阶段4 fixture（G4）；本套件用应力/应变完整历史记账。"
+  },
+  "checks": {
+    "update1_eta0_dissipation_le_2pct": true,
+    "refinement_gap_le_1pct": true,
+    "traction_identity_le_1e-9": true,
+    "psi_explicit_le_1e-10": true,
+    "no_negative_dissipation": true,
+    "family_symmetric_0deg": true,
+    "update0_converges_to_target": true,
+    "production_eta_no_negative_dissipation": true,
+    "lc056_same_limit_045": true
+  },
+  "status": "PASS",
+  "suite": "energy",
+  "run_dir": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\material_energy_20260927_194622_082220",
+  "core_src_sha256": "b8f18000b54c4fbb034e8be6517a546bf837dbe3a0d7c90165c84b67ed686519",
+  "dist_umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121"
+}

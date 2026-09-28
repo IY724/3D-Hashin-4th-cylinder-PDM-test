@@ -1,0 +1,92 @@
+{
+  "paper": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\references\\REF3_朱宁-2023_浙江大学硕士论文_模型铺层与材料参数来源.pdf",
+  "paper_sha256": "fff68e94a99b6bab84e03a78c5d54afb687ffb59e504f1f16b5ff5f4df2882ae",
+  "inp": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\Job-hashinnewcdm.inp",
+  "inp_sha256": "afbbf202d5e1ba491bb223a01508e356b2bda709d11d756f5175171deb97f76a",
+  "parts": {
+    "Tank-1": {
+      "node_count": 73057,
+      "min_xyz": [
+        0.0,
+        -723.680847,
+        -28.1946602
+      ],
+      "max_xyz": [
+        162.366577,
+        723.658997,
+        0.0
+      ],
+      "radius_min": 0.0,
+      "radius_max": 162.366577,
+      "angle_min": -10.000001085268948,
+      "angle_max": 0.0,
+      "sections": []
+    },
+    "zhuningnew-1": {
+      "node_count": 15084,
+      "min_xyz": [
+        15.7569265,
+        -769.0,
+        -16.1505337
+      ],
+      "max_xyz": [
+        93.0072098,
+        -630.0,
+        0.0
+      ],
+      "radius_min": 16.0000019,
+      "radius_max": 93.0072147266331,
+      "angle_min": -10.000000923777167,
+      "angle_max": 0.0,
+      "sections": [
+        "*Solid Section, elset=_PickedSet4, material=al-6061"
+      ]
+    },
+    "zhuningnew-2": {
+      "node_count": 16047,
+      "min_xyz": [
+        15.7569265,
+        630.0,
+        -16.1505337
+      ],
+      "max_xyz": [
+        93.0072098,
+        769.0,
+        0.0
+      ],
+      "radius_min": 16.0000019,
+      "radius_max": 93.0072147266331,
+      "angle_min": -10.000000950758166,
+      "angle_max": 0.0,
+      "sections": [
+        "*Solid Section, elset=_PickedSet4, material=al-6061"
+      ]
+    },
+    "zhuningnew-3": {
+      "node_count": 38745,
+      "min_xyz": [
+        45.3011551,
+        -702.320312,
+        -24.3107452
+      ],
+      "max_xyz": [
+        140.0,
+        702.320312,
+        0.0
+      ],
+      "radius_min": 45.999996703441525,
+      "radius_max": 140.00001223924247,
+      "angle_min": -10.00000086538647,
+      "angle_max": 0.0,
+      "sections": [
+        "*Solid Section, elset=_PickedSet9, material=Liner"
+      ]
+    }
+  },
+  "old_cad_candidates": [
+    "G:\\cylinder\\qiping\\model-sw\\zhuning-cylinder.STEP",
+    "G:\\cylinder\\qiping\\model-cad\\cylinder2-zhuning.dxf",
+    "G:\\cylinder\\qiping\\model-cad\\zhuning-cylinder.DXF"
+  ],
+  "note": "历史 CAD 仅为辅助依据；不得替代论文已明确给出的尺寸。"
+}

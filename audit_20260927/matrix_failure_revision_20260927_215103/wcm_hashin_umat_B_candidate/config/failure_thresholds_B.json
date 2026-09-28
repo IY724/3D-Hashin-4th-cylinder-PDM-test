@@ -1,0 +1,12 @@
+{
+  "variant": "B",
+  "fiber_threshold": 1.0,
+  "matrix_threshold": 1.0,
+  "tolerance": 1e-06,
+  "vessel_failure_rule": "either",
+  "step_name": "Step-1",
+  "pressure_at_step_start_mpa": 0.0,
+  "pressure_at_step_end_mpa": 250.0,
+  "step_duration": 1.0,
+  "pressure_assumption": "Rebuild_PDM_B.inp：*Dsload P=250、步时长1、无幅值曲线，线性升压 p=250×t。改载荷或步长后必须同步本文件。"
+}

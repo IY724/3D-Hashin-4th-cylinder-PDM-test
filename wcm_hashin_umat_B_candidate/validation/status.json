@@ -1,0 +1,114 @@
+{
+  "time": "2026-09-27",
+  "candidate": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate",
+  "scope": "用户确认峰后跨度软化并要求直接计算；已提交B_remesh_span_stab，Abaqus编译链接及INP处理通过，Standard运行中。本轮不做额外测试；以下gate_evidence为旧版本历史证据。",
+  "gates": {
+    "G0_isolation": "PASS",
+    "G1_reproduction": "NOT_RUN_SPAN_REVISION_USER_REQUEST",
+    "G2_onset_fix": "NOT_RUN_SPAN_REVISION_USER_REQUEST",
+    "G3_material_point": "NOT_RUN_SPAN_REVISION_USER_REQUEST",
+    "G4_abaqus_small_model": "NOT_RUN_SPAN_REVISION_USER_REQUEST",
+    "G5_mesh": "UNCHANGED_USER_REQUEST",
+    "G6_bottle": "SUBMITTED_SEE_LATEST_RUN_JSON"
+  },
+  "gate_evidence": {
+    "G0": {
+      "formal_hash_zero_change": "validation/source_manifest.json + validation/isolation_check.json",
+      "escape_tests": "6项全拒绝（..上跳/目录联接/前缀陷阱/绝对路径/内部放行/常规路径）",
+      "environment": "Python 3.14.0、NumPy 2.3.5、gfortran 15.2.0、Abaqus 2025启动器在位",
+      "output_isolation": "prepare_test_cases.py 产物只写候选generated/；正式test/A、test/B零写入"
+    },
+    "G1": {
+      "strict_1033_reproduced": "validation/reproduction.json + validation/reproduction_prefix_G1.json（修正前证据存档）",
+      "documented_example": "修正前端点反例 σ0=110.05、δ0=0.034565、δf=0.0090868 逐位复现",
+      "onset_at_analytic_gamma0": "2000步细斜坡在 γ0=110/7100 首个跨越增量报1033",
+      "legacy_silent_skip": "旧程序同路径损伤冻结不报错（仅对照）",
+      "forensics": "validation/forensics_1022.json：9个规划单元=族1MT固有不相容；20,857条1022无失败试算状态",
+      "constitutive_ledger": "results/constitutive_contract.md"
+    },
+    "G2": {
+      "path_onset_fix": "src/wcm_core.for：E0/E1显式传递+WCM_ONSET_B沿增量路径定位最早有效起始点+新错误41-44",
+      "independent_reference": "tests/test_onset.py 独立重推公式+密集采样二分，不调用被测算法",
+      "onset_match": "全部路径起始量与参考一致（相对差<=1e-8，典型1e-16）",
+      "step_independent": "同终点1/20/200步起始量一致（<=1e-12）",
+      "a_regression": "tools/run_tests.py 14/14 OK：A版对旧版逐增量<=2e-10",
+      "rollback": "重复调用/拒绝试算/IADV=0/UPDATE1切线均不污染历史",
+      "error_semantics": "40+I缺少可定位历史、20+I（1022合成泊松反例）、30+I固有不相容按正确起始量报错",
+      "bug_found_and_fixed": "WCM_FICOEF模式2（FC）A1系数符号错误（测试暴露后修正）"
+    },
+    "G3": {
+      "matrix": "validation/matrix.json PASS：弹性/自由泊松拉压/剪切正反/跨越1e-6/非比例/拉压切换/双族/UPDATE0滞后/黏性递推/长度域",
+      "energy": "validation/energy.json PASS：纯23剪切解析负对照耗能极限=0.9*Gmt=0.45 N/mm（rel=4.7e-6，细化差<=1%）；牵引恒等式残差4.5e-14；Ψ显式重构7e-15；无负耗散；UPDATE0细步收敛4.1%->1.0%",
+      "g_meaning_finding": "剪切退化式(1-0.9dmt)(1-0.5dmc)决定名义Gmt只有90%耗散、10%留存于剩余刚度通道；属模型定义层面结论，非数值误差；标定G时须按此理解",
+      "length_domain": "纯剪基体拉伸路径 Lc_crit = 2*7100*0.5/110^2 = 0.586777 mm；MC单轴路径 Lc_crit≈0.158mm；长度分类按模式/路径逐条判定，不用单一值要求全瓶",
+      "verdict": "本构闭合（账本可解释、无未解释差额、无持续负耗散）；生产气瓶LC≈2.23-2.34mm超域 -> LENGTH_LIMITED；UNRESOLVED_1022保留"
+    },
+    "G4": {
+      "compiler": "Intel(R) Fortran 2021.7.0 实际编译候选UMAT；Abaqus/Standard 2025 求解（5 tokens Flexnet localhost）",
+      "umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121",
+      "existing_suites": "elastic 4.5e-8(<=1e-5)/rotation 9.1e-12(<=1e-3)/damage SDV核对/completion d->1 全部passed（validation/abaqus_*.json）",
+      "fixture": "validation/abaqus_candidate.json：C3D8/C3D8R/C3D6 纯23剪切位移控制能量fixture，18帧逐帧对比",
+      "celem_measured": "C3D8/C3D8R=0.0999999972mm（立方体体积^(1/3)）；C3D6=0.0793701mm（楔形体体积^(1/3)）——实测记录，证实不能把边长直接等同CELENT",
+      "acceptance_1e-4": "tau与状态 vs 材料点解析参考：C3D8 8.2e-8 / C3D8R 8.2e-8 / C3D6 5.4e-8（C3D8R与C3D8一致属正确：均匀应变下缩减积分与全积分材料响应相同）",
+      "energy_ledger": "D_crack = 0.4521/0.4521/0.4498 N/mm vs 0.45 目标（0.46%/0.46%/0.05%），无负耗散",
+      "defects_found_and_fixed_in_g4": [
+        "D1 FE噪声分支漂移：各IP的 Q=S2+S3 带±1e-14数值噪声，旧式符号判分支使同一单元各积分点起始量发散（IP3起始偏晚2.6%、IP4永不起始）。修复：路径噪声尺度 EPSG=1e-10*max|EFF|、退化带内张力支拥有路径/压缩支不起始、分支活动容差带、候选点GC过滤",
+        "D2 切线虚播种：切线扰动(1e-9应变×泊松耦合1.6e4=1.4e-4 MPa)把Q推出噪声带，未起始MC在共享剪切面上于s=0/端点虚播种且deltaf_MC<=delta0 -> 1034死循环切步。修复：切线差分调用传 IONSET=0，起始决策只发生在主调用；已起始模式切线中正常演化",
+        "D3 测试器自身WCM_PLY直调签名未随IONSET同步（segfault），已修复"
+      ],
+      "revalidation_after_fix": "reproduce/onset/matrix/energy + run_tests 14项（含A回归）全部重跑PASS；4套Abaqus套件按最终哈希重跑passed"
+    },
+    "G5": {
+      "rho_survey": "validation/mesh_rho_survey.json：fallback收敛帧(110.7MPa)全场普查，两族x四模式。FT全相容(rho>=9.7)；MT rho<=1共4874点(LC_req p50=1.90mm)；MC rho<=1共8999点(LC_req p50=0.504mm,p90=2.09mm,min=0.0077mm)",
+      "block_study": "validation/mesh_block_study.json：MC(Bin40,35°) h=0.5在rho<1预测位置恰好1034中止、h<=0.333干净通过；MT(Bin150,90°)三档全通过——rho判据端到端验证",
+      "compatible_sizes": "MC区<=0.35mm（中位数要求0.504mm）；MT区<=3.0mm（p50=1.90mm）；FT区无需加密",
+      "celem_note": "CELENT=体积^(1/3)经G4实测，普查LC逐元优先用fallback日志Abaqus值（>20%差异者）",
+      "caveats": "普查状态来自fallback分支(即时完成)收敛解，极值点(0.007mm)疑为其d=1区边界应力集中伪迹；结构性5%收敛门需带局部化+边界传递的热点子模型",
+      "energy_scope": "均匀块体D密度无裂缝面能意义；ALLAE/ALLIE全部<=5e-27"
+    }
+  },
+  "unresolved_1022": {
+    "flag": true,
+    "note": "实际失败试算状态不可从现有ODB/日志取得；1022机制（FC判据S1<0触发 vs DEL2=LC*max(-EL11,0)）已有合成反例演示，但不冒充现场根因。见validation/forensics_1022.json。"
+  },
+  "blocked_items": [],
+  "next_authorizations_required": [
+    "阶段5续：热点子模型（几何副本切局部、边界传递误差说明、rho>=1.2结构性5%收敛门）",
+    "阶段5续：全瓶候选几何副本WCM重建（重生成角度/材料映射，新基线断言）",
+    "阶段6：小增量整瓶渐进承载验证（初始增量0.001/最大0.005，157.5MPa设计目标口径，失效与计算失败分表输出）",
+    "可选：instrumented取证解决UNRESOLVED_1022"
+  ],
+  "deliverables": {
+    "candidate_src": "src/wcm_core.for、src/umat_entry.for.in（起始定位修正）",
+    "tools": "verify_isolation/build/prepare_test_cases(输出隔离)/run_material_tests/make_diagnostics/run_tests/abaqus_verify(串行锁+显式input)/run_job(realpath防护)/extract_failure(必传--config)",
+    "tests": "reproduce_suite/test_onset/test_matrix/test_energy/extract_odb(--all-frames)",
+    "evidence": "validation/{isolation_check,source_manifest,reproduction,reproduction_prefix_G1,forensics_1022,onset,matrix,energy,test_cases}.json",
+    "ledger": "results/constitutive_contract.md、results/reference_matrix.csv",
+    "runs": "runs/material_*（编译日志、逐点CSV、能量曲线）"
+  },
+  "package_label": "B峰后跨度版：deltaf=delta0+2G/sigma0，取消基体局部完成与纤维103x；运行包位于remesh_energy_tests_20260927/runs/B_remesh_span_stab_20260927_233211_029718，旧package目录不是本次运行版本。",
+  "span_revision": {
+    "state_schema_B": 20260927,
+    "energy_meaning": "G为理想单模式峰后软化功，不是全程总断裂能；材料数值未重新标定。",
+    "post_onset_energies_N_per_mm": [300.0, 40.0, 0.6, 2.1],
+    "stabilize": 0.002,
+    "viscosity": [0.0001, 0.005],
+    "latest_run": "../remesh_energy_tests_20260927/latest_run.json",
+    "validation": "未额外测试；本次Abaqus实际编译链接和输入处理通过，最终计算状态以latest_run及作业日志为准。"
+  },
+  "g4_round_note": "阶段4期间发现并修复两处FE级缺陷（FE噪声分支漂移D1、切线虚播种D2），每处独立定位（增量级trace+离线复现）后一因一改；修后全部材料点套件、A回归、4套Abaqus套件、3种单元fixture按最终哈希重跑通过。详见validation/abaqus_candidate.json与复盘文档阶段4节。",
+  "matrix_failure_revision": {
+    "umat_sha256": "6f4dcd79c8c7eef24f7d50912288431df84195ee59a646f83b6981e7e317f2f9",
+    "policy": "Matrix deltaf<=delta0 completes local nonviscous damage; compatible modes retain linear softening. Existing viscosity and UPDATE retained. Vessel failure uses fiber_completion only; matrix completion never triggers it.",
+    "energy_limit": "Instantaneous matrix completion is not exact dissipation of input fracture energy.",
+    "validation": "NOT_RUN_USER_REQUEST",
+    "prior_evidence": "All pre-existing gate_evidence and validation reports refer to the earlier implementation, not this revision."
+  },
+  "fiber_onset_revision": {
+    "umat_sha256": "120d1abb77fabec3aeceb7846b2d41fabfff6dff526253ba0eaef910a9ad1465",
+    "cause": "1022: FC Hashin stress branch S11<0 can coincide with E11>=0 under coupled multiaxial loading; old DEL2 then equals zero.",
+    "change": "FC uses stress-equivalent displacement LC*max(-S11,0)/PROPS(1) and equivalent stress max(-S11,0). Material caps are CAPF=0.95 and CAPM=0.85 in next INP, preserving residual normal stiffness while SDV damage may reach 1.",
+    "validation": "NOT_RUN_USER_REQUEST",
+    "prior_runs": "Prior solve and validation reports refer to other source hashes."
+  }
+}

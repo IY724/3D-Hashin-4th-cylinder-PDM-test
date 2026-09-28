@@ -1,0 +1,47 @@
+{
+  "model_name": "Zhuning_Base_10deg",
+  "units": "mm, N, MPa, tonne",
+  "paper_dimensions": {
+    "liner_outer_diameter": 280.0,
+    "liner_nominal_thickness": 5.0,
+    "cylinder_length": 1282.0,
+    "overall_length": 1520.0,
+    "pole_outer_diameter": 72.0,
+    "bore_diameter": 32.0,
+    "ellipse_axis_ratio": 2.0,
+    "sector_angle_deg": 10.0,
+    "source": "朱宁-2023，正文16页2.3.2、18页图2.2、31页3.2.1、37页图3.9；PDF页31、33、46、52"
+  },
+  "fitted_joint_dimensions": {
+    "boss_flange_split_radius": 93.0,
+    "collar_interface_radius": 46.0,
+    "collar_return_radius": 32.0,
+    "collar_return_center_from_tangent": -12.0,
+    "collar_tip_from_tangent": -20.0,
+    "neck_outer_fillet_radius": 10.0,
+    "bore_inner_fillet_radius": 10.0,
+    "liner_inner_blend_radius": 5.0,
+    "source": "参考图2.2/3.9接头形态及用户旧 cylinder2-zhuning.dxf。旧CAD约93.007/628.987等尺寸取整；均为可调整的复现假设，不是论文或国标给定尺寸。"
+  },
+  "materials": {
+    "PA6": {"young_modulus": 1880.0, "poisson_ratio": 0.4, "density": 1.13e-9},
+    "Al6061_T6": {"young_modulus": 70000.0, "poisson_ratio": 0.32, "density": 2.7e-9},
+    "source": "朱宁论文表2.2，PDF第31页；本轮只赋弹性和密度，未定义塑性、损伤或分析步。"
+  },
+  "geometry_policy": {
+    "axial_direction": "全局Y轴，中心Y=0，两端Y=±760；周向区间-10°至0°",
+    "outer_dome": "径向半轴140、轴向半轴70的椭圆，筒身连接点Y=±641；瓶颈用R10相切圆弧连接",
+    "liner_inner": "筒身及主体椭圆区按法向内偏置5 mm；嵌入式回折接头保持5 mm名义壁厚，椭圆内壁与回折直段采用R5相切圆弧平滑连接，连接处局部增厚",
+    "joint": "塑料内衬与两端铝阀座共用同一组界面曲线，旋转后保留交界面合并为一个Part；界面按完全粘结几何拓扑处理",
+    "wcm": "只准备连续外表面、子午线边集和旋转轴，不生成缠绕层",
+    "not_included": "瓶阀、螺纹、O形圈/密封槽、制造公差、残余应力、脱粘/接触；图纸未完整给出，不虚构工程制造细节",
+    "scope": "论文基体几何复现，非制造图纸，非规范合格认证，未网格划分和求解"
+  },
+  "standard_reference": {
+    "number": "GB/T 42612-2023",
+    "title": "车用压缩氢气塑料内胆碳纤维全缠绕气瓶",
+    "official_url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=45DD03ADDB3EBA2F48FB548C13765947",
+    "public_copy_url": "https://szhdtest.com/static/upload/file/20240117/1705473705672924.pdf",
+    "policy": "按已核实条款核对结构及后续验证范围；不把标准当作朱宁未标注接头尺寸的直接来源。"
+  }
+}

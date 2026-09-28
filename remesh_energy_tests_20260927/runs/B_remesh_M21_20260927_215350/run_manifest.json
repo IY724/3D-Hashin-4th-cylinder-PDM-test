@@ -1,0 +1,52 @@
+{
+  "source": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_joint_rebuild\\Job-remesh.inp",
+  "source_sha256": "273f387dfcfb49b420296593e30f0b148c8d4b07a0728de32669a2b681d64b53",
+  "inp_sha256": "e6e15b013b7dbd7b1bfe397bd346f7399a12cffe329cbc004554eda92863aecb",
+  "umat_sha256": "6f4dcd79c8c7eef24f7d50912288431df84195ee59a646f83b6981e7e317f2f9",
+  "fracture_energies_N_per_mm": [
+    133.0,
+    40.0,
+    0.6,
+    2.1
+  ],
+  "energy_source": "张华伟等2021，碳纤维复合材料层合板低速冲击影响因素，表1，T700GC/M21",
+  "doi": "10.3969/j.issn.1007-2012.2021.12.028",
+  "source_url": "https://qikan.cmes.org/sxgcxb/EN/PDF/10.3969/j.issn.1007-2012.2021.12.028",
+  "limitation": "文献参数敏感性试算，非本材料实验标定；原文非能量软化验证，不保证收敛或设计爆压。",
+  "smt_smc": [
+    0.9,
+    0.5
+  ],
+  "viscosity": [
+    0.0001,
+    0.005
+  ],
+  "static": [
+    0.005,
+    1.0,
+    1e-20,
+    0.02
+  ],
+  "pressure_mpa": 250.0,
+  "update": 0,
+  "caps": [
+    1.0,
+    1.0
+  ],
+  "material_bins": 135,
+  "controlled_sections": 434,
+  "max_elastic_error": 6.808461904109211e-06,
+  "command": [
+    "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "job=B_remesh_M21",
+    "input=B_remesh_M21.inp",
+    "user=hashin_energy_wcm.for",
+    "cpus=12",
+    "scratch=F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_M21_20260927_215350\\scratch",
+    "interactive"
+  ],
+  "cwd": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_M21_20260927_215350",
+  "status": "STOPPED_CHECK_LOG",
+  "launcher_pid": 23928,
+  "returncode": 0
+}

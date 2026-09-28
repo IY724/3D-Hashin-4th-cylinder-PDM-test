@@ -1,0 +1,100 @@
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:94:13:
+
+   94 |           IF(P(I).NE.P(I).OR.ABS(P(I)).GT.1D100) IERR=2
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:97:13:
+
+   97 |           IF(OLD(I).NE.OLD(I).OR.ABS(OLD(I)).GT.1D100) IERR=3
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:112:33:
+
+  112 |       IF (P(ISCH).NE.202609D0.OR.P(IMOD).NE.DBLE(MODE))
+      |                                 1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:112:10:
+
+  112 |       IF (P(ISCH).NE.202609D0.OR.P(IMOD).NE.DBLE(MODE))
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:114:10:
+
+  114 |       IF (OLD(84).NE.0D0) THEN
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:115:37:
+
+  115 |           IF (OLD(84).NE.202609D0.OR.OLD(83).NE.DBLE(MODE))
+      |                                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:115:14:
+
+  115 |           IF (OLD(84).NE.202609D0.OR.OLD(83).NE.DBLE(MODE))
+      |              1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:119:19:
+
+  119 |       ELSE IF (ANY(OLD(1:80).NE.0D0)) THEN
+      |                   1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:127:29:
+
+  127 |      1    (P(IUP).NE.0D0.AND.P(IUP).NE.1D0)) IERR=8
+      |                             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:127:11:
+
+  127 |      1    (P(IUP).NE.0D0.AND.P(IUP).NE.1D0)) IERR=8
+      |           1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:126:29:
+
+  126 |       IF ((P(IEN).NE.0D0.AND.P(IEN).NE.1D0).OR.
+      |                             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:126:11:
+
+  126 |       IF ((P(IEN).NE.0D0.AND.P(IEN).NE.1D0).OR.
+      |           1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:138:14:
+
+  138 |           IF (LC.NE.LC.OR.LC.LE.0D0.OR.LC.GT.1D100) IERR=10
+      |              1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:140:10:
+
+  140 |       IF (DT.NE.DT.OR.DT.LT.0D0.OR.DT.GT.1D100) IERR=10
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:146:42:
+
+  146 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                                          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:146:21:
+
+  146 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:156:42:
+
+  156 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                                          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:156:21:
+
+  156 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:49:14:
+
+   49 |           IF (E1(I).NE.E1(I).OR.ABS(E1(I)).GT.1D10) THEN
+      |              1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:328:13:
+
+  328 |           IF(W.EQ.0D0) CYCLE
+      |             1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]

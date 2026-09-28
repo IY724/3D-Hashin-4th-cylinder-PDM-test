@@ -1,0 +1,79 @@
+{
+  "status": "VERIFIED",
+  "run_directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260926_143805_multipart",
+  "model": "Zhuning_Base_10deg_Multipart",
+  "cae_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\zhuning_base_10deg_multipart.cae",
+  "merged_into_single_part": false,
+  "analysis_submitted": false,
+  "material_source": "G:/cylinder/qiping/workplace/zhuning/WCM_Job.inp (旧成功案例)",
+  "warnings": [],
+  "parts": [
+    "Al6061_Bosses",
+    "PA6_Liner"
+  ],
+  "part_cells": {
+    "PA6_Liner": 1,
+    "Al6061_Bosses": 2
+  },
+  "materials": {
+    "PA6": {
+      "density": 1.13e-09,
+      "elastic": [
+        1880.0,
+        0.4
+      ],
+      "plastic": [
+        [
+          47.0,
+          0.0
+        ],
+        [
+          55.0,
+          0.17
+        ]
+      ]
+    },
+    "Al6061_T6": {
+      "density": 2.7e-09,
+      "elastic": [
+        70000.0,
+        0.32
+      ],
+      "plastic": [
+        [
+          306.0,
+          0.0
+        ],
+        [
+          340.0,
+          0.12
+        ]
+      ]
+    }
+  },
+  "sections": [
+    "Section_PA6 -> MAT_PA6",
+    "Section_Al6061_T6 -> MAT_AL6061"
+  ],
+  "instances": [
+    "PA6_Liner-1",
+    "Al6061_Bosses-1"
+  ],
+  "volumes_mm3": {
+    "PA6_Liner": 181775.20564253617,
+    "Al6061_Bosses_total": 83193.56386018923,
+    "Al6061_Bosses_per_boss": 41596.781930094614
+  },
+  "axial_extent_mm": [
+    -760.0,
+    760.0
+  ],
+  "radius_range_mm": [
+    15.999999979856781,
+    140.0
+  ],
+  "geometry_validity": {
+    "PA6_Liner": "1",
+    "Al6061_Bosses": "1"
+  }
+}

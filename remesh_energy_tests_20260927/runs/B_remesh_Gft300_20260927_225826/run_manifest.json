@@ -1,0 +1,58 @@
+{
+  "source": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_joint_rebuild\\Job-remesh.inp",
+  "source_sha256": "273f387dfcfb49b420296593e30f0b148c8d4b07a0728de32669a2b681d64b53",
+  "inp_sha256": "78cc0203bec9db1e73a90b6190614360a8440ed426b79fca823978d27bccbf79",
+  "umat_sha256": "40a1bc5b1fef162b968579d7f2b460f4599a5f12804b22872ae5aca07a9217e3",
+  "fracture_energies_N_per_mm": [
+    300.0,
+    40.0,
+    0.6,
+    2.1
+  ],
+  "reference_fracture_energies_N_per_mm": [
+    133.0,
+    40.0,
+    0.6,
+    2.1
+  ],
+  "energy_source": "Gft=300为本轮敏感性试算值；其余断裂能沿用张华伟等2021表1的T700GC/M21参数",
+  "doi": "10.3969/j.issn.1007-2012.2021.12.028",
+  "source_url": "https://qikan.cmes.org/sxgcxb/EN/PDF/10.3969/j.issn.1007-2012.2021.12.028",
+  "limitation": "Gft=300非文献原值或本材料实验标定；仅检验软化参数敏感性，不保证收敛或设计爆压。",
+  "smt_smc": [
+    0.9,
+    0.5
+  ],
+  "viscosity": [
+    0.0001,
+    0.005
+  ],
+  "static": [
+    0.01,
+    1.0,
+    1e-20,
+    0.1
+  ],
+  "pressure_mpa": 250.0,
+  "update": 0,
+  "caps": [
+    0.95,
+    0.85
+  ],
+  "material_bins": 135,
+  "controlled_sections": 434,
+  "max_elastic_error": 6.808461904109211e-06,
+  "command": [
+    "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "job=B_remesh_Gft300",
+    "input=B_remesh_Gft300.inp",
+    "user=hashin_energy_wcm.for",
+    "cpus=12",
+    "scratch=F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_Gft300_20260927_225826\\scratch",
+    "interactive"
+  ],
+  "cwd": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_Gft300_20260927_225826",
+  "status": "STOPPED_CHECK_LOG",
+  "launcher_pid": 42092,
+  "returncode": 0
+}

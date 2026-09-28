@@ -1,0 +1,33 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB verify
+Abaqus 2025
+Begin Compiling Abaqus/Standard User Subroutines
+9/25/2026 11:16:41 PM
+End Compiling Abaqus/Standard User Subroutines
+Begin Linking Abaqus/Standard User Subroutines
+  正在创建库 standardU.lib 和对象 standardU.exp
+libirc.lib(fast_mem_ops.obj) : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+End Linking Abaqus/Standard User Subroutines
+9/25/2026 11:16:42 PM
+Begin Analysis Input File Processor
+9/25/2026 11:16:42 PM
+Run pre.exe
+9/25/2026 11:16:43 PM
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+9/25/2026 11:16:43 PM
+Run standard.exe
+9/25/2026 11:16:47 PM
+End Abaqus/Standard Analysis
+Begin SIM Wrap-up
+9/25/2026 11:16:47 PM
+Run SMASimUtility.exe
+9/25/2026 11:16:47 PM
+End SIM Wrap-up
+Abaqus JOB verify COMPLETED
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server localhost.
+<9994 out of 9999 licenses remain available>.
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0 Build 20220726_000000
+Copyright (C) 1985-2022 Intel Corporation.  All rights reserved.
+

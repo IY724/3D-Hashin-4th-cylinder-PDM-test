@@ -1,0 +1,64 @@
+# Abaqus large binary artifacts - never commit
+*.odb
+*.stt
+*.mdl
+*.sim
+*.023
+*.com
+*.prt
+*.cax
+*.lck
+*.cid
+*.ipm
+*.psm
+*.abq
+*.pac
+*.res
+*.sel
+*.ods
+*.fbd
+*.SMABulk
+*.simdir
+*.simlog
+*.exception
+*.jnl
+*.rpy*
+*.cae
+*.sat
+
+# Abaqus session / temp
+abq.app_cache/
+abaqus.guiState*
+abaqus_v6.env
+temp-*.sat
+
+# 本库不收录的求解产物与编译中间件（详见 _excluded/ 与 README 第四节）
+# 注意：pattern 中的扩展名在 Windows 上不区分大小写，不得写 *.INC 这类
+#       会误匹 *.json（结尾同为 inc）的规则。
+*.msg
+*.log.*
+*.dll
+*.o
+*.mod
+*.env
+*.pass
+*.dstep
+*.stat
+*.lastdata
+*.dlo
+*.lk
+*.odbjnl
+*.opj
+*.tmp
+*.dbg
+*.acis
+abq.app_cache/
+_pub_stage/
+
+# Python
+__pycache__/
+*.pyc
+abq.app_cache
+abaqus_acis.log
+abaqus.ini
+*.lck

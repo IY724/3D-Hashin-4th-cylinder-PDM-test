@@ -1,0 +1,11 @@
+{
+  "minimum_relative_elastic_eigenvalue": 1e-06,
+  "first_completion": {
+    "raw_damage": 1.0,
+    "updated_viscous_damage": 0.9105031862671157,
+    "used_viscous_damage": 0.8657547794006735,
+    "strain": 0.0192
+  },
+  "passed": true,
+  "scope": "Compiled full-damage residual stiffness and independent energy/viscosity recurrence; material-point verification only"
+}

@@ -1,0 +1,1976 @@
+Wound Composite Modeler
+          For
+        Abaqus
+                          WCM-2024 (Compatible with Abaqus 2024)
+
+
+
+  User’s Manual
+                                                          Table of Contents
+
+1    Background ................................................................................................................................................4
+  1.1     Plug-in Overview .................................................................................................................................5
+  1.2     Top-Level Icons .................................................................................................................................. 5
+2    COPV (Tank) Creation ...............................................................................................................................6
+  2.1     Model & Tank Initialization .................................................................................................................. 6
+     2.1.1     Model Creation............................................................................................................................6
+     2.1.2     Tank Creation ............................................................................................................................. 7
+  2.2     Liner Geometry Assignment ...............................................................................................................8
+     2.2.1     Geodesic Liner Profile ................................................................................................................ 8
+     2.2.2     Elliptical, Spherical Liner Profiles ................................................................................................ 9
+     2.2.3     From-Part Instance Liner Profile ...............................................................................................10
+     2.2.4     User-Defined Profile..................................................................................................................10
+     2.2.5     Transition Radii .........................................................................................................................10
+     2.2.6     Defining the Dome Set Properly ...............................................................................................11
+     2.2.7     Viewing Dome Geometry in Sketcher .......................................................................................13
+     2.2.8     Adjusting Spline Refinement .....................................................................................................14
+  2.3     Winding Layout (Parametric) ............................................................................................................15
+     2.3.1     Layer Manager Dialog ..............................................................................................................15
+     2.3.2     Layer Shape Controls ...............................................................................................................16
+     2.3.2.1 End Fraction Override ...............................................................................................................17
+     2.3.2.2 Transition Radius Override .......................................................................................................17
+     2.3.2.3 Transition Radius Override (Ignoring End Cap) .......................................................................18
+     2.3.2.4 Transition Angle ........................................................................................................................19
+     2.3.2.5 Overlap Fraction .......................................................................................................................20
+     2.3.3     Helical Layers ...........................................................................................................................22
+     2.3.3.1 Controlling the Wind Angle at the Turnaround Radius .............................................................23
+     2.3.3.2 Varying Wing Angle over Cylinder Section ...............................................................................23
+     2.3.5     Helical Layer with Friction .........................................................................................................25
+     2.3.6     Doily & Hoop Layers .................................................................................................................25
+     2.3.7     Layer-Level Mesh Controls .......................................................................................................26
+  2.4     Winding Layout (CAD) ......................................................................................................................27
+     2.4.1     Layer Manager Dialog ..............................................................................................................27
+     2.4.2     Importing from ComposicaD .....................................................................................................27
+     2.4.3     CAD Data Summary Tab ..........................................................................................................28
+     2.4.4     Individual Layer Data Tab .........................................................................................................30
+     2.4.5     Layer Controls Tab ...................................................................................................................30
+  2.5     Mesh Partitioning ..............................................................................................................................32
+  2.6     Mesh Creation...................................................................................................................................33
+  2.7     Properties Creation ...........................................................................................................................34
+     2.7.1     Material Properties ....................................................................................................................35
+     2.7.2     Material Orientations .................................................................................................................36
+     2.7.3     Uvarm Subroutine .....................................................................................................................36
+     2.7.4     User-Defined function to define frictionless wind angle ............................................................41
+     2.7.5     User-Defined function to define Non-zero friction wind angle ..................................................42
+     2.7.6     User-Defined function to define helical thickness .....................................................................43
+3    Geometry/Element Formulations .............................................................................................................44
+     3.1     Axisymmetric Continuum Geometry .............................................................................................45
+     3.2     3D Continuum Geometry ..............................................................................................................47
+     3.2.1     Cylindrical Elements .................................................................................................................48
+     3.3     3D Shell Geometry........................................................................................................................49
+     3.3.1     Shell Geometry Controls ...........................................................................................................49
+     3.3.2     Shell Liner Controls...................................................................................................................51
+     3.3.3     Composite Layups ....................................................................................................................51
+     3.3.4     Shell Output ..............................................................................................................................52
+     3.4     Axisymmetric Shell Geometry.......................................................................................................52
+4    Running the Analysis ...............................................................................................................................52
+5    Output Processing....................................................................................................................................53
+                                                                                                                                                               2
+6    Sample Test Cases ..................................................................................................................................55
+7    Micromechanics Module ..........................................................................................................................56
+  7.1     Module Overview ..............................................................................................................................57
+  7.2     Module Usage ...................................................................................................................................58
+     7.2.1      Fiber Packing Arrangement ......................................................................................................59
+     7.2.2      Fiber Volume Fraction ..............................................................................................................59
+     7.2.3      Fiber Elastic Properties .............................................................................................................60
+     7.2.4      Matrix Elastic Properties ...........................................................................................................60
+     7.2.5      Thermal Expansion Properties .................................................................................................61
+     7.2.6      Density Properties.....................................................................................................................61
+  7.3     Module Output ..................................................................................................................................62
+  7.4     Micromechanics Theory....................................................................................................................63
+     7.4.1      Micromechanics unit cell geometry...........................................................................................63
+     7.4.2      Unit cell boundary conditions ....................................................................................................64
+     7.4.3      Volume-averaged ply properties ...............................................................................................64
+8    Installation of WCM Plug-in ......................................................................................................................65
+9    References ...............................................................................................................................................66
+  WCM References .........................................................................................................................................66
+  Abaqus References ......................................................................................................................................66
+10 Best practices ...........................................................................................................................................66
+
+
+
+
+                                                                                                                                                               3
+1 Background
+The process of filament winding has become a popular technique in a wide variety of industries for creating
+extremely high stiffness-to-weight structures. Aerospace industry applications include rocket propellant tanks
+and solid rocket motors casings. Automotive industry applications include high pressure fuel storage tanks
+for hydrogen powered automobiles.
+The difficulty in accurately analyzing the behavior of filament wound structures derives from the varying
+orientation of the wound filaments throughout the structure. The standard capabilities of commercial finite
+element codes are inadequate to model the variation of fiber orientation in a practical way. Thus, the Wound
+Composite plug-in for Abaqus was warranted. This Wound Composite Modeler for Abaqus plug-in was
+developed to analyze a wide variety of axisymmetric or three-dimensional, wound composite pressure
+vessels. This documentation describes the capabilities and usage of the plug-in.
+
+
+
+
+                          Figure 1.1-1: Composite Overwrapped Pressure Vessel
+
+
+
+
+                                                                                                            4
+1.1    Plug-in Overview
+The Wound Composite Modeler for Abaqus plug-in is a vertical application which is designed to facilitate the
+creation of an entire axisymmetric or three-dimensional finite element model of a composite overwrapped
+pressure vessel (COPV). The model created is a representation of the full tank. The plug-in automates the
+creation of the tank geometry and its corresponding mesh and element-by-element material property and
+orientation assignments.
+The plugin is brought up by selecting Wound Composite Modeler (Show/Hide) under the Plugins drop down
+menu. The WCM plugin follows the same tree structure of the model and output data base trees, therefore,
+the model tree must be displayed in order to work in the WCM. To toggle the model tree on and off, click
+CTRL-t.
+
+
+
+
+                               Figure 1.1-1 Wound Composite Modeler Tree
+
+It may be necessary to widen the tab region to make room for the entire WCM tab by clicking and dragging
+    the edge shown in red below.
+
+
+
+
+                                  Figure 1.1-2 Widening Room for Dialogs
+
+
+1.2    Top-Level Icons
+Along the top of the Weld Modeler tree is a row of top-level icons providing the following functionality:
+          Examples: Brings up a dialog that runs example models. The example problems are also used
+        as verification tests.
+           User's Manual: Brings up this document.
+          Workshops: Brings up dialog to automatically set up folders containing workshop files.
+          Axisymmetric Conversion: Brings up dialog to perform 3D to axisymmetric conversion of an im-
+        ported liner part.
+          Isight Integration: Brings up dialog to set up optimization study using ISight. (Not Yet Imple-
+        mented)
+
+                                                                                                          5
+            Path Plotting: Brings up a dialog that is used to automatically generate path plots
+            Contour Plotting: Brings up a dialog that makes it easy to set the UVARM variable of interest for
+          contour plotting.
+
+
+
+
+2         COPV (Tank) Creation
+
+2.1       Model & Tank Initialization
+The process of building a COPV model inside the WCM consists of the following five steps.
+      1. Initialize the WCM Model and tank attributes such as 2D or 3D.
+      2. The second step involves defining the geometry over which the filament wound layers will be placed.
+         This can be done with analytic expressions such as spherical or elliptical dome shapes, or the
+         underlying geometry can be defined by simply creating a node set on a part representing the liner.
+      3. The third step is generating a table of layers wrapped over the liner. The termination conditions at
+         both end of the tank are specified along with layer thickness, wind angle, layer material properties
+         and more.
+      4. The fourth step is specifying partitions which are used to help improve mesh quality.
+      5. The fifth step is assigning the mesh sizes and generating the mesh.
+      6. The sixth step is to generate the material orientations and material properties throughout the tank.
+
+2.1.1     Model Creation
+The first step in the creation of a COPV model is to first associate a model that exists in the .cae database
+with a WCM database object to be stored on the mdb.models[currentModelName].customData object. By
+doing this, the WCM initializes the WCM data object on the persistent customData object. This object is
+saved onto the database and can be accessed during later Abaqus/CAE sessions.
+To create a WCM model, select the Models item in the WCM tree, right click, and select Create. The Model
+Properties dialog is displayed next to the WCM tree. A list of analyses types is provided to choose the
+element types to be assigned to the tank. Clicking the Create button creates the WCM custom data object
+that will be used to store the remainder of the tank information.
+
+
+
+
+                                                                                                                 6
+                                 Figure 2.1-1 WCM Model Creation Dialog
+
+2.1.2   Tank Creation
+Once the WCM model has been created, a tank is initialized by selecting the Tanks repository, right clicking,
+and selecting Create. The dialog brought up is shown below. The first item to be chosen is whether to model
+a full tank or only a partial tank by defining a symmetry plane. A number of options are provided to assign
+default element controls that are assigned to all of the tank’s layers to be created. These controls can be
+overridden on a layer-by-layer basis as the layers are created.
+
+
+
+
+                                                                                                           7
+                                  Figure 2.1-2 WCM Tank Creation Dialog
+
+
+In the case of a 3D COPV model, an axis must be defined which represents the vessel centerline. A datum
+axis may be selected or one of the axes of a datum coordinate system. During the tank creation of the 3D
+COPV, the axis must be selected.
+
+
+2.2     Liner Geometry Assignment
+The next step in the COPV model generation process is to define the region of the liner and polar bosses
+over which filament wound layers will be laid. There are three ways to define the underlying liner geometry:
+analytically, from an existing part instance, or from x-y data. All three ways essentially require the user to
+define a sequence of lines, which when swept about an axis, represent the geometry over which the filament
+wound layers will be placed. In the case of a 3D model, the axis that the set will be revolved around must
+also be selected. This axis must be defined as a datum axis.
+
+
+2.2.1   Geodesic Liner Profile
+The geodesic-shaped dome is a specially shaped dome which results in a nearly constant strain state along
+much of the fiber as it wraps around the dome. The shape of the dome is directly related to the vessel radius
+and the wind angle of the layer at the tangent line. Geodesic liner geometry is created by selecting the
+Analytic category, then choosing the dome type as Geodesic. Each end of the tank may be assigned
+different dome types.
+
+
+
+
+                                                                                                             8
+                                       Figure 2.2-1 Geodesic Dome Input
+
+
+For example, Figure 2.2-2 shows a dome in blue which is constructed from a wind angle of five degrees and
+a dome in grey which is constructed from a wind angle of ten degrees.
+
+
+
+
+                          Figure 2.2-2 Geodesic Dome with/without Base Wind Angle
+
+For the given geodesic wind angle, the helical turns around at a radius equal to the vessel radius at the tan-
+gent line times the sine of the wind angle. The underlying geometry follows the geodesic shape up until this
+turnaround radius, then is assumed to extend vertically as though the first layer abutted to an imaginary polar
+boss. For a radius less than this so called turnaround radius, the layer would simply intersect the extended
+assumed polar boss geometry.
+
+2.2.2   Elliptical, Spherical Liner Profiles
+Creation of elliptically and spherically-shaped domes is available by specifying the vessel radius at the
+tangent line, and in the case of the elliptical dome, the radius of the ellipse in the y-direction (minor axis).
+
+
+                                                                                                              9
+                                 Figure 2.2-3 Elliptical and Spherical Domes
+
+
+2.2.3   From-Part Instance Liner Profile
+Wound composite layers can be made to wrap over an existing part instance that has been created within
+Abaqus/CAE or imported into Abaqus/CAE from other CAD programs. The liner part instance may be
+geometry-based or orphan mesh-based. In the case of an orphan mesh-based liner, a node set is required to
+be created along the entire length in a cross-section. The nodal coordinates extracted from the node set are
+used to create splines, which in turn, are used to generate the composite layer geometry. In the case of a
+geometry-based liner, again an edge-based set is created along the length of the tank. Equally spaced points
+are created from the geometry to serve as the basis for the splines, which, in turn, are used to generate the
+composite layer geometry. In the case of a three-dimensional model, the node set is not required to lie in the
+x-y plane as is the case for axisymmetric geometry.
+
+
+
+
+                                 Figure 2.2-4 Helical Layers on Part Instance
+
+
+2.2.4   User-Defined Profile
+(Will be updated later…)
+
+2.2.5   Transition Radii
+Regardless of the type of underlying geometry used to define tank geometry, a transition radius is required
+for each end of the tank. As the layers wrap up to this transition radius, the layer thickness is continually
+building up and the slope of the outer edge of the layer is continually changing. Once this transition radius is
+reached, the slope of the outer edge of the layer is forced to remain constant (zero transition angle) until an
+intersection with the polar boss is found. Alternatively, a non-zero transition angle can be entered to change
+the slope of the layer until an intersection with the liner is found. This allows the thickness buildup at the
+polar boss regions to be controlled. Any layer with a turnaround radius less than the fillet start radius is
+assumed to abut to the polar boss. The transition radius entered for the liner may be overwritten on a layer-
+by-layer basis allowing for very fine control of the polar boss thickness buildup.
+
+
+                                                                                                             10
+                                      Figure 2.2-5 From-Part Dome Input
+
+
+
+
+                                   Figure 2.2-6 Transition Radius Definition
+
+
+
+
+2.2.6 Defining the Dome Set Properly
+The proper creation of the underlying dome set is critical to being able to generate the wound layout geome-
+try onto an existing part instance. Improper set creation will result in the failure of the geometry creation and
+may result in any number of obscure Abaqus or Python errors. The set may be based on geometry edges or
+in the case of an orphaned mesh liner a set of nodes. Use the following guidelines for choosing the dome set
+shown in red for various cases:
+
+
+                                                                                                              11
+Case 1: Large Fillet Polar Boss & Continuum Model: Set transition radius at the beginning of the fil-
+let. Assign all layers abutting polar boss a radius less than the transition radius. Any layers with turn-
+around radii less than transition radius will abut to the polar boss, regardless of the end controls.
+
+
+
+
+Case 2: Arbitrarily-shaped Polar Boss & Continuum Model: Use transition radius less than the radius
+of any point along the vertical face of the polar boss. Assign all layers abutting polar boss a radius
+less than the transition radius. Use the vertical segments of the polar boss.
+
+
+
+
+Case 3: Invalid Dome Set/Transition Radius
+
+
+
+                                                                                                        12
+2.2.7 Viewing Dome Geometry in Sketcher
+The proper creation of the underlying dome geometry set is critical to building the tank properly. To ensure
+this set is being read properly by the WCM, it can be plotted by clicking on the sketch icon    . As shown
+below, the solid yellow line represents the shape of the underlying geometry based on the set provided. The
+dashed vertical lines attached to either end of the solid yellow line represent the extended polar boss geome-
+try. The dashed yellow lines slightly offset from the extended polar boss geometry represent the transition
+radii.
+
+
+
+
+                                                                                                           13
+                                      Figure 2.2-7 Liner Geometry Sketch
+
+2.2.8   Adjusting Spline Refinement
+The underlying geometry of the tank is drawn by extracting points from the dome set provided. If the dome
+set is geometry-based, then the WCM will extract equally spaced points along the length of the set. The
+number of points to be used is based on the refinement selected. The following numbers of points are used
+based on the refinement:
+
+
+
+                                                             Number of
+                                         Refinement
+                                                              Points
+
+                                  Extra Coarse                  100
+
+                                  Coarse                        150
+
+                                  Medium                        300
+
+                                  Fine                          450
+
+                                  Extra Fine                    600
+
+
+
+The first composite layer of the tank is drawn by projecting the points along the base geometry in the normal
+direction through a distance equal to the layer thickness at the points being generated. These projected
+
+                                                                                                          14
+points are then combined to draw splines representing the exterior of the first layer. The second layer is then
+drawn in the same manner by projecting the exterior points of the first layer. Thus, by continuing this pattern,
+the points along the liner geometry are propagated up through all of the layers of the entire tank. The amount
+of time required to generate the tank part is directly related to the number of points used to draw the splines.
+Therefore, controlling the number of points used to draw the liner is critical in controlling the amount of time
+required to draw the entire tank. The refinement option allows the user to control the number of points along
+the liner, and thus the number of points used to draw the tank. Using coarse refinement will build the tank
+quickly, but in areas where one layer wraps over another, the geometry created may show inaccuracies.
+If the liner part is an orphan-mesh part, then the points used to define the liner geometry are the actual node
+points contained in the node set. In this case, the refinement option is ignored.
+
+
+2.3     Winding Layout (Parametric)
+
+2.3.1   Layer Manager Dialog
+Once the liner has been defined, the layout can be defined to overwrap the liner. Right clicking on the Layers
+repository and selecting Manager will bring up the Layer Manager dialog. Double clicking on the Layers
+repository will also bring up the Layer Manager dialog.
+
+
+
+
+                                     Figure 2.3-1 Activating Layer Manager
+
+
+The first item in the Layer Manager dialog to choose is how the layup will be defined. Parametric requires the
+user to enter a number of parameters describing each layer, along with a number of controls associated with
+controlling specific aspects of the layer geometry. The CAD layup definition provides a means of importing
+the layup from a CAD data file. Currently only import from ComposicaD is supported. In the this section we
+will discuss the Parametric layup definition in detail.
+
+
+The entire layup can be defined and verified from with the Layer Manager dialog. Each layer is assigned a
+layer type, material, thickness, and wind angle. The inner and outer radius, hoop height and band width are
+applicable to specific layer types. A row of buttons is listed below to assist in table manipulation. The first four
+buttons are for adding, removing, and moving layers. The Add Rows            button adds a row at the end of the
+table by copying all of the layer information, including controls, of the layer in which the cursor is placed. The
+
+
+
+                                                                                                                 15
+Move Up     and Move Down      buttons simply move the entire layer, along with its control information, up or
+down. Multiple layers can be moved up and down simultaneously.
+
+
+
+
+                                        Figure 2.3-2 Layer Manager Dialog
+
+
+As changes are made to the table, they can immediately be viewed by clicking on the Sketch icon . This
+will sketch the layers of the table, as well as the liner. The Sketch All icon       , the Sketch Top icon       , and
+the Sketch Bottom icon, allow the user to control which portions of the tank are being sketched. This allows
+the user to focus on viewing parameter changes that are specific to the top, for example, while ignoring
+parameters specific to the bottom. This can also speed up sketching in large layups. If changes are made to
+the table and in the sketch mode, the Refresh icon         must be clicked for the sketch to reflect the changes.
+Each layer has a multitude of controls that affect the thickness buildup, the shape at the end of the layer,
+how the layer abuts to the polar boss, and more. By clicking the Visible Columns icon , each of the controls
+can be displayed and modified in the table. Because there are so many, they are not displayed by default.
+The Default Columns icon        displays the default columns. The Top Columns icon             displays controls
+specific to the top of the tank. Likewise, the Bottom Columns icon         displays controls that are specific to the
+bottom portion of the tank. The All Columns icon         displays all controls for all of the layers. The Mesh
+Columns icon       displays controls related to the mesh. The Symmetric Tank icon             allows the bottom
+controls to be set identical the top controls in which case only the top controls can be modified. Regardless
+of which columns are shown, the information stored in each column is saved upon submission of the Layer
+Manager dialog.
+
+2.3.2   Layer Shape Controls
+
+The thickness buildup described in the sections below for helicals is very accurate throughout the tank, with
+the exception of the regions very near the polar bosses. Because of the many ways in which individual wind-
+ing machines affect the polar boss region buildup, some tools in the WCM have been added to allow the user
+to control how each of the layers are shaped close to the polar boss. In order to demonstrate how these con-
+trols affect the polar boss region, a single layer will be considered which terminates near the polar boss
+which has a boss radius of 2.0. Each of the parameters which affect the shape will be modified to demon-
+strate the affect. In order to display the controls, the Top Columns icon     can be clicked and the table is up-
+dated to show all of the layer controls of the top of the tank.
+
+
+
+
+                                                                                                                   16
+                                      Figure 2.3-3 Layer Manager Dialog
+
+
+
+2.3.2.1 End Fraction Override
+
+The End Fraction parameter controls how the end of the layer is terminated. The thickness buildup equation
+described in subsequent sections approaches infinity as the radius at which the thickness is calculated ap-
+proaches the turnaround radius of the layer. In reality the end of the layer tapers off. The shape of the taper
+can be controlled by the winding software used to wind the COPV. As a default, the WCM calculates the
+point, referred to as the transition point, at which the thickness buildup equations are no longer used and a
+rounded or straight line describes the remainder of the end cap of the layer. The distance from the turna-
+round point to a point at the base of the layer corresponding to the transition point is determined as a fraction
+of the bandwidth for helical layers and a fraction of the constant layer thickness for hoop layers. This fraction,
+referred to as the End Fraction, is determined automatically by the WCM but can be overridden. Below is
+displayed plots corresponding to End Fractions of 0.25, 0.5, 1.0, and 2.0.
+
+
+
+
+                                       Figure 2.3-4 Effect of End Fraction
+
+
+2.3.2.2 Transition Radius Override
+
+The transition radius is the radius at which the slope of the outer line is abruptly overridden and continued on
+a straight line until an intersection with the polar boss or underlying layers is found. The sketches below were
+generated with the values shown. The polar boss is set to a radius of 2.0, the layer turnaround radius is set
+to 2.1, and the end fraction is set to 1.0 with a band width of 0.5. Therefore, the end cap of the layer begins
+at a radius of 3.1 - just outside of the values of each of the transition radii shown. The dashed vertical line
+represents the transition radius for the layer. By modifying the value of the transition radius, the thickness
+buildup can be controlled precisely.
+
+
+
+
+                                                                                                               17
+                                    Figure 2.3-5 Effect of Transition Radius
+
+
+2.3.2.3 Transition Radius Override (Ignoring End Cap)
+
+In the plots above you will notice that the WCM attempted to draw the end cap of the layer until the transition
+radius was reached, at which point the slope remained constant until an intersection with the polar boss was
+found. Alternatively, if the layer terminates inside of the transition radius, the sketching of the end cap can be
+ignored. The thickness buildup is based on the theoretical thickness buildup until the transition radius is
+reached. Then the slope remains constant until an intersection with the polar boss is found.
+
+
+
+
+                                                                                                                18
+                       Figure 2.3-6 Effect of Transition Radius while Ignoring End Cap
+
+2.3.2.4 Transition Angle
+
+The default behavior of the layer thickness buildup is to continue the outer layer slope from at the transition
+point until an intersection with the polar boss is found. As an alternative, that slope can be modified by set-
+ting the transition angle to a non-zero number. A positive transition angle causes the layer to increase in
+thickness, while a negative transition angle causes the layer to decrease in thickness.
+
+
+
+
+                                                                                                              19
+                                    Figure 2.3-7: Effect of Transition Angle
+2.3.2.5 Overlap Fraction
+
+As one layer overlaps the end of another, a void is formed which contains resin, but no composite fibers. The
+size of the void region depends on a number of factors such as wind angle, tape tension, and whether a
+post-layup treatment is applied to squeeze out excess resin material. The WCM provides an overlap fraction
+parameter which controls length of the void region. The curved line drawn begins at a point above the transi-
+tion point of the underlying layer (i.e. the point at which the end cap begins). The slope used is that of the
+liner if this point were projected onto the liner. The curved line then terminates at a distance equal to the
+overlap fraction times the thickness of the underlying layer at its end cap transition point. If the end type Ta-
+pered is specified on a hoop or a doily, the overlapping calculations are ignored.
+
+
+
+
+                                                                                                              20
+                                     Figure 2.3-8 Effect of Overlap Fraction
+
+If it is determined that the overlap region intersects the transition radius of the layer, then the overlap region
+determined by projecting the end cap transition point in a direction parallel to the liner until an intersection
+with the underlying geometry is found. This approach is used because of the generality of the geometry that
+is possible inside the transition radius. This may cause geometry that is not reflective of the actual part. In
+this case, other controls can be used to modify the geometry to better match reality.
+
+
+
+
+                                                                                                                 21
+                         Figure 2.3-9: Overlapping a Layer near the Transition Radius
+
+
+2.3.3   Helical Layers
+The helical layer types (with and without friction) of a wound composite are typically wound in such a manner
+as to produce an axisymmetric layup. In other words, for every helical band at + theta, there is a
+corresponding band at – theta to cause the overall laminate to be a balanced angle-ply (+/- theta) laminate.
+This assumption is implicit in both axisymmetric models and 3D models. Therefore, the wound composite
+plug-in requires only a single orientation angle to be given for each layer at the tangent line and the plug-in
+will calculate the angle-ply laminate material properties for each element within each helical layer.
+Helical layers may be wrapped over a liner with or without a cylindrical section. The wind angle along the
+cylindrical section remains constants, while the helical winding angle over the dome is described by the
+following equation:
+
+                                                                                 n
+                                                        R0      R  R0 
+                                        ( R )  sin 1                 
+                                                        R       Rtl  R 0 
+
+                                       Equation 2-1 Helical Wind Angle
+
+
+
+Here, R is the radial distance from the center line to a point in the layer, R o is the radial distance from the
+centerline to the turnaround point, and Rtl is the radius at the dome-cylinder tangent line, and  is the
+difference in degrees between the frictionless wind angle (input for the layer) and the wind angle calculated
+by the first term of Equation 2-1 Helical Wind Angle. A frictionless winding pattern is obtained by
+choosing 𝛿 = 0.0. If friction is accounted for,  ≠ 0, then the wind angle distribution will vary as described in
+more detail in later sections. The wind angle distribution of helicals with our without friction are described by
+the equation above.
+
+
+
+
+                                                                                                              22
+2.3.3.1 Controlling the Wind Angle at the Turnaround Radius
+As a band turns around the dome, the wind angle of the entire width of the band is 90˚. As a default, the
+WCM modifies the turnaround radius, 𝑅 , by the one half of the width of the band so that the wind angle
+begins to drop below 90˚ immediately after the middle of the band. This would be accurate if the band
+wrapped completely around dome. However, as a band wraps around the dome, it is orientated at 90˚ for
+only a short distance. Instead, many bands are required to cover the dome in the hoop direction. Therefore,
+the fibers are not orientated at 90˚ over the full band width around the full 360˚ circumference. In order to
+approximate the portion of the band that is at 90˚, the ninety degree band width factor, 𝑓 , may be used to
+reduce this distance.
+
+
+
+
+                                 Figure 2.3-10: Specifying 90 degree Factor
+
+
+
+
+                            Figure 2.3-11 Contour Plot of Wind Angle (90° in red)
+
+
+
+
+2.3.3.2 Varying Wing Angle over Cylinder Section
+In many circumstances the wind angle of a helical may vary over the length of the cylindrical section of a
+tank. Setting the bottom wind angle, as shown in red below, will linearly vary the wind angle over the length
+of the cylinder from the bottom wind angle to the top wind angle. The beginning and end points of the
+variation are determined by calculating the points above and below the cylinder section with radii equal to
+
+                                                                                                            23
+.995 the radius of the cylinder. In order for this approach to be valid, the cylinder section must remain
+perfectly flat (not tapered, nor contain any imperfections). The thickness calculation based on Equation 2.3.4
+uses the wind angle at the tangent line as part of the calculation to determine the thickness. The smallest of
+the top and bottom wind angles is used as the wind angle at the tangent line in Equation 2.3.4. As a result,
+the thickness of the layer varies over the cylinder region.
+
+
+
+
+                               Figure 2.3-12 Varying Wind Angle over Cylinder
+
+
+2.3.4   Helical Layer Thickness Buildup
+The thickness buildup may be specified in one of two ways. The first method is the Classic Equation as
+shown below. The thickness specified in the winding layout table is the thickness at the cylinder tangent line.
+As the layer traverses the dome to the polar boss, the thickness of the helical layer gradually builds up as
+described by the equation below. The method has the option of the user being able to modify the band width
+to affect the thickness buildup.
+
+
+
+
+                     Equation 2-3.4-1: Classical Equation for Helical Thickness Buildup
+
+The second option to define the thickness is based on the conservation of fiber volume.
+
+
+
+                                                                                                            24
+                                                           𝑟 ∙ cos(𝜃 )
+                                           𝑡(𝑟) = 𝑡 ∙
+                                                            𝑟 ∙ cos(𝜃 )
+                   Equation 2.3.4-2: Conservation of Volume for Helical Thickness Buildup
+
+
+
+
+2.3.5   Helical Layer with Friction
+A helical layer with-friction requires the wind angle and turnaround radius both be specified. The wind angle
+distribution is determined from of Equation 2- with the value of n set to 1.0. This equation essentially bounds
+the with-friction curve between two frictionless curves. The first curve is frictionless curve based on the wind
+angle given. The second curve is the frictionless curve based on a wind angle that would reproduce the
+turnaround given. The difference in wind angles (δ) between the two curves is simply ramped down linearly
+(for n=1.0) over the length of the layer with the turnaround specified by the user. The resulting with-friction
+wind angle curve is shown in red in the figure below.
+
+
+                                90
+
+                                80
+
+                                70
+
+                                60
+                   Wind Angle
+
+
+
+
+                                50
+
+                                40
+
+                                30
+
+                                20
+                                                                                       Theta2
+                                10
+                                                                                       Theta1
+                                 0
+                                      R1       R2    Dome Radius                     Rtl
+
+                                     Figure 2.3-13 Wind Angle with Friction in Red
+
+
+2.3.6   Doily & Hoop Layers
+The TOP DOILY, BOTTOM DOILY, and HOOP type layers consist of a constant thickness and constant wind angle
+layer. Doilies can be specified to either be placed over the top of the tank (TOP DOILY) or over the bottom of
+the tank (BOTTOM DOILY) in the case of a full tank model. Doilies cannot extend over the full length of the
+cylinder (see section below describing hoops). Modeling a doily requires the inner-most termination point to
+be entered as a radius. The outer-most termination point may be entered as either a radius or Y-Position
+measured from the center of the tank. The WCM determines the washer-shaped ply which is wrapped over
+other layers as shown in Figure 2.3-14. A doily is constructed with a uniform thickness and usually of an
+orthotropic material. The primary material direction is rotated from the meridional axis of the tank by the
+value of the wind angle. Just as helicals, a layer consists of fibers at + and - angles at the same position
+through the thickness of the layup, thus resulting in an axisymmetric behavior. For example, a wind angle of
+90.0 degrees results in the primary material direction of the doily being in the tank’s hoop direction.
+
+
+
+
+                                                                                                             25
+                       Figure 2.3-14 Doily Layer in Blue (Only half of the tank is shown)
+
+
+Modeling a hoop entails specifying the y-coordinates of the termination. The y-coordinates are measured
+from the center of the tank, which is determined half way between the two extreme y-coordinates of the liner.
+A uniform-thickness layer which begins in the cylinder region and terminates at a position along the tank axis
+is shown in Figure 2.3-15. A hoop layer is usually orthotropic like a doily with the primary material direction
+rotated from the meridional axis of the tank by the value of the wind angle – typically 90 degrees.
+
+
+
+
+                      Figure 2.3-15 Hoop Layer in Blue (Only half of the tank is shown)
+
+The end cap of doilies and hoops have an optional end type specification, Tapered, not available with
+helicals. This end type simply linearly varies the thickness of the end cap from zero at the end of the layer to
+the full thickness at a distance equal to the band width from the end point. A unique characteristic of this end
+cap is that when a layer overlaps this end type, no bridging calculations are used. In other words, the base of
+the overlapping layer exactly matches the geometry of the end cap.
+
+2.3.7   Layer-Level Mesh Controls
+Clicking on the Mesh Columns icon        displays mesh specific controls of the layer as shown in the figure
+below. These controls allow individual layers to be assigned mesh controls that give the user significant
+controls over the characteristics and quality of the final mesh. The layer-level controls override the tank-level
+mesh controls described in Section 2.1.2 . The number of elements through the thickness of a particular
+layer may be specified in this dialog. Resulting mesh seeds are applied through the thickness of the layer at
+the base of the dome, or in the case of an attached cylinder, at the interface between the dome and cylinder.
+The mesh seeds are also applied on the segment of the partitions (described in the next section) passing
+through the layer of interest.
+The element formulation may be assigned to the layer by selecting any combination of the HYBRID, REDUCED,
+or INCOMPATIBLE MODES formulations. Layer-level controls are not available for shell elements.
+
+
+                                                                                                              26
+                             Figure 2.3-16 Layer-Level Mesh Controls Tab Input
+
+
+
+2.4     Winding Layout (CAD)
+
+2.4.1   Layer Manager Dialog
+Defining a layup by importing directly from the CAD winding software output is currently only supported for
+ComposicaD™. The preferred ComposicaD version is V2.4.33 or later. From the Layer Manager dialog,
+selecting the layup definition as CAD displays the dialog tabs shown below. The dialog consists of two main
+tabs, the Raw CAD Data tab, and the Layup Controls tab. The Raw CAD Data tab is used to review and
+modify the CAD data if necessary. The Layup Controls tab is used to assign materials to the layers and to
+control how each layer terminates.
+
+
+
+
+                            Figure 2.4-1: CAD Import from Layer Manager Dialog
+
+2.4.2   Importing from ComposicaD
+The first step in importing from ComposicaD is to click on the folder shown circled in the figure above. The
+Import CAD dialog is brought up. From that dialog the user may browse to select the FEA .xml file from
+ComposicaD. Once selected, the file is scanned and the material assignment table is automatically
+populated. ComposicaD assigns to each layer a material identifier in case more than one fiber type is used.
+The material assignment table simply assigns an existing material model from within Abaqus/CAE to each
+material identifier. Upon submission of the Import CAD dialog, the FEA file is scanned and all of the data is
+stored to be displayed and manipulated form within the Layer Manager dialog.
+
+
+
+
+                                                                                                            27
+                                  Figure 2.4-2: ComposicaD Import Dialog
+
+
+
+2.4.3   CAD Data Summary Tab
+The CAD Data Summary tab provides a number of tools for modifying the all of the data associated with
+each layer simultaneously, as well as, provides a table of options used for sketching the raw cad data. The
+position of the tank, relative to the liner, is also specified on the tab.
+
+
+
+
+                                  Figure 2.4-3-1: CAD Data Summary Tab
+
+
+The top row of icons perform the following functions:
+
+          , : Reduce or increase the number of points along the cylinder region of the tank by
+        deactivating/activating every other point active/inactive point
+
+           , : Reduce or increase the number of points along the dome region of the tank by
+        deactivating/activating every other active/inactive point
+
+           : Permanently remove any deactivated points of the layers
+
+           : Sketch the active data points associated with each selected layer based on the controls specified
+
+
+                                                                                                              28
+           : Refresh the sketch of the layers based on changes in table or a modified Y-Symmetry position
+
+
+The Y-Symmetry Position defines the Y-Coordinate, relative to the coordinate system of the CAD data, which
+will be set to zero in the local coordinate system of the Abaqus tank part. This allows the user to position the
+CAD data to match the coordinates system of the liner. If only half the tank is being modeled, it provides
+flexibility in determining how much of the cylinder region is included in the analysis. For example, if analyzing
+a symmetric tank with a long cylinder region, it is not necessary to set the symmetry position at the center of
+the tank. It can instead be set closer to the transition from cylinder to dome up to a point where the dome
+effects have tapered out. In order to confirm that the Y-Symmetry position is set properly so that the CAD
+data align properly with the liner geometry, the raw CAD data can be sketched by clicking on the sketch icon
+    . The liner geometry is sketched as a dashed line. The layers can be sketched as splines or lines.
+Sketching as a spline only draws the last two points of the layer, but reduces the sketch time dramatically.
+Sketching the layer as a collection of individual lines is useful in viewing the exact locations of the points, but
+can slow down the sketching process. Additionally, each layer, whether drawn as a line or spline, can be
+sketched as solid or dashed. This is useful in identifying individual layers in large layups. If an error message
+is raised during this process, the Y-Symmetry position is probably to blame.
+
+
+ComposicaD defines each layer as a collection of coordinates (x,y), thickness, and wind angle at various
+points along the bottom of the layer. In order to view what the outer layer would look like, the Include Outer
+Layer column is provided. The normal at any point in a layer is determined by averaging the normal of lines
+created from a current point and the points before and after. The resulting normal, along with the thickness at
+the point, is used to determine the outer point. The outer layer is drawn as a dashed line. This method of
+determining the outer surface of the layer is only used for raw CAD data sketching purposes since it can lead
+to false outer surfaces as shown below. When building the actual tank geometry, the normal of a point is
+determined by projecting the point onto the liner, then determining the normal of the liner at that point.
+
+
+
+
+                               Figure 2.4-3-2: Sketch of Individual Exterior Layer
+
+
+
+
+                                                                                                                29
+2.4.4   Individual Layer Data Tab
+The Individual Layer Data tab provides a number of tools for detailing all of the point information of a single
+layer. The same edit tools are available for activating and deactivating points along the dome and cylinder
+regions that are available when sketching the entire raw data layup. The rows of the table which are
+associated with the cylinder region of the tank are shown with the background shaded. By clicking on the
+sketch icon     , the user can sketch the base of the layer as a series of lines or splines, and include the outer
+surface of the layer as a collection of dashed splines.
+
+
+
+
+                                     Figure 2.4-4: Individual Layer Data tab
+
+
+These tools are useful for locating and modifying or removing points which are may be considered invalid.
+For example in the plot below, the last couple of points of the layer below are clearly invalid. By sketching the
+layer, it is clear which point to remove. Once removed, click the refresh icon,   , to redraw the sketch with
+the updated settings.
+
+
+A very important note to make is that if hoop (or in some circumstances helical) layers are very thin, with
+thickness to radius ratios less than 1/1000, then the WCM may be unable to draw a proper sketch. An error
+will be raised reading “Shell extrude feature failed. A part could not be created from the exterior sketch.
+Check that sketch WCM_Exterior is adequate for creating an axisymmetric part”. The problem occurs
+because the splines being draw on the end of the layer may create a zero thickness end type. In such cases
+of extremely thin layers, the only work around may be to create 3D shell models.
+
+
+2.4.5   Layer Controls Tab
+The Layup Controls primarily provides controls for layer meshing and layer termination. As changes are
+made to the table, they can immediately be viewed by clicking on the Sketch icon . This will sketch the
+layers of the table, as well as the liner. The Sketch All icon  , the Sketch Top icon    , and the Sketch
+Bottom icon, allow the user to control which portions of the tank are being sketched. This allows the user to
+focus on viewing parameter changes that are specific to the top, for example, while ignoring parameters
+
+
+                                                                                                               30
+specific to the bottom. This can also speed up sketching in large layups. If changes are made to the table
+and in the sketch mode, the Refresh icon        must be clicked for the sketch to reflect the changes. By clicking
+the Visible Columns icon , each of the controls can be displayed and modified in the table. Because there
+are so many, they are not displayed by default. The Default Columns icon           displays the default columns.
+The Top Columns icon         displays controls specific to the top of the tank. Likewise, the Bottom Columns icon
+   displays controls that are specific to the bottom portion of the tank. The All Columns icon        displays all
+controls for all of the layers. The Mesh Columns icon        displays controls related to the mesh. The Symmetric
+Tank icon      allows the bottom controls to be set identical the top controls in which case only the top controls
+can be modified. Regardless of which columns are shown, the information stored in each column is saved
+upon submission of the Layer Manager dialog.
+
+
+
+
+                     Figure 2.4-5-1: CAD End Type (Top) vs. Straight End Type (Bottom)
+
+
+
+
+Layer termination controls for layers that do not abut the polar boss consist of the end type and band width.
+The end types available are either CAD or Straight. The CAD end type implies that the CAD data will be
+used as-is to define the termination of layer except for the last point which may be modified such that it
+exactly intersects the underlying layer. The Straight end type is generated by first computing a setback
+distance along the bottom of the layer equal to the band width. Once determined, a straight line is drawn
+from the corresponding outer point to the termination point of the layer. The straight end type can be useful in
+cases where the last one or two points of the CAD data appear to be spurious. The straight end type simply
+truncates the last couple of CAD data points as shown in the plot below.
+
+
+
+
+                                                                                                               31
+                     Figure 2.4-5-2: CAD End Type (Top) vs. Straight End Type (Bottom)
+
+
+
+
+2.5       Mesh Partitioning
+The mesh partitioning options allow for the creation of partitions through the thickness of a layer all along the
+length of the layer. The spacing of the partitions can be biased toward the top of the layer, the bottom of the
+layer, or evenly spaced throughout the layer.
+
+
+
+
+                          Figure 2.5-1: Geometry/Mesh with and without Partitioning
+
+
+The partitions control the mesh in a couple of ways:
+         They prevent the mesher from creating skewed elements as shown to the left in Figure 2.5-2. A
+          mesh modified with partitions is shown to the right in Figure 2.5-2.
+
+
+
+                                                                                                              32
+         They allow for the application of mesh seeds and constraints through the thickness all along the
+          length of the layer as opposed to having only a single mesh seed constraint at the bottom of the
+          dome. This helps to ensure the number of elements through the thickness remains uniform
+          throughout the layer.
+
+
+
+
+                          Figure 2.5-2: Geometry/Mesh with and without Partitioning
+If a partition passes too close to an existing vertex, the mesh creation may fail as shown in the figure below.
+In order to ensure that the partitions do not terminate too close to an existing vertex, the sketcher mode may
+be entered by clicking on the sketch icon       while the partition properties are being edited. For example, in a
+particular layup, one partition terminates very near the vertex. This may result not only in a poorly formed
+mesh in this region, but may also prevent the mesher from generating a mesh altogether. To eliminate this
+particular partition line, click the Remove Individual Partitions icon   , then pick on the line to be removed
+and hit the Done button. This process will ensure a nicely formed mesh will be created throughout the tank.
+
+
+
+
+                            Figure 2.5-3: Removing Individual Lines from Partitions
+
+
+2.6       Mesh Creation
+The next step in the COPV model creation is generating a mesh on tank. Double clicking the mesh icon
+displays the Mesh Properties dialog. Since the number of elements and element types are assigned at the
+
+                                                                                                               33
+tank and layer levels, only the number of elements along the length of the tank needs to be specified. The
+number of elements specified is assigned as the total number assigned to the top and bottom domes.
+
+
+
+
+                                    Figure 2.6-1: Mesh Generation Inputs
+
+
+Upon submission of the Mesh Properties dialog, the WCM applies the mesh seeds to the part and attempts
+to mesh it. In some circumstances an inadequate mesh, or no mesh at all, is obtained. The following are
+some troubleshooting tips regarding meshing:
+     Very poorly shaped elements: This is usually caused by an inadequate number of elements along
+       the length of the tank. Increase the number of elements along the length of the tank so that the as-
+       pect ratios of the elements in the cylindrical section of the tank do not exceed 2 to 1.
+     No mesh on a face: This often occurs because a partition passes too closely to an existing vertex for
+       the mesher to honor the mesh seeds. Edit the partitions and remove any lines passing very near a
+       vertex.
+     No mesh at all on a 3D tank: This can occur if too few elements were chosen in the hoop direction.
+     Very slow creation for 3D models. Reduce the number of segments in the hoop direction and the
+       number of lines used for mesh partitioning. In the cylinder region of the tank, only use mesh parti-
+       tions near the transitions from cylinder to dome. Mesh seeding, setting the sweep direction, and
+       meshing all are slowed down by the number of cells in the tank.
+
+If after trouble shooting a mesh you are still not able to generate a mesh on a tank, attempt to generate the
+mesh directly within the Abaqus/CAE mesh module. For example, on some 3D models the mesher may fail
+to generate a mesh, but if sections are meshed individually in sequence the mesher is able to generate a
+mesh. If you are able to use the tools in the mesh module to generate an adequate mesh, you can then right
+click on the mesh icon in the WCM tree and select Set as Completed. This will indicate to the WCM that an
+adequate mesh has been created and will allow the final step of the property generation to be completed.
+
+
+2.7    Properties Creation
+Then final step in the creation for a COPV model is to generate the properties. This process involves
+generating material properties, section definitions and material orientations. Clicking on the properties icon
+   opens up the Material Properties dialog.
+
+
+
+
+                                                                                                             34
+                                   Figure 2.7-1: Material Properties dialog
+2.7.1   Material Properties
+The assignment of material properties to the tank begins by assigning section definitions based on the
+materials provided for each layer in the winding layout table. The plug-in then determines which layers have
+orthotropic materials assigned to them (*ELASTIC, *CONDUCTIVITY, or *EXPANSION). The elements in the
+orthotropic layers are assigned transformed material definitions and section assignments. Field variable
+dependent elastic and expansion properties are not supported.
+The calculation of orthotropic materials properties is performed by first creating wind angle bins for each
+orthotropic material. That is to say, all the elements assigned a given orthotropic material are grouped
+together based on wind angle and put into bins. The local wind angle of each element is calculated from
+Equation 2.3.3 based on the coordinates of a point at the bottom of the layer which is projected normal from
+the layer to the centroidal coordinates of the element. The range of wind angles assigned to a bin is chosen
+by the user as the wind angle increment in the Tank Manager Dialog as shown in Figure 2.6.1. Wind angle
+bins are then generated from 0 to 90 degrees based on the wind angle increment. For example, 90 bins
+would be created for a wind angle increment of 1 degree. All elements with wind angles falling within the
+range of a given wind angle bin is assigned a single material property based on the wind angle of the bin. No
+materials are created for bins which have no elements associated with them.
+The orthotropic materials for each wind angle bin are calculated as angle-ply laminate (±θ) materials, where
+the angle θ is the bin wind angle. The orthotropic material properties input by the user are for the composite
+lamina (single-ply) with 1=fiber direction, 2=transverse and 3=normal. The plug-in transforms these material
+properties to the following global directions for axisymmetric-continuum and axisymmetric-shell geometry: 1-
+meridional, 2=radial, and 3=hoop, and the following global directions for three-dimensional geometry:
+1=meridional, 2=hoop, and 3=radial. These transformed material properties, along with a section definition,
+are assigned to each wind angle bin and a unique material definition is created. Material properties other
+than orthotropic *ELASTIC, *CONDUCTIVITY, and *EXPANSION are assigned directly to the wind angle bin material
+without being altered and are also written to the include file. Anisotropic *ELASTIC and *EXPANSION are not
+supported.
+
+
+
+
+                                                                                                           35
+                                 Figure 2.7.2: Wind Angle Bins of 0.5 Degrees
+
+
+
+
+2.7.2   Material Orientations
+The material orientation assignments are generated along with the material properties. Each layer is
+assigned its own material orientation definition which references the part feature coordinate system
+"TankCenter", as well as a discrete field definition, WCM_tankName_AddRot, which is used to assign an
+additional rotation for each element with regard to the coordinate system "TankCenter".
+
+
+
+2.7.3   Uvarm Subroutine
+Since the material properties of the fiber have been smeared and transformed into axisymmetric coordinate
+system, output quantities such as stress and strain are not readily available along the fiber direction. For this
+reason, a toggle has been added to allow the creation of a UVARM subroutine which facilitates the
+calculation of material properties along and transverse to the fiber direction. An output request is
+automatically generated requesting Field Output for the corresponding UVARM variables. The strain
+measured used are logarithmic, so the NLGEOM flag must be activated; otherwise the logarithmic strains will
+show up as zero. When calculating lamina stresses, thermal strains are subtracted out from the logarithmic
+strains. In order to perform these calculations, field output variables LE, THE, and TEMP must be requested.
+If any of these are not requested, the UVARM subroutine will read them as zero.
+
+
+The transformation of the strains is as follows:
+
+
+
+
+                                                                                                              36
+                   Figure 2.7.3-1: Transformation of global smeared strains to local strains
+
+
+The smeared strains in the direction of the fiber are equal to the lamina strains, which in turns, are equal to
+the fiber strains.
+
+
+
+
+                                     Figure 2.7.3-2: Equivalency in strains
+
+
+The transformation of the stress performed by the UVARM subroutine can be performed in one of two ways.
+The first is using a simple coordinate transformation, as is done for the strains, results in “smeared” stresses,
+i.e. the stresses acting over the entire layer cross-section which includes fibers at both positive and negative
+wind angles.
+
+
+
+
+            Figure 2.7.3-3: Transformation of global smeared stresses to local smeared stresses
+
+                                                                                                              37
+The calculation of lamina stresses can also be performed. This is done by using the strains in the fiber local
+coordinates along with the original lamina properties assigned within the material definition in Abaqus/CAE.
+This is performed as shown below.
+
+
+
+
+                                Figure 2.7.3-4: Calculation of Lamina Stresses
+
+
+The plug-in creates 7 UVARM output variables for axisymmetric shell and continuum geometries are as
+follows for smeared stresses:
+       Wind angle in degrees
+       Logarithmic total strain along the fiber direction
+       Logarithmic total strain transverse to the fiber direction
+       Logarithmic total in-plane shear strain
+       Smeared stress in the fiber direction
+       Smeared stress transverse to the fiber direction
+       In-plane smeared shear stress
+The plug-in creates 13 UVARM output variables for axisymmetric shell and continuum geometries are as
+follows for lamina stresses:
+       Wind angle in degrees
+       Logarithmic elastic strain along the fiber direction
+       Logarithmic elastic strain transverse to the fiber direction
+       Logarithmic elastic strain in normal direction
+       Logarithmic elastic in-plane shear strain
+       Logarithmic elastic transverse shear strain in fiber direction
+       Logarithmic elastic transverse shear strain transverse to fiber direction
+       Lamina stress in fiber direction
+       Lamina stress traverse to fiber direction
+       Lamina stress in normal direction
+       Transverse shear stress transverse to fiber direction
+       Transverse shear stress in fiber direction
+
+
+                                                                                                             38
+       In-plane shear stress
+Because we have the logarithmic strain in the pressure vessel coordinate reference frame and we know the
+wind angle at each point along the dome, we are able to rotate these strains into a fiber direction coordinate
+reference frame. For three-dimensional analyses, additional terms are added for fibers at the negative of the
+wind angles. Additionally, the UVARM output is different based on whether stresses are smeared or lamina.
+The plug-in creates 13 UVARM output variables for three-dimensional shell and continuum geometries are
+as follows for smeared stresses:
+       Wind angle in degrees
+       Logarithmic strain along the fiber direction (positive angle)
+       Logarithmic strain along the fiber direction (negative angle)
+       Logarithmic strain transverse to the fiber direction (positive angle)
+       Logarithmic strain transverse to the fiber direction (negative angle)
+       Logarithmic in-plane shear strain (positive angle)
+       Logarithmic in-plane shear strain (negative angle)
+       Smeared stress along the fiber direction (positive angle)
+       Smeared stress along the fiber direction (negative angle)
+       Smeared stress transverse to the fiber direction (positive angle)
+       Smeared stress transverse to the fiber direction (negative angle)
+       In-plane smeared shear stress (positive angle)
+       In-plane smeared shear stress (negative angle)
+The plug-in creates 23 UVARM output variables for three-dimensional shell and continuum geometries are
+as follows for lamina stresses:
+       Wind angle in degrees
+       Logarithmic elastic strain along the fiber direction (positive angle)
+       Logarithmic elastic strain along the fiber direction (negative angle)
+       Logarithmic elastic strain transverse to the fiber direction (positive angle)
+       Logarithmic elastic strain transverse to the fiber direction (negative angle)
+       Logarithmic elastic strain normal to fiber plane
+       Logarithmic elastic in-plane shear strain (positive angle)
+       Logarithmic elastic in-plane shear strain (negative angle)
+       Log elastic transverse shear strain in fiber direction (positive angle)
+       Log elastic transverse shear strain in fiber direction (negative angle)
+       Log elastic transverse shear strain transverse to fiber direction (positive angle)
+       Log elastic transverse shear strain transverse to fiber direction (negative angle)
+       Lamina stress along the fiber direction (positive angle)
+       Lamina stress along the fiber direction (negative angle)
+       Lamina stress transverse to the fiber direction (positive angle)
+       Lamina stress transverse to the fiber direction (negative angle)
+       Lamina stress normal to fiber plane
+       Transverse shear stress transverse to fiber direction (positive angle)
+
+
+
+                                                                                                           39
+       Transverse shear stress transverse to fiber direction (negative angle)
+       Transverse shear stress in fiber direction (positive angle)
+       Transverse shear stress in fiber direction (negative angle)
+       Lamina in-plane shear stress (positive angle)
+       Lamina in-plane shear stress (negative angle)
+For analyses choosing to output lamina failure output, the output quantities shown below are generated.
+       Maximum stress theory failure measure
+       Tsai-Hill theory failure measure
+       Tsai-Wu theory failure measure
+       Azzi-Tsai-Hill theory failure measure
+       Hashin fiber stress theory failure measure
+       Hashin matrix stress theory failure measure
+       Maximum strain theory failure measure
+       Maximum of all failure theory measures
+In a contour plot of the maximum of all failure theory measures, the maximum value may be displayed as
+less than individual components. This is due to the possibility that other failures measures have a larger
+gradient and the extrapolation to the nodes which is performed during contour plotting generates the larger
+magnitudes. In order to eliminate this issue, quilt plotting may be used.
+For Heat Transfer analyses, UVARM2 and UVARM3 are filled with the heat flux along and fibers and
+transverse to the fibers.
+For Coupled Temp-Displacement analyses two additional variables are added as the heat flux along the fiber
+direction and transverse to the fiber direction. For the axisymmetric case, and three-dimension case in round
+brackets, these are:
+       heat flux along the fiber direction
+       heat flux transverse to fiber direction
+For the three-dimensional case, the additional variables are:
+       heat flux along the fiber direction
+       heat flux transverse to fiber direction
+An option is provided for allocating more memory for user-output variables. This is useful if the UVARM
+subroutine is to be expanded to include more user-defined output variables. The plug-in then sets the *USER
+OUTPUT VARIABLES keyword option in every material definition automatically. A source file, wcUvarmUtils.py,
+is provided to allow automatic merging of user-defined UVARM coding with that created by the plug-in. Two
+functions are provided: writeDeclarations and addExtra. The first inserts declarations statements immediately
+following the generic declaration statements of the UVARM subroutine described in the Abaqus User’s
+Manual. The second inserts coding immediately following the plug-in’s coding for filling its default UVARM
+variables. The uvarm argument passed into both routines is the file object to be written to. The nextUvarm
+argument is the first available UVARM (an integer) for user-definition. For example, referring to the lists
+above, for an axisymmetric stress analysis the nextUvarm variable would be set to 8. The UVARM
+subroutine is not available in Abaqus/Explicit so the UVARM toggle is stippled for the procedures related to
+Abaqus/Explicit.
+
+
+        def writeDeclarations(uvarm):
+           uvarm.write(" C    User-Defined Declaration Statements \n")
+           uvarm.write("      REAL pi\n")
+           ....
+
+                                                                                                          40
+        def writeExtra(uvarm, nextUvarm):
+          uvarm.write("C       User-Defined Uvarm Coding \n")
+          uvarm.write(“        CALL GETVRM('PE',ARRAY,JARRAY,FLGRAY,JRCD,JMAC, ,\n")
+          uvarm.write("     & JMATYP,MATLAYO ,LACCFLA)               \n")
+           ....
+                      Figure 2.7.3-5: User-Defined Modifications to UVARM Subroutine
+
+2.7.4   User-Defined function to define frictionless wind angle
+
+A user defined function, getFrictionlessWindAngle, is made available in the wcmUvarmUtils.py python file for
+the user to override the wind angle calculation performed by the WCM for frictionless helicals.
+
+        def getFrictionlessWindAngle(wcmLayer, R_0, topTangentPoint, botTangentPoint, point, pos):
+            # wcmLayer - layer object, the following attributes can be extracted from wcmLayer
+            #             using the getattr(wcmLayer, 'attrName') method:
+            # layerType, materialName, bandWidth, thickness, windAngle, curveExponent,
+            # ninetyDegreeFactor, includeBottomWindAngle, botWindAngle,
+            # topTerminationType, topRadius, topYCoord, topOverlapFraction, topTransitionAngle,
+            # topTransitionOverride, topTransitionRadius, topEndFractionOverride, topEndFraction,
+            # topIgnoreEndCap, topEndType,
+            # botTerminationType, botRadius, botYCoord, botOverlapFraction, botTransitionAngle,
+            # botTransitionOverride, botTransitionRadius, botEndFractionOverride, botEndFraction,
+            # botIgnoreEndCap, botEndType
+            # R_0 - calculated turnaround radius adjusted by bandwidth*90DegreeFactor
+            # windAngle, botWindAngle - user-specified wind angle in degrees
+            # includeBottomWindAngle = (True,False)
+            # topTangentPoint - (x,y) coordinates where cylinder transitions to top dome
+            # botTangentPoint - (x,y) coordinates where cylinder transitions to bottom dome
+            # point = (x,y) coordinates of point where wind angle is to be determined
+            # pos = TOP,BOT - symbolic constant representing whether point is on top of tank or bottom
+            beta = None # Set this to wind angle in radians
+            return beta
+
+
+                     Figure 2.7.4-1: Function to enter user-defined frictionless wind angle
+
+If the function returns the variable beta as None, then the WCM will use its own calculations to determine the
+wind angle. If the variable beta is set to a number (angle in radians), then the WCM will override its own cal-
+culations. In the descriptions above, the letters in blue represent comments which are begun with the charac-
+ter #. The graphic below describes how the WCM calculates the frictionless wind angle. The wind angle an-
+gle at the tangent line, 𝜃 ,is the layer wind angle entered by the user. The wind angle in the region shown is
+red is set to 90°. The width of the region is set to the band width by default. The user can override that by
+changing the 90° Factor parameter in the winding table. Beginning at the radius where this region ends, 𝑅 ,
+the classical wind angle formula as shown below is used for the remainder of the layer.
+
+
+
+
+                                                                                                            41
+                              Figure 2.7.4-2: Frictionless wind angle calculations
+
+
+
+2.7.5   User-Defined function to define Non-zero friction wind angle
+
+A user defined function, getNonZeroFrictionWindAngle, is made available in the wcmUvarmUtils.py python
+file for the user to override the wind angle calculation performed by the WCM for helicals with friction.
+
+        def getNonZeroFrictionWindAngle(wcmLayer, R_0, topTangentPoint, botTangentPoint, point, pos):
+          # wcmLayer - layer object, the following attributes can be extracted from wcmLayer
+          #             using the getattr(wcmLayer, 'attrName') method:
+          # layerType, materialName, bandWidth, thickness, windAngle, curveExponent,
+          # ninetyDegreeFactor, includeBottomWindAngle, botWindAngle,
+          # topTerminationType, topRadius, topYCoord, topOverlapFraction, topTransitionAngle,
+          # topTransitionOverride, topTransitionRadius, topEndFractionOverride, topEndFraction,
+          # topIgnoreEndCap, topEndType,
+          # botTerminationType, botRadius, botYCoord, botOverlapFraction, botTransitionAngle,
+          # botTransitionOverride, botTransitionRadius, botEndFractionOverride, botEndFraction,
+          # botIgnoreEndCap, botEndType
+          # R_0 - user-defined turnaround radius adjusted by bandwidth*90DegreeFactor
+          # windAngle, botWindAngle - user-specified wind angle in degrees
+          # includeBottomWindAngle = (True,False)
+          # topTangentPoint - (x,y) coordinates where cylinder transitions to top dome
+          # botTangentPoint - (x,y) coordinates where cylinder transitions to bottom dome
+          # point = (x,y) coordinates of point where wind angle is to be determined
+          # pos = TOP,BOT - symbolic constant representing whether point is on top of tank or bottom
+          beta = None # Set this to wind angle in radians
+          return beta
+
+
+Figure 2.7.5-1: Function to enter user-defined non-zero friction wind angle
+
+
+                                                                                                            42
+If the function returns the variable beta as None, then the WCM will use its own calculations to determine the
+wind angle. If the variable beta is set to a number (angle in radians), then the WCM will override its own cal-
+culations. In the descriptions above, the letters in blue represent comments which are begun with the charac-
+ter #. The graphic below describes how the WCM calculates the non-zero friction wind angle. The wind angle
+in the region shown is red is set to 90°. The width of the region is set to the band width by default. The user
+can override that by changing the 90° factor parameter in the winding table. At the radius where this region
+ends, 𝑅 , the classical wind angle formula as shown below is used for the remainder of the layer.
+
+
+
+
+                          Figure 2.7.5-2: Non-Zero Friction wind angle calculations
+
+
+
+2.7.6   User-Defined function to define helical thickness
+
+A user defined function, getHelicalThickness, is made available in the wcmUvarmUtils.py python file for the
+user to override the thickness calculation performed by the WCM for helicals with or without friction. This
+function is not called for doilies or hoops since they are by definition of constant thickness.The curWindAngle
+value is passed in
+
+        def getHelicalThickness(wcmLayer, point, pos, vesselRadius, turnaroundRadius, curWindAngle,
+                                     topWindAngle, botWindAngle, includeBottomWindAngle, layerThickness):
+           # wcmLayer - layer object, the following attributes can be extracted from wcmLayer
+           #             using the getattr(wcmLayer, 'attrName') method:
+           # layerType, materialName, bandWidth, thickness, windAngle, curveExponent,
+           # ninetyDegreeFactor, includeBottomWindAngle, botWindAngle,
+           # topTerminationType, topRadius, topYCoord, topOverlapFraction, topTransitionAngle, topTransitionOver-
+        ride,
+           # topTransitionRadius, topEndFractionOverride, topEndFraction, topIgnoreEndCap, topEndType,
+           # botTerminationType, botRadius, botYCoord, botOverlapFraction, botTransitionAngle, botTransitionOver-
+        ride,
+           # botTransitionRadius, botEndFractionOverride, botEndFraction, botIgnoreEndCap, botEndType
+           # point = (x,y) coordinates of point where thickness is to be determined
+
+                                                                                                              43
+           # pos = TOP,BOT - symbolic constant representing whether point is on top of tank or bottom
+           # vesselRadius - maximum radius of cylinder region of tank
+           # turnaroundRadius (r0) - turnaround radius NOT adjusted by bandWidth*90DegreeFactor
+           # curWindAngle(degrees)- wind angle at point where thickness is being calculated
+           # topWindAngle(degrees) - wind angle entered by user
+           # includeBottomWindAngle - Flag(True/False) specifying if wind angle on bottom of tank differs from top of
+        tank
+           # botWindAngle(degrees) - wind angle for bottom of tank, entered by user, if applicable
+           # layerThickness - thickness entered by user
+           return None
+
+
+Figure 2.7.6-1: Function to enter user-defined helical thickness
+
+
+
+If the function returns the variable beta as None, then the WCM will use its own calculations to determine the
+helical thickness. If the variable beta is set to a number, then the WCM will override its own calculations. In
+the descriptions above, the letters in blue represent comments which are begun with the character #. The
+graphic below describes how the WCM calculates the helical thickness.
+
+
+
+
+                                  Figure 2.7.6-2: Helical thickness calculations
+
+
+3      Geometry/Element Formulations
+The WCM provides the options of generating solid geometry or shell geometry in both 2D and 3D. For solid
+geometry, the default mesh controls are assigned when the tank is being generated. The element assign-
+ments chosen will be assigned to all of the layers of the tank by default. However, when editing the layup the
+element type may be overridden on a layer-by-layer basis, with the exception of shell geometry.
+
+
+                                                                                                                  44
+                                    Figure 3.1: Tank-level Mesh Controls
+
+3.1     Axisymmetric Continuum Geometry
+Choosing the element family as Continuum will result in the creation of axisymmetric continuum elements.
+For axisymmetric geometry, Abaqus/CAE requires that the one and two local directions of the elements be in
+the X-Y plane. A material orientation is applied to each layer which references a single Cartesian coordinate
+system that is aligned with the global coordinate system. The coordinate system is then rotated on an ele-
+ment-by-element basis to account for the continually changing orientation of the fibers. A discrete field, as
+shown below, is created to rotate the local Cartesian coordinate system about the Z-axis such that the 1-axis
+is parallel to the base of the layer.
+
+
+
+
+                                                                                                           45
+                               Figure 3.1-1: Discrete Field of Material Rotations
+
+The rotation of the fibers out of the plane is accounted for by rotating the material properties to the local co-
+ordinate system. The resulting orientations which vary on an element-by-element basis are shown below.
+The 1-axis is shown in red and the 2-axis is shown in green.
+
+
+
+
+                Figure 3.1-2: Local Coordinate Systems of Axisymmetric Continuum Elements
+
+
+
+                                                                                                                46
+3.2     3D Continuum Geometry
+If three-dimensional continuum geometry is chosen, the default element formulation, the sweep angle, and
+information regarding the axis of rotation must be entered. The sweep angle must be chosen as 90, 180,
+360, or a user-specified angle which must be less than 90 degrees. The WCM draws the exterior of the layup
+and revolves it around the axis selected by the user through the chosen angle. Partitions of the layers are
+then generated to differentiate between the layers. The swept geometry can be further partitioned into seg-
+ments in the hoop direction by assigning a number greater than one to the Number of Segments entry. Each
+segment may be assigned a different number of elements. This may be useful if, for example, one section of
+the tank comes into contact with another object. In order to capture the more severe strain gradients, the
+section coming into contact is meshed with a finer density.
+
+
+
+
+                               Figure 3.2-1: 3D Continuum Tank Properties
+
+
+Assigning more than one segment is also useful for post-processing. Nodes sets of each layer are generated
+for each segment and are made available for post-processing using the WCM path plotting tool.
+
+
+
+
+                                                                                                        47
+                                    Figure 3.2-2: Path Plotting at Segments
+
+The material orientation convention of three-dimensional geometry differs from that of two-dimensional ge-
+ometry. The local 1-direction, like in the axisymmetric case, is along the meridional direction of a given layer.
+However, the 2 and 3 directions are reversed. For three-dimensional geometry, the 2-direction is in the hoop
+direction and the 3-direction is normal to the surface of the tank. This is consistent with the requirements of
+three-dimensional shells in that the third direction must always be normal to the shell. A Cylindrical coordi-
+nate is used to define the local material directions. An additional rotation discrete field is created in the same
+manner as the axisymmetric case except that it is applied to the 2-direction of the Cylindrical coordinate sys-
+tem as opposed to the 3-direction of the Cartesian system defined in the axisymmetric case.
+
+3.2.1 Cylindrical Elements
+Cylindrical elements are used to model axisymmetric three-dimensional geometry which experiences asym-
+metric deformation. They use trigonometric interpolation functions to determine displacements in the hoop
+direction. Although each element requires more memory than a corresponding brick element, fewer elements
+are required in the hoop direction to accurately capture non-axisymmetric behavior such as tank bending.
+Below is an example analyzing bending of a COPV. It is modeled with a constant number of elements along
+the length, but a varying number of elements in the hoop direction. Comparison quantities are the rotations at
+the support, maximum displacement at the center of the tank and the maximum stress at the center of the
+tank. Convergence studies show mesh convergence with 30 brick elements and 6-8 cylindrical elements.
+
+
+
+
+      Model             Memory             Runtime               Φ                Max u              Max σ
+                         (GB)               (Min.)           (radians)             (m)               (Mpa)
+
+
+    Hex – 20               15                 20                .0467             .00604              15.38
+
+
+    Hex – 30               25                 37                .0473            .006067              15.31
+
+
+
+
+                                                                                                                48
+    Hex – 40              38                88               .0474            .006071             15.29
+
+
+     Cyl - 4               4                 6               .0434             .00589             17.42
+
+
+     Cyl - 6               7                10              .04287            .005802             15.51
+
+
+     Cyl - 8              10                15              .04266            .005787             15.36
+
+
+
+
+                     Figure 3.2-3: Convergence Study of Cylindrical vs. Brick Elements
+
+
+
+
+3.3     3D Shell Geometry
+The building of COPV tank models using shell elements versus continuum elements differs only slightly. The
+element type is chosen when the tanks is created. The termination of the shell model near the polar boss is
+specified when defining the liner. The layup definition doesn’t change at all except that no layer-by-layer
+mesh controls are necessary. The output processing is also very similar.
+
+3.3.1 Shell Geometry Controls
+Selecting the 3D Shell geometry button will cause the additional options to be activated as shown in Figure
+3.1.3-1. Three-dimensional shell geometry, like the three-dimensional continuum geometry, can be swept
+between 0 and 360 degrees. Each segment may be assigned a different number of elements as shown in
+Figure 3.3-2. The axis of revolution of the shell model is chosen in the exact same manner as that of the
+three-dimensional continuum model.
+
+
+
+
+                                                                                                              49
+ Figure 3.3-1: 3D Shell Tank Creation Options
+
+
+
+
+Figure 3.3-2: Differing 3D Shell Segment Meshes
+
+
+
+                                                  50
+3.3.2 Shell Liner Controls
+The full liner geometry is chosen in the same manner as continuum geometry. The only additional item re-
+quired for defining the shell geometry is the point at which the shell terminates. Because of the myriad of po-
+lar boss shapes, this may not always be a trivial thing to do. The point should be at the base of layers be-
+cause the stack is determined by the normal
+
+
+
+
+                             Figure 3.3-3 Shell Termination Radius Specification
+
+3.3.3 Composite Layups
+The composite layup definitions of the elements along the liner are determined by examining the element
+stack at the centroid of each shell element. The shell element geometry, shown in red in Figure 3.1.3-3, is
+determined from the surface of the liner. The composite layup properties for a given element are filled by de-
+termining the stack layup beginning at the centroid of element and extending in the direction normal to the
+liner through all of the layers of the present. The layup is scaled over the length of the element by determin-
+ing the stack thickness at the nodes of elements. The thicknesses at the nodes are assigned via the *NODAL
+THICKNESS specified in a discrete field. Because of the axisymmetric geometry and wind angle orientation
+assumptions, the composite layup definitions are grouped together in the hoop direction to minimize the
+number of sections, thus improving performance in the solvers.
+
+
+
+
+                                                                                                             51
+                                  Figure 3.3-4: Laminated Composite Layup
+
+3.3.4 Shell Output
+The path plotting utility is available for shell models, as well as, continuum models. However, all available
+shell section points are required to be output in order to fully use the path plotting utility. Since the WCM
+does not generate new or modify existing output requests, the user will need to modify existing field output
+request in order extend them to the entire shell cross section. When the WCM generates the composite
+layups, it specifies that the default number of integration points through the thickness of a layer is to be used
+which is 3. Therefore the maximum number of section points through the thickness of any point in the tank is
+three times the number of layers. Any field output request which is to be read by the path plotting utility will
+need to be modified as shown below.
+
+
+
+
+                           Figure 3.3-5: Field Output Request for all Section Points
+
+
+3.4    Axisymmetric Shell Geometry
+Choosing axisymmetric shell geometry results in line geometry created at the inner surface of the axisym-
+metric domes. The procedure for determining the shell section definitions for axisymmetric shells follows the
+same procedure as that of the three-dimensional shells. The nodal thicknesses are also calculated in the
+same manner as the three-dimensional shell elements.
+
+
+4      Running the Analysis
+Upon generation of the model mesh, sections and material properties, a job definition with the same name as
+the tank is also created. With all of these, a run-ready job is created and ready to be submitted. However, a
+
+                                                                                                               52
+number of potential problems may arise. Firstly, the Uvarm routine may need to be renamed from .f to .for, or
+vice versa. Other problems which can occur are related to running on a queuing system, or a cluster. These
+potential problems are related to the files that are referenced by the input file and by the UVARM subroutine
+if present.
+
+A queuing system on a cluster usually runs a job on any number of nodes (servers) and the particular nodes
+may vary from one job to another. In order to ensure that the proper files are available during a run, the clus-
+ter queuing software is configured to copy certain types of files to whichever node the job ends up being run
+on. Typically user subroutines and include files are properly copied to the node by the queuing software.
+However, the UVARM subroutine written by the Wound Composite Modeler references a file with the exten-
+sion .ang. This file contains wind angle information read by the UVARM routine. By default, the Wound Com-
+posite Modeler hardwires the path of this file assuming it to be that of the current working directory detected
+during the UVARM generation. When running on a queuing system, this path needs to be modified to a path
+which will remain valid regardless of the node on which the job is run. In order to do this, the function is made
+available in wcUvarmUtils.py. This function is called in order to set the path of the .ang file. The fullPath-
+Name name variable is set in the first line of the function using the current working directory.
+
+
+def getWindAngleFilePath(tankName):
+   fullPathName = '%s%s%s.ang' % (os.getcwd(), os.sep, tankName)
+   #fullPathName = "/your_directory/%s.ang" % tankName
+   return fullPathName
+
+Uncomment the line in blue (remove the # sign) and insert a directory which will contain the .ang file and will
+be accessible from any node on the cluster. This will allow the Uvarm subroutine to properly read the wind
+angle information.
+
+
+5      Output Processing
+When the plug-in generates the COPV model, it automatically generates node sets named Layern along the
+bottom of each layer where n is the layer number. The dialog accessed from by clicking on the post
+processing icon,      , automates the process of creating path plots along the interface between layers using
+these node sets. The dialog is shown in the figure below. For each layer selected from the table, the script
+first details the elements only in that particular layer, then sorts the nodes in the Layern node set from one
+end to another, and creates an x-y curve of the chosen field variable along the list of nodes. Finally, all of the
+x-y curves are combined into a single path plot as shown in Figure 4-2.
+The field output variable, step number, and frame number must be selected prior to opening up the dialog.
+An option to smooth out the curves is provided. The path plots can often contains significant spikes in
+regions where on layer overlaps another. The Smoothing Factor option simply smooths out these spikes.
+
+
+
+
+                                                                                                               53
+Figure 5-1: Path Plot Dialog
+
+
+
+
+                               54
+                                       Figure 5-2: Plot of Wind Angles
+
+
+
+
+                                     Figure 5-3: Wind Angle Contour Plot
+
+6       Sample Test Cases
+
+A number of QA problems have been included with the plug-in. Since these tests are fairly small but test all
+of the plug-in functionality, it is recommended that these be run and experimented with in order to familiarize
+oneself with the workings of the plug-in. Multiple tests may be selected to be run at one time. Two test
+modes are provided:
+       Generate Model: Generates geometry, mesh, and material properties.
+       Run Full Analysis: Generates and runs model. The displacements in the y-direction at the ends of
+        tank are extracted and compared to archived results.
+
+
+
+                                                                                                            55
+An Abaqus/CAE model named “WcmTestModel_1-1” is created, for example, when test 1.1 is run. Thus if a
+particular feature is of interest, you can scan through the test descriptions and run the test that best
+describes the feature of interest. The resulting model will be created and readily available for editing and
+testing.
+
+
+
+
+                                     Figure 6-1 QA Test Manager Dialog
+
+
+7      Micromechanics Module
+Analysis of laminated composite structures using the Finite Element Method in Abaqus includes a composite
+laminate as a homogeneous material with anisotropic properties. This typically requires the input of through-
+the-thickness composite lay-up, defined by the individual ply angles, thickness of the plies, and the material
+properties of the plies. The individual plies are assumed homogeneous and exhibit transverse isotropy
+which require the use of directionally dependent ply properties. However, a ply typically constitutes of two
+constituents; the reinforcing fibers arranged in a continuous supporting matrix. Therefore, the properties of
+the composite ply are governed by the properties of the fiber, the properties of the matrix, and the fiber
+volume fraction. Figure 2.7-1 is a schematic illustration of the influence of the fiber and matrix properties on
+the global response of a finite element structural model.
+Traditionally, the composite ply properties are estimated based on Rule-of-mixtures formulae [1]. Although
+these closed-form solutions provide reasonable estimates of the composite ply properties, they do not
+account for the micro-structural arrangement of the fibers in the matrix. A micromechanics model that
+incorporates the lamina microstructure in calculating the anisotropic ply properties has been developed. This
+documentation discusses its usage and provides some insight into the underlying theory for obtaining the
+
+                                                                                                             56
+volume-averaged ply properties. Additionally, there is a separate micromechanics plug-in that can be
+downloaded from SIMULIA Knowledge Base (QA00000046185) and more information on it can be obtained
+from its User Manual which is included with the plugin.
+
+
+
+
+       Figure 2.7-1 Schematic of the relationship between a composite structure and the constituents
+
+
+7.1    Module Overview
+Obtaining the composite ply properties using the Micromechanics module primarily requires input of the fiber
+properties, matrix properties, and fiber volume fraction, along with a selection of the microstructure for the
+composite lamina. Invoking the module begins by right-clicking ‘Micro Materials’ under the Model and
+selecting ‘Create. This brings the Composite Micromechanics dialog box, depicted in Figure 7.1-1. All the
+required input for this module is provided through this dialog box. The module calculates the lamina
+properties by simulating uniaxial states of stresses in the composite. These volume-averaged uniaxial states
+of stresses are further discussed in of this manual.
+
+
+
+
+                                                                                                           57
+                                 Figure 7.1-1 Micromechanics Dialog Box
+
+
+7.2    Module Usage
+The micromechanics model depicted in Figure 7.1.1 requires input of the fiber properties, the matrix
+properties, the fiber volume fraction, and the microstructural arrangement of the fibers in the matrix. The
+details of the input are described in this section.
+
+
+
+
+                                                                                                        58
+7.2.1   Fiber Packing Arrangement
+The module calculates the properties of the lamina taking into account the microstructural arrangement of
+the fibers in the matrix. Two options are provided: Hexagonal Packing and Square Packing. Based on the
+option selected (Microstructural Arrangement), the module displays a schematic of the generated finite element
+model, as depicted by Figure 7.2.1.
+
+
+
+
+                    Figure 7.2.1: Schematic of the model for the two fiber packing options.
+
+
+7.2.2   Fiber Volume Fraction
+Volume fractions of the constituents is one of the influencing factors of the resulting composite lamina
+properties. This is provided by the input box next to Fiber Volume Fraction, as depicted by Figure 7.2.2. A void
+fraction is also included. The void fraction is defined as the volume fraction of the voids with respect to the
+entire composite volume. The void fraction is used to reduce the stiffnesses and density of the matrix
+material based on the rule of mixtures.
+
+
+
+
+                            Figure 7.2.2: Fiber and void volume fraction input box
+
+
+
+                                                                                                              59
+7.2.3   Fiber Elastic Properties
+Properties of the fibers are provided through the fiber properties section of this module as depicted in the
+following Figure 7.2.3. It is assumed that the fibers are circular and exhibit transverse isotropy with the plane
+of isotropy coinciding with that of the ply. Here, it is assumed that the “1” direction is the fiber direction and
+the plane 2-3 is the plane of isotropy. Similar assumption applies to the ply properties calculated through this
+plug-in where “1” direction stands for the fiber direction or longitudinal direction, “2” direction stands for the
+transverse or the matrix direction, and “3” direction indicates the thickness direction.
+A material name can be provided for the fiber in the box next to Fiber Material Name. Based on the assumption
+of transverse isotropy, the required elastic properties to fully describe the mechanical behavior of the fibers
+are E11 (Extensional Modulus – E11), E 22 (Extensional Modulus – E22), 12 (Poissons Ratio – Nu12),  23 (Poissons Ratio
+– Nu23), and G12 (Shear Modulus – G12) which are supplied by the user in the appropriate data boxes as shown
+in Figure Figure7.2.3-1. Owing to the difficulty in obtaining experimentally measured shear modulus of the
+fibers an Estimate option is provided. Upon clicking this button, a dialog box as depicted in Figure 7.2.3-2 is
+displayed with an estimate of G12 , based on E 22 and 12 , and the formula used. Note that upon the
+execution of the module a fiber material with the provided name and material properties will be created in a
+model named HexPackModel or SqPackModel depending on the selection of the microstructural
+arrangement option.
+
+
+
+
+                                    Figure7.2.3-1: The fiber elastic properties.
+
+
+
+
+                                 Figure 7.2.3-2: Estimate for fiber shear modulus.
+
+7.2.4   Matrix Elastic Properties
+Matrix elastic properties are supplied to the module in the matrix properties section as depicted in the
+following Figure 7.2.4. It is assumed that the matrix is isotropic and therefore requires only the Extensional
+modulus and the Poissons ratio.
+A material name can be provided for the matrix in the box next to Matrix Material Name. Based on the
+assumption of isotropy, the required elastic properties to fully describe the mechanical behavior of the matrix
+are E (Extensional Modulus – E) and  (Poissons Ratio – Nu) which are supplied by the user in the appropriate
+
+
+                                                                                                                     60
+data boxes as shown in Figure 7.2.4. Note that upon the execution of the module a matrix material with the
+provided name and material properties will be created in a model named HexPackModel (for hexagonal
+packing microstructural arrangement option) or SqPackModel (for square packing).
+
+
+
+
+                                   Figure 7.2.4: The matrix elastic properties.
+7.2.5   Thermal Expansion Properties
+In addition to calculating the elastic properties of the ply, the thermal expansion coefficients of the ply can be
+requested to be calculated by selecting Include Thermal Expansion Properties option (see Figure 7.2.5 below) and
+then providing the coefficients of thermal expansion for the fiber and the matrix materials. Note that the
+fibers are assumed transversely isotropic and therefore only require two coefficients of thermal expansion
+ 11 (provided through Alpha 11 - Fiber) and  22 (provided through Alpha 22 - Fiber) whereas the matrix is
+isotropic and only require  (provided through Alpha - Matrix). The coefficients of thermal expansion for the
+composite are calculated by simulating a load case where the finite element model is subjected to a uniform
+temperature change.
+
+
+
+
+                                  Figure 7.2.5: Thermal expansion properties
+
+7.2.6   Density Properties
+
+In addition to calculating the thermo-elastic properties of the ply, the composite ply density can also be calcu-
+lated based on rule-of-mixtures formula. Although this property does not require the use of a finite element
+model for calculation, it is included here as density is one of most frequently used composite properties. This
+calculation can be requested by selecting the Include Densities option as depicted in Figure 7.2.6 and providing
+the Fiber Density and Matrix Density for the fiber and the matrix materials respectively. The calculated ply densi-
+ty is listed next to Composite Density: label. Note that this sub-option uses the volume and void fractions sup-
+plied through input box depicted in Figure 7.2.2.
+
+
+
+
+                                                                                                                61
+                                       Figure 7.2.6: Density properties
+
+7.3    Module Output
+The primary function of the micromechanics module is to calculate the composite ply properties based upon
+the supplied fiber and matrix properties. The resulting composite ply properties are displayed through a
+message box an example of which is depicted in the following Figure 7.3. As illustrated in Figure 7.3, the
+properties of the fiber, the matrix and the composite are presented in the message box. The same
+information is also written to a text file titled “Composite_Properties.txt” which is created and placed in the
+current working directory.
+In addition to the above mentioned text file, the module creates a material with the resulting ply properties.
+The name of the ply material is the same as that supplied in the input dialog box and depending on the
+microstructural arrangement the ply material is either located in the model named ‘HexPackModel’
+(hexagonal packing arrangement) or ‘SqPackModel’ (for square packing assumption).
+
+
+
+
+                                                                                                            62
+                              Figure 7.3: Composite properties message box.
+
+
+7.4     Micromechanics Theory
+The composite ply properties are calculated by simulating different states of stresses in the composite finite
+element model.
+
+7.4.1   Micromechanics unit cell geometry
+The finite element micromechanics model is intended to represent a continuum point in a lamina. The
+micromechanics model should therefore adhere to the concept of a Representative Volume Element (RVE)
+that statistically represents the composite lamina. In an actual lamina, the fibers are randomly arranged in
+the matrix and capturing the randomness requires the modeling of numerous fibers. To reduce the volume
+of the RVE, periodicity is assumed whereby the randomness of the fiber locations is removed and the fibers
+are assumed to be distributed in a uniform array and the RVE volume/geometry can be minimized to contain
+one or two fibers.
+Typically, it is assumed that the packing arrangement of the fibers in the matrix is either hexagonal packing
+or square packing. The highlighted regions in the following figures schematically depict the unit cell
+geometries representing the two packing arrangements.
+
+
+
+
+                                                                                                           63
+           Figure 7.4.1-1: Hexagonal packing unit cell and the corresponding finite element model.
+
+
+
+
+            Figure 7.4.1-2: Square packing unit cell and the corresponding finite element model.
+
+
+7.4.2   Unit cell boundary conditions
+The unit cell geometry is based on periodicity implying that the unit cell can be translated in the three direc-
+tions to generate the entire lamina. This is incorporated into the finite element model through periodic
+boundary conditions. The boundary conditions are derived using the mathematical representation of perio-
+dicity as outlined by Whitcomb et al. [2] and are further discussed by Akula [3].
+
+
+7.4.3   Volume-averaged ply properties
+Based on the definition of a continuum point, the stress and strain tensor components can be described by
+the following relations where domain D represents the domain of the continuum point (composite), V is the
+volume, and X is the position vector representing a point in the domain.
+                                         1                   1
+                                    
+                                         VD  ( X ) dV ,     ( X ) dV
+                                                             VD
+
+                  Equation 7.4.3.1: Volume-averaged stress and strain tensor components.
+
+Extending the above definition to the constituents and expanding over the volume of the domain, the
+following relationships are obtained where  ,  f , and  m are the volume-averaged stress tensor
+components in the composite, fiber, and the matrix whereas  ,  f , and  m are the volume-averaged strain
+tensor components and V f is the fiber volume fraction. Further discussion on volume-averaging can be
+found in Nemat-Nasser and Hori [4].
+
+
+
+
+                                                                                                             64
+                                 V f  f  (1  V f ) m ,   V f  f  (1  V f ) m
+           Equation 7.4.3.2: Relationship between different volume-averaged tensor components.
+
+
+Using these volume-averaged stress and strain tensor components, the volume-averaged composite ply
+properties are calculated. However, several different load cases are needed for estimating the different ply
+properties and the discussion of the same follows.
+
+
+Load Case 1:
+In the first load case,  11  0 and  22   33   12   13   23  0 for the composite. Note that although a
+uniaxial state of stress exists in the composite, the constituents can still be subjected to multi-axial states of
+stresses. Using this stress state, the lamina properties E11 , 12 , and 13 are calculated.
+
+Load Case 2:
+In the second load case,  22  0 and  11   33   12   13   23  0 for the composite. Using this stress
+state, the lamina properties E22 ,  21 , and  23 are calculated.
+
+Load Case 3:
+In the third load case,  33  0 and  11   22   12   13   23  0 for the composite. Using this stress
+state, the lamina properties E33 ,  31 , and  32 are calculated.
+
+Load Case 4:
+In this load case,  12  0 and  11   22   32   13   23  0 for the composite. Using this stress state,
+the lamina property G12 is calculated.
+
+Load Case 5:
+In this load case,  13  0 and  11   22   32   12   23  0 for the composite. Using this stress state,
+the lamina property G13 is calculated.
+
+Load Case 6:
+In this load case,  23  0 and  11   22   32   12   13  0 for the composite. Using this stress state,
+the lamina property G23 is calculated.
+
+Uniform temperature change:
+In this load case, the composite is subjected to a uniform temperature change, the magnitude of which is
+equal to “-1e-6/Alphamatrix”. Using the obtained volume-averaged strains, the coefficients of thermal
+expansion of the composite are calculated.
+
+As part of the output a file titled “HEXPACKPARTVolumeAveragedResults-VF-a.txt” (for hexagonal packing)
+or “SQPACKPARTVolumeAveragedResults-VF-a.txt” (for square packing) where ‘a’ stands for the fiber
+volume fraction, is created in the current working directory. This text file summarizes the volume-averaged
+stresses and strains of the composite and the constituents.
+
+
+
+8      Installation of WCM Plug-in
+The Wound Composites Modeler installation zip file contains a single folder named WCM which contains all
+the files necessary to run the plug-in. This entire folder and all its subfolders should be installed under an
+abaqus_plugins folder as described below and should only be run in Abaqus2024.GA.
+
+
+
+                                                                                                               65
+When you start Abaqus/CAE, it searches for plug-in files in the following directories and all their subdirecto-
+ries:
+
+        Plugin central directory: Defined by plugin_central_dir env variable. plugin_central_dir env variable
+         can be specified in a local or site env files. The local env can be stored in the home directory or cur-
+         rent working directory. If stored in both, the working directory env will be used.
+        home_dir\abaqus_plugins where home_dir is your home directory.
+        current_dir\abaqus_plugins where current_dir is the current directory.
+
+Abaqus/CAE will import any files in these directories that match the naming convention *_plugin.py. Close
+any Abaqus/CAE sessions and reopen Abaqus/CAE before activating WCM. The plugin will be available un-
+der the plug-ins drop down menu.
+
+
+9        References
+WCM References
+     1 Akula, M.K. Venkata, “Analysis of Filament Wound Composite Pressure Vessel using Cylindrical
+       Elements”, SAMPE, Spring 2013.
+     2 Akula, M.K. Venkata, Shubert, M., “Nonlinear FEA of Composite Overwrapped Pressure Vessels”,
+       SAMPE, Fall, 2013.
+     3 Akula, M.K. Venkata, Shubert, M., “Analysis of Debonding of Filament Wound Composite Pressure
+       Vessels”, American Society of Composites 2013.
+     4 Willardson, R., Gray, D., DeLay, T., "Improvements in FEA of Composite Overwrapped Pressure
+       Vessels", CPV Symposium 2011, Belgium.
+     5 Peters, S.T., Humphrey, W.D, and Foral, R.F., Filament Winding Composite Structure Fabrication, 2 nd
+       Edition.
+     6 Gray, D.L., and Moser, D.J., “Finite Element Analysis of a Composite Overwrapped Pressure Vessel”,
+       American Institute of Aeronautics and Astronautics.
+     7 Skinner, Michael, “Trends, advances and innovations in filament winding”, Reinforced Plastics,
+       February 2006.
+     8 T. Güll, R. Immel, T. Schütz, V. Schultheis, M. Shubert, “CAE Process Chain for Strength and Crash-
+       Worthiness Prediction of Wet Wound High Pressure Composite Vessels“. NAFEMS Proceedings,
+       November 6-7, 2007 Bad Kissingen, Germany.
+     9 Willardson, R., “FEA Considerations for CPV Design and Analysis”, CPV Symposium 2014, Salt Lake
+       City, Utah.
+
+Abaqus References
+For additional information on the Abaqus capabilities referred to in this brief please see the following Abaqus
+Version 6.14 documentation references:
+      Analysis User’s Manual
+      Abaqus GUI Toolkit User's Manual
+      Abaqus User's Manual
+
+
+10       Best practices
+With certain unit systems, Abaqus/CAE throws the following warning:
+    ‘Warning: A very small spline whose length is of the order 1.0e-03 has been created. Further operations
+    using this spline may have unpredictable results. Consider using a different system of units.’
+Due to an Abaqus/CAE bug (BR10000378238), these warnings might cause issues with meshing if some
+edges of the geometry is too small. If this happens, please switch to a different unit system.
+
+
+
+
+                                                                                                               66
+

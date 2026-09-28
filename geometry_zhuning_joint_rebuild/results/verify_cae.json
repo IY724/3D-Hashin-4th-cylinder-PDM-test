@@ -1,0 +1,53 @@
+{
+  "status": "PASSED",
+  "cae_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_joint_rebuild\\zhuning_joint_rebuilt.cae",
+  "mismatches": [],
+  "warnings": [],
+  "materials_in_model": [
+    "PA6",
+    "al-6061",
+    "t-700"
+  ],
+  "part": "Vessel_Base",
+  "part_cells": 3,
+  "geometry_validity": "1",
+  "sets": [
+    "END_FACES",
+    "INNER_CAVITY",
+    "MATERIAL_INTERFACES",
+    "MAT_AL6061",
+    "MAT_PA6",
+    "SECTOR_0",
+    "SECTOR_MINUS_10",
+    "WCM_MERIDIAN_0",
+    "WCM_OUTER"
+  ],
+  "section_assignments": [
+    {
+      "section": "Section_PA6",
+      "cells": 1
+    },
+    {
+      "section": "Section_al-6061",
+      "cells": 2
+    },
+    {
+      "section": "Section_PA6",
+      "cells": 1
+    },
+    {
+      "section": "Section_al-6061",
+      "cells": 2
+    }
+  ],
+  "section_assignment_totals": {
+    "Section_PA6": 2,
+    "Section_al-6061": 4
+  },
+  "model_name": "Zhuning_Joint_Rebuilt",
+  "assembly_instances": [
+    "Al6061_Bosses-1",
+    "PA6_Liner-1",
+    "Vessel_Base-1"
+  ]
+}

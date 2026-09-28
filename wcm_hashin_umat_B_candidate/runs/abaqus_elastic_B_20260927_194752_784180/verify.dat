@@ -1,0 +1,531 @@
+1
+
+   Abaqus 2025                                  Date 27-Sep-2026   Time 19:47:56
+   For use by Supplied by Team-SolidSQUAD under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes Americas Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine PC-20250918KWMT 
+                          you are authorized to run
+                          Abaqus/Standard until 31-Dec-2055
+
+                          Your site id is:  
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                       Abaqus 2025                       * 
+                *                                                         * 
+                *       BUILD ID: 2024_09_20-21.00.46 RELr427 198590      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2025 manuals                            * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Element, type=C3D8, elset=E1
+  *Element, type=C3D8, elset=E2
+  *Element, type=C3D8, elset=E3
+  *Element, type=C3D8, elset=E4
+  *Element, type=C3D8, elset=E5
+  *Element, type=C3D8, elset=E6
+  *Element, type=C3D8, elset=E7
+  *Element, type=C3D8, elset=E8
+  *Element, type=C3D8, elset=E9
+  *Element, type=C3D8, elset=E10
+  *Element, type=C3D8, elset=E11
+  *Element, type=C3D8, elset=E12
+  *Element, type=C3D8, elset=E13
+  *Element, type=C3D8, elset=E14
+  *Element, type=C3D8, elset=E15
+  *Element, type=C3D8, elset=E16
+  *Element, type=C3D8, elset=E17
+  *Element, type=C3D8, elset=E18
+  *Element, type=C3D8, elset=E19
+  *Element, type=C3D8, elset=E20
+  *Element, type=C3D8, elset=E21
+  *Element, type=C3D8, elset=E22
+  *Element, type=C3D8, elset=E23
+  *Element, type=C3D8, elset=E24
+  *Element, type=C3D8, elset=E25
+  *Element, type=C3D8, elset=E26
+  *Element, type=C3D8, elset=E27
+  *Element, type=C3D8, elset=E28
+  *Element, type=C3D8, elset=E29
+  *Element, type=C3D8, elset=E30
+  *Element, type=C3D8, elset=E31
+  *Element, type=C3D8, elset=E32
+  *Element, type=C3D8, elset=E33
+  *Element, type=C3D8, elset=E34
+  *Element, type=C3D8, elset=E35
+  *Element, type=C3D8, elset=E36
+  *Element, type=C3D8, elset=E37
+  *Element, type=C3D8, elset=E38
+  *Element, type=C3D8, elset=E39
+  *Element, type=C3D8, elset=E40
+  *Element, type=C3D8, elset=E41
+  *Element, type=C3D8, elset=E42
+  *Element, type=C3D8, elset=E43
+  *Element, type=C3D8, elset=E44
+  *Element, type=C3D8, elset=E45
+  *Element, type=C3D8, elset=E46
+  *Element, type=C3D8, elset=E47
+  *Element, type=C3D8, elset=E48
+  *Element, type=C3D8, elset=E49
+  *Element, type=C3D8, elset=E50
+  *Element, type=C3D8, elset=E51
+  *Element, type=C3D8, elset=E52
+  *Element, type=C3D8, elset=E53
+  *Element, type=C3D8, elset=E54
+  *Element, type=C3D8, elset=E55
+  *Element, type=C3D8, elset=E56
+  *Element, type=C3D8, elset=E57
+  *Element, type=C3D8, elset=E58
+  *Element, type=C3D8, elset=E59
+  *Element, type=C3D8, elset=E60
+  *heading
+  *material, name=M1
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M2
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M3
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M4
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M5
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M6
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M7
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M8
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M9
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M10
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M11
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M12
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M13
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M14
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M15
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M16
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M17
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M18
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M19
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M20
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M21
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M22
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M23
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M24
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M25
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M26
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M27
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M28
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M29
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M30
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M31
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M32
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M33
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M34
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M35
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M36
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M37
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M38
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M39
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M40
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M41
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M42
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M43
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M44
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M45
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M46
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M47
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M48
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M49
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M50
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M51
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M52
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M53
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M54
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M55
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M56
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M57
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M58
+  *elastic, type=ENGINEERINGCONSTANTS
+  *material, name=M59
+  *depvar
+  *usermaterial, constants=30, unsymm
+  *material, name=M60
+  *elastic, type=ENGINEERINGCONSTANTS
+  *orientation, name=BASE, system=RECTANGULAR
+  *solidsection, elset=E1, material=M1, orientation=BASE
+  *solidsection, elset=E2, material=M2, orientation=BASE
+  *solidsection, elset=E3, material=M3, orientation=BASE
+  *solidsection, elset=E4, material=M4, orientation=BASE
+  *solidsection, elset=E5, material=M5, orientation=BASE
+  *solidsection, elset=E6, material=M6, orientation=BASE
+  *solidsection, elset=E7, material=M7, orientation=BASE
+  *solidsection, elset=E8, material=M8, orientation=BASE
+  *solidsection, elset=E9, material=M9, orientation=BASE
+  *solidsection, elset=E10, material=M10, orientation=BASE
+  *solidsection, elset=E11, material=M11, orientation=BASE
+  *solidsection, elset=E12, material=M12, orientation=BASE
+  *solidsection, elset=E13, material=M13, orientation=BASE
+  *solidsection, elset=E14, material=M14, orientation=BASE
+  *solidsection, elset=E15, material=M15, orientation=BASE
+  *solidsection, elset=E16, material=M16, orientation=BASE
+  *solidsection, elset=E17, material=M17, orientation=BASE
+  *solidsection, elset=E18, material=M18, orientation=BASE
+  *solidsection, elset=E19, material=M19, orientation=BASE
+  *solidsection, elset=E20, material=M20, orientation=BASE
+  *solidsection, elset=E21, material=M21, orientation=BASE
+  *solidsection, elset=E22, material=M22, orientation=BASE
+  *solidsection, elset=E23, material=M23, orientation=BASE
+  *solidsection, elset=E24, material=M24, orientation=BASE
+  *solidsection, elset=E25, material=M25, orientation=BASE
+  *solidsection, elset=E26, material=M26, orientation=BASE
+  *solidsection, elset=E27, material=M27, orientation=BASE
+  *solidsection, elset=E28, material=M28, orientation=BASE
+  *solidsection, elset=E29, material=M29, orientation=BASE
+  *solidsection, elset=E30, material=M30, orientation=BASE
+  *solidsection, elset=E31, material=M31, orientation=BASE
+  *solidsection, elset=E32, material=M32, orientation=BASE
+  *solidsection, elset=E33, material=M33, orientation=BASE
+  *solidsection, elset=E34, material=M34, orientation=BASE
+  *solidsection, elset=E35, material=M35, orientation=BASE
+  *solidsection, elset=E36, material=M36, orientation=BASE
+  *solidsection, elset=E37, material=M37, orientation=BASE
+  *solidsection, elset=E38, material=M38, orientation=BASE
+  *solidsection, elset=E39, material=M39, orientation=BASE
+  *solidsection, elset=E40, material=M40, orientation=BASE
+  *solidsection, elset=E41, material=M41, orientation=BASE
+  *solidsection, elset=E42, material=M42, orientation=BASE
+  *solidsection, elset=E43, material=M43, orientation=BASE
+  *solidsection, elset=E44, material=M44, orientation=BASE
+  *solidsection, elset=E45, material=M45, orientation=BASE
+  *solidsection, elset=E46, material=M46, orientation=BASE
+  *solidsection, elset=E47, material=M47, orientation=BASE
+  *solidsection, elset=E48, material=M48, orientation=BASE
+  *solidsection, elset=E49, material=M49, orientation=BASE
+  *solidsection, elset=E50, material=M50, orientation=BASE
+  *solidsection, elset=E51, material=M51, orientation=BASE
+  *solidsection, elset=E52, material=M52, orientation=BASE
+  *solidsection, elset=E53, material=M53, orientation=BASE
+  *solidsection, elset=E54, material=M54, orientation=BASE
+  *solidsection, elset=E55, material=M55, orientation=BASE
+  *solidsection, elset=E56, material=M56, orientation=BASE
+  *solidsection, elset=E57, material=M57, orientation=BASE
+  *solidsection, elset=E58, material=M58, orientation=BASE
+  *solidsection, elset=E59, material=M59, orientation=BASE
+  *solidsection, elset=E60, material=M60, orientation=BASE
+  *solidsection, elset=E1, material=M1, orientation=BASE
+  *solidsection, elset=E2, material=M2, orientation=BASE
+  *solidsection, elset=E3, material=M3, orientation=BASE
+  *solidsection, elset=E4, material=M4, orientation=BASE
+  *solidsection, elset=E5, material=M5, orientation=BASE
+  *solidsection, elset=E6, material=M6, orientation=BASE
+  *solidsection, elset=E7, material=M7, orientation=BASE
+  *solidsection, elset=E8, material=M8, orientation=BASE
+  *solidsection, elset=E9, material=M9, orientation=BASE
+  *solidsection, elset=E10, material=M10, orientation=BASE
+  *solidsection, elset=E11, material=M11, orientation=BASE
+  *solidsection, elset=E12, material=M12, orientation=BASE
+  *solidsection, elset=E13, material=M13, orientation=BASE
+  *solidsection, elset=E14, material=M14, orientation=BASE
+  *solidsection, elset=E15, material=M15, orientation=BASE
+  *solidsection, elset=E16, material=M16, orientation=BASE
+  *solidsection, elset=E17, material=M17, orientation=BASE
+  *solidsection, elset=E18, material=M18, orientation=BASE
+  *solidsection, elset=E19, material=M19, orientation=BASE
+  *solidsection, elset=E20, material=M20, orientation=BASE
+  *solidsection, elset=E21, material=M21, orientation=BASE
+  *solidsection, elset=E22, material=M22, orientation=BASE
+  *solidsection, elset=E23, material=M23, orientation=BASE
+  *solidsection, elset=E24, material=M24, orientation=BASE
+  *solidsection, elset=E25, material=M25, orientation=BASE
+  *solidsection, elset=E26, material=M26, orientation=BASE
+  *solidsection, elset=E27, material=M27, orientation=BASE
+  *solidsection, elset=E28, material=M28, orientation=BASE
+  *solidsection, elset=E29, material=M29, orientation=BASE
+  *solidsection, elset=E30, material=M30, orientation=BASE
+  *solidsection, elset=E31, material=M31, orientation=BASE
+  *solidsection, elset=E32, material=M32, orientation=BASE
+  *solidsection, elset=E33, material=M33, orientation=BASE
+  *solidsection, elset=E34, material=M34, orientation=BASE
+  *solidsection, elset=E35, material=M35, orientation=BASE
+  *solidsection, elset=E36, material=M36, orientation=BASE
+  *solidsection, elset=E37, material=M37, orientation=BASE
+  *solidsection, elset=E38, material=M38, orientation=BASE
+  *solidsection, elset=E39, material=M39, orientation=BASE
+  *solidsection, elset=E40, material=M40, orientation=BASE
+  *solidsection, elset=E41, material=M41, orientation=BASE
+  *solidsection, elset=E42, material=M42, orientation=BASE
+  *solidsection, elset=E43, material=M43, orientation=BASE
+  *solidsection, elset=E44, material=M44, orientation=BASE
+  *solidsection, elset=E45, material=M45, orientation=BASE
+  *solidsection, elset=E46, material=M46, orientation=BASE
+  *solidsection, elset=E47, material=M47, orientation=BASE
+  *solidsection, elset=E48, material=M48, orientation=BASE
+  *solidsection, elset=E49, material=M49, orientation=BASE
+  *solidsection, elset=E50, material=M50, orientation=BASE
+  *solidsection, elset=E51, material=M51, orientation=BASE
+  *solidsection, elset=E52, material=M52, orientation=BASE
+  *solidsection, elset=E53, material=M53, orientation=BASE
+  *solidsection, elset=E54, material=M54, orientation=BASE
+  *solidsection, elset=E55, material=M55, orientation=BASE
+  *solidsection, elset=E56, material=M56, orientation=BASE
+  *solidsection, elset=E57, material=M57, orientation=BASE
+  *solidsection, elset=E58, material=M58, orientation=BASE
+  *solidsection, elset=E59, material=M59, orientation=BASE
+  *solidsection, elset=E60, material=M60, orientation=BASE
+  *boundary
+  *boundary
+  *output, field, frequency=1
+  *elementoutput
+  *output, field, frequency=1
+  *elementoutput
+  *output, field, frequency=1
+  *elementoutput
+  *step, name=LOAD, nlgeom=NO, inc=1000
+  *step, name=LOAD, nlgeom=NO, inc=1000
+  *output, field, frequency=1
+  *step, name=LOAD, nlgeom=NO, inc=1000
+  *step, name=LOAD, nlgeom=NO, inc=1000
+  *static
+  *boundary
+  *output, field, frequency=1
+  *elementoutput
+  *nodeoutput
+  *endstep
+  *step, name=LOAD, nlgeom=NO, inc=1000
+  *static
+  *boundary
+  *endstep
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                    60
+          NUMBER OF NODES IS                                      480
+          NUMBER OF NODES DEFINED BY THE USER                     480
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                 1440
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.10    
+       SYSTEM TIME (SEC)    =      0.0    
+       TOTAL CPU TIME (SEC) =     0.10    
+       WALLCLOCK TIME (SEC) =            0
+1
+
+   Abaqus 2025                                  Date 27-Sep-2026   Time 19:47:57
+   For use by Supplied by Team-SolidSQUAD under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                1.000E-02
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-08
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                1.000E-02
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          5.55E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      1 WARNING MESSAGES ON THE MSG FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      2.6    
+       SYSTEM TIME (SEC)    =      1.0    
+       TOTAL CPU TIME (SEC) =      3.6    
+       WALLCLOCK TIME (SEC) =            7

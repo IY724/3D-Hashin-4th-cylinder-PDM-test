@@ -1,0 +1,409 @@
+{
+  "sources": [
+    {
+      "path": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\Job-hashinnewcdm.inp",
+      "sha256": "afbbf202d5e1ba491bb223a01508e356b2bda709d11d756f5175171deb97f76a"
+    },
+    {
+      "path": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\Job-hashinnewconstant.inp",
+      "sha256": "342e430c5b2ab3277d82ff267fa3f86f4e2b0f84bece2b9c7b231110be43797b"
+    }
+  ],
+  "three_cards_identical_between_cases": true,
+  "materials": {
+    "Liner": {
+      "header": "*Material, name=Liner",
+      "properties": [
+        {
+          "keyword": "elastic",
+          "options": {},
+          "header": "*Elastic",
+          "rows": [
+            "1880., 0.4"
+          ],
+          "values": [
+            [
+              1880.0,
+              0.4
+            ]
+          ]
+        },
+        {
+          "keyword": "plastic",
+          "options": {},
+          "header": "*Plastic",
+          "rows": [
+            "47., 0.",
+            "51., 0.005",
+            "55., 0.01",
+            "60., 0.02",
+            "65., 0.03",
+            "71.5, 0.045",
+            "78., 0.06",
+            "85., 0.08",
+            "92., 0.10",
+            "98.5, 0.125",
+            "105., 0.15"
+          ],
+          "values": [
+            [
+              47.0,
+              0.0
+            ],
+            [
+              51.0,
+              0.005
+            ],
+            [
+              55.0,
+              0.01
+            ],
+            [
+              60.0,
+              0.02
+            ],
+            [
+              65.0,
+              0.03
+            ],
+            [
+              71.5,
+              0.045
+            ],
+            [
+              78.0,
+              0.06
+            ],
+            [
+              85.0,
+              0.08
+            ],
+            [
+              92.0,
+              0.1
+            ],
+            [
+              98.5,
+              0.125
+            ],
+            [
+              105.0,
+              0.15
+            ]
+          ]
+        }
+      ]
+    },
+    "al-6061": {
+      "header": "*Material, name=al-6061",
+      "properties": [
+        {
+          "keyword": "density",
+          "options": {},
+          "header": "*Density",
+          "rows": [
+            "2.7e-09,"
+          ],
+          "values": [
+            [
+              2.7e-09
+            ]
+          ]
+        },
+        {
+          "keyword": "elastic",
+          "options": {},
+          "header": "*Elastic",
+          "rows": [
+            "70000., 0.32"
+          ],
+          "values": [
+            [
+              70000.0,
+              0.32
+            ]
+          ]
+        },
+        {
+          "keyword": "plastic",
+          "options": {},
+          "header": "*Plastic",
+          "rows": [
+            "306.,0."
+          ],
+          "values": [
+            [
+              306.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    "t-700": {
+      "header": "*Material, name=t-700",
+      "properties": [
+        {
+          "keyword": "density",
+          "options": {},
+          "header": "*Density",
+          "rows": [
+            "1.75e-09,"
+          ],
+          "values": [
+            [
+              1.75e-09
+            ]
+          ]
+        },
+        {
+          "keyword": "elastic",
+          "options": {
+            "type": "ENGINEERING CONSTANTS"
+          },
+          "header": "*Elastic, type=ENGINEERING CONSTANTS",
+          "rows": [
+            "141000.,11400.,11400.,  0.28,  0.28,  0.28, 7100., 7100.",
+            "7100.,"
+          ],
+          "values": [
+            [
+              141000.0,
+              11400.0,
+              11400.0,
+              0.28,
+              0.28,
+              0.28,
+              7100.0,
+              7100.0
+            ],
+            [
+              7100.0
+            ]
+          ]
+        },
+        {
+          "keyword": "fail strain",
+          "options": {},
+          "header": "*Fail Strain",
+          "rows": [
+            "0.01475, 0.00887, 0.00526, 0.02544, 0.01549"
+          ],
+          "values": [
+            [
+              0.01475,
+              0.00887,
+              0.00526,
+              0.02544,
+              0.01549
+            ]
+          ]
+        },
+        {
+          "keyword": "fail stress",
+          "options": {},
+          "header": "*Fail Stress",
+          "rows": [
+            "2080.,  60.,1250., 290., 110.,   0.,   0."
+          ],
+          "values": [
+            [
+              2080.0,
+              60.0,
+              1250.0,
+              290.0,
+              110.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "layup_inner_to_outer": [
+    {
+      "group": "Layer01",
+      "angle_deg": 15.0,
+      "inner_radius_mm": 140.0,
+      "outer_radius_mm": 141.8,
+      "thickness_mm": 1.8,
+      "ply_count_at_0_3_mm": 6
+    },
+    {
+      "group": "Layer02",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 141.8,
+      "outer_radius_mm": 143.6,
+      "thickness_mm": 1.8,
+      "ply_count_at_0_3_mm": 6
+    },
+    {
+      "group": "Layer03",
+      "angle_deg": 20.0,
+      "inner_radius_mm": 143.6,
+      "outer_radius_mm": 145.4,
+      "thickness_mm": 1.8,
+      "ply_count_at_0_3_mm": 6
+    },
+    {
+      "group": "Layer04",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 145.4,
+      "outer_radius_mm": 147.2,
+      "thickness_mm": 1.8,
+      "ply_count_at_0_3_mm": 6
+    },
+    {
+      "group": "Layer05",
+      "angle_deg": 25.0,
+      "inner_radius_mm": 147.2,
+      "outer_radius_mm": 149.6,
+      "thickness_mm": 2.4,
+      "ply_count_at_0_3_mm": 8
+    },
+    {
+      "group": "Layer06",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 149.6,
+      "outer_radius_mm": 152.0,
+      "thickness_mm": 2.4,
+      "ply_count_at_0_3_mm": 8
+    },
+    {
+      "group": "Layer07",
+      "angle_deg": 30.0,
+      "inner_radius_mm": 152.0,
+      "outer_radius_mm": 154.4,
+      "thickness_mm": 2.4,
+      "ply_count_at_0_3_mm": 8
+    },
+    {
+      "group": "Layer08",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 154.4,
+      "outer_radius_mm": 156.8,
+      "thickness_mm": 2.4,
+      "ply_count_at_0_3_mm": 8
+    },
+    {
+      "group": "Layer09",
+      "angle_deg": 35.0,
+      "inner_radius_mm": 156.8,
+      "outer_radius_mm": 158.0,
+      "thickness_mm": 1.2,
+      "ply_count_at_0_3_mm": 4
+    },
+    {
+      "group": "Layer10",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 158.0,
+      "outer_radius_mm": 159.2,
+      "thickness_mm": 1.2,
+      "ply_count_at_0_3_mm": 4
+    },
+    {
+      "group": "Layer11",
+      "angle_deg": 40.0,
+      "inner_radius_mm": 159.2,
+      "outer_radius_mm": 160.4,
+      "thickness_mm": 1.2,
+      "ply_count_at_0_3_mm": 4
+    },
+    {
+      "group": "Layer12",
+      "angle_deg": 90.0,
+      "inner_radius_mm": 160.4,
+      "outer_radius_mm": 162.2,
+      "thickness_mm": 1.8,
+      "ply_count_at_0_3_mm": 6
+    }
+  ],
+  "nominal_ply_thickness_mm": 0.3,
+  "actual_total_ply_count": 74,
+  "actual_total_thickness_mm": 22.2,
+  "zhuning_table_3_2_inner_to_outer": [
+    {
+      "group": "Layer01",
+      "angle_deg": 15,
+      "ply_count": 6,
+      "thickness_mm": 1.8
+    },
+    {
+      "group": "Layer02",
+      "angle_deg": 90,
+      "ply_count": 6,
+      "thickness_mm": 1.8
+    },
+    {
+      "group": "Layer03",
+      "angle_deg": 15,
+      "ply_count": 6,
+      "thickness_mm": 1.8
+    },
+    {
+      "group": "Layer04",
+      "angle_deg": 90,
+      "ply_count": 6,
+      "thickness_mm": 1.8
+    },
+    {
+      "group": "Layer05",
+      "angle_deg": 20,
+      "ply_count": 8,
+      "thickness_mm": 2.4
+    },
+    {
+      "group": "Layer06",
+      "angle_deg": 90,
+      "ply_count": 8,
+      "thickness_mm": 2.4
+    },
+    {
+      "group": "Layer07",
+      "angle_deg": 25,
+      "ply_count": 8,
+      "thickness_mm": 2.4
+    },
+    {
+      "group": "Layer08",
+      "angle_deg": 90,
+      "ply_count": 8,
+      "thickness_mm": 2.4
+    },
+    {
+      "group": "Layer09",
+      "angle_deg": 35,
+      "ply_count": 4,
+      "thickness_mm": 1.2
+    },
+    {
+      "group": "Layer10",
+      "angle_deg": 90,
+      "ply_count": 4,
+      "thickness_mm": 1.2
+    },
+    {
+      "group": "Layer11",
+      "angle_deg": 40,
+      "ply_count": 4,
+      "thickness_mm": 1.2
+    },
+    {
+      "group": "Layer12",
+      "angle_deg": 90,
+      "ply_count": 4,
+      "thickness_mm": 1.2
+    }
+  ],
+  "zhuning_total_ply_count": 72,
+  "zhuning_total_thickness_mm": 21.6,
+  "thickness_basis": "原INP的Tank-1中Layer01至Layer12在Y=0的节点半径差，并按对应单元材料前的Beta注释核对角度。层数按朱宁表3.2的0.3 mm单层计。",
+  "half_cylinder_length_mm": 641.0,
+  "notes": [
+    "Liner原卡未定义Density，按原案例保持未定义。",
+    "t-700为原始单层正交各向异性卡；不复制WCM等效Bin，也不预设尚在修改的UMAT参数。",
+    "Fail Stress和Fail Strain按旧卡复制，不代表已经配置Hashin渐进损伤演化。",
+    "螺旋组的层数为正负角合计，例如±15°的6层厚度为1.8 mm，不是3.6 mm。"
+  ]
+}

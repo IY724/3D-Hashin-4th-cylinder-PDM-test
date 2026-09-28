@@ -1,0 +1,61 @@
+{
+  "cae_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\zhuning_base_10deg.cae",
+  "sat_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\zhuning_base_10deg.sat",
+  "validation_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\archive\\runs\\20260925_232127\\geometry_validation.json",
+  "capacity_check": {
+    "geometric_cavity_litre": 75.56315282166217,
+    "paper_nominal_litre": 78.0,
+    "difference_litre": -2.4368471783378283,
+    "difference_percent": -3.124163049151063,
+    "definition": "两端瓶口平面封闭后的基体内部容积；未扣除实际瓶阀/盲堵占据体积。",
+    "status": "NOT_A_NOMINAL_CAPACITY_CERTIFICATION",
+    "note": "论文仅给部分接头尺寸，本模型优先满足已标注尺寸。拟合接头侵入容腔使实际几何容积与78 L公称值存在差异；因此不能宣称已完全复现论文或满足国标公称容积要求。"
+  },
+  "images": [
+    {
+      "image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\results\\model_section_full.png",
+      "raw_abaqus_image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\archive\\runs\\20260925_232127\\abaqus_section_full.png",
+      "operations": [
+        "裁去空白及坐标图标",
+        "添加标题与材料图例"
+      ],
+      "geometry_pixels_modified": false,
+      "ai_generated": false
+    },
+    {
+      "image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\results\\model_section_joint.png",
+      "raw_abaqus_image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\archive\\runs\\20260925_232127\\abaqus_section_joint.png",
+      "operations": [
+        "裁去空白及坐标图标",
+        "添加标题与材料图例"
+      ],
+      "geometry_pixels_modified": false,
+      "ai_generated": false
+    },
+    {
+      "image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\results\\model_sector_3d.png",
+      "raw_abaqus_image": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\archive\\runs\\20260925_232127\\abaqus_sector_3d.png",
+      "operations": [
+        "裁去空白及坐标图标",
+        "添加标题与材料图例"
+      ],
+      "geometry_pixels_modified": false,
+      "ai_generated": false
+    }
+  ],
+  "material_cards_update": {
+    "save_in_place": true,
+    "created_materials": ["al-6061", "t-700", "Liner"],
+    "preserved_existing_materials": ["Al6061_T6", "PA6"],
+    "geometry_and_configuration_unchanged": true,
+    "validation_file": "material_update_validation.json",
+    "layup_comparison_file": "case_materials_and_layup.json",
+    "source_inp_ply_count": 74,
+    "source_inp_thickness_mm": 22.2,
+    "zhuning_table_3_2_ply_count": 72,
+    "zhuning_table_3_2_thickness_mm": 21.6,
+    "half_cylinder_length_mm": 641.0
+  },
+  "geometry_status": "VERIFIED",
+  "reproduction_scope": "已标注尺寸一致；接头缺失尺寸为有记录的近似，非完全同一模型。"
+}

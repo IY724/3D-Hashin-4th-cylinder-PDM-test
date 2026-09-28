@@ -1,0 +1,82 @@
+{
+  "variant": "B",
+  "step": "LOAD",
+  "configuration": {
+    "variant": "B",
+    "fiber_threshold": 1.0,
+    "matrix_threshold": 1.0,
+    "tolerance": 1e-06,
+    "vessel_failure_rule": "either",
+    "step_name": null,
+    "pressure_at_step_start_mpa": 0.0,
+    "pressure_at_step_end_mpa": 1.0,
+    "step_duration": 1.0,
+    "pressure_assumption": "Linear ramp; update for any changed amplitude/load/step."
+  },
+  "events": {
+    "fiber_initiation": {
+      "step_time": 0.44999998807907104,
+      "pressure_mpa": 0.44999998807907104,
+      "previous_below_threshold_pressure_mpa": 0.4399999976158142,
+      "sdv": "SDV2",
+      "value": 1.0306310653686523,
+      "threshold": 1.0,
+      "tolerance": 0.0,
+      "instance": "PART-1-1",
+      "element": 2,
+      "integration_point": 1
+    },
+    "matrix_initiation": {
+      "step_time": 0.4399999976158142,
+      "pressure_mpa": 0.4399999976158142,
+      "previous_below_threshold_pressure_mpa": 0.4300000071525574,
+      "sdv": "SDV3",
+      "value": 1.0064102411270142,
+      "threshold": 1.0,
+      "tolerance": 0.0,
+      "instance": "PART-1-1",
+      "element": 3,
+      "integration_point": 1
+    },
+    "fiber_completion": {
+      "step_time": 0.6399999856948853,
+      "pressure_mpa": 0.6399999856948853,
+      "previous_below_threshold_pressure_mpa": 0.6299999952316284,
+      "sdv": "SDV5",
+      "value": 1.0,
+      "threshold": 1.0,
+      "tolerance": 1e-06,
+      "instance": "PART-1-1",
+      "element": 1,
+      "integration_point": 1
+    },
+    "matrix_completion": {
+      "step_time": 0.6299999952316284,
+      "pressure_mpa": 0.6299999952316284,
+      "previous_below_threshold_pressure_mpa": 0.6200000047683716,
+      "sdv": "SDV6",
+      "value": 1.0,
+      "threshold": 1.0,
+      "tolerance": 1e-06,
+      "instance": "PART-1-1",
+      "element": 3,
+      "integration_point": 1
+    }
+  },
+  "vessel_failure": {
+    "step_time": 0.6299999952316284,
+    "pressure_mpa": 0.6299999952316284,
+    "previous_below_threshold_pressure_mpa": 0.6200000047683716,
+    "sdv": "SDV6",
+    "value": 1.0,
+    "threshold": 1.0,
+    "tolerance": 1e-06,
+    "instance": "PART-1-1",
+    "element": 3,
+    "integration_point": 1,
+    "criterion": "matrix_completion"
+  },
+  "status": "THRESHOLD_REACHED",
+  "pressure_assumption": "User-configured linear ramp; not inferred from ODB",
+  "scope": "Recorded integration-point threshold events; not experimental burst validation"
+}

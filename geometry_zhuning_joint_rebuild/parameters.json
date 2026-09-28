@@ -1,0 +1,45 @@
+{
+  "schema": "zhuning-wide-shoulder-paper-fit-v3",
+  "model_name": "Zhuning_Joint_Rebuilt",
+  "units": "mm-N-MPa-tonne",
+  "paper": {
+    "outer_diameter": 280.0,
+    "cylinder_length": 1282.0,
+    "overall_length": 1520.0,
+    "straight_liner_thickness": 5.0,
+    "ellipse_ratio": 2.0,
+    "neck_outer_diameter": 72.0,
+    "bore_diameter": 32.0,
+    "sector_angle": 10.0,
+    "source": "朱宁论文图2.2/3.9、2.3.2和3.2.1；原有本地PDF核对记录。5 mm限定直筒段，端部按旧STEP保留宽肩厚实结构。"
+  },
+  "joint": {
+    "inner_shoulder_outer_fillet": 30.0,
+    "inner_shoulder_inner_fillet": 28.0,
+    "inner_collar_radius": 50.0,
+    "shoulder_axial_offset": 30.0,
+    "collar_tip_axial_offset": -22.0,
+    "boss_split_radius": 90.0,
+    "boss_interface_collar_radius": 43.0,
+    "boss_interface_fillet": 35.0,
+    "boss_interface_center_offset": 2.0,
+    "neck_fillet": 12.0,
+    "bore_fillet": 6.0,
+    "source": "仅按朱宁原始图2.2像素及已标注尺寸重新拟合，不读取旧STEP尺寸。详见archive/paper_fit/paper_fit_report.json。R30/R28为约束圆拟合候选；直段27由135-30-50-28得到。肩部轴向位置由内圆角与Y=641直筒相切和壁厚约束确定。外颈R12/内孔R6为工程候选。",
+    "status": "拟合尺寸待用户确认，不是论文原始标注，也非唯一解",
+    "old_step_dimensions_used": false,
+    "image_resolution_limit_mm": 5.0
+  },
+  "materials": {
+    "PA6": {"density": 1.13e-9, "elastic": [1880.0, 0.4], "plastic": [[47.0, 0.0], [55.0, 0.17]]},
+    "Al6061_T6": {"density": 2.7e-9, "elastic": [70000.0, 0.32], "plastic": [[306.0, 0.0], [340.0, 0.12]]},
+    "T700": {"density": 1.75e-9, "elastic": [141000.0, 11400.0, 11400.0, 0.28, 0.28, 0.28, 7100.0, 7100.0, 7100.0]},
+    "source": "PA6/Al沿用目前多Part脚本中的旧成功案例两点硬化；塑性应变0.17和0.12是案例输入，非朱宁完整试验曲线。T700仅为未指派的原始单层工程常数备用卡，不带UMAT或损伤演化。"
+  },
+  "delivery": {
+    "parts": "PA6_Liner与Al6061_Bosses两个原生旋转Part；后者含两个端部实体，装配不合并、不建Tie",
+    "checks": "另建临时模型布尔合并仅用于验证共享界面与重叠，验证模型不写入交付CAE",
+    "not_included": "复材实体、铺层、网格、载荷、边界条件、接触、求解、密封圈和螺纹",
+    "limitations": "形态按用户指定旧STEP修复；尺寸不能等同完整制造图纸，不声称78 L容积或规范合格。图2-7只作为结构说明，不混入其1/1.5/R7等另一模型的尺寸。"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variant": "B",
+  "fiber_threshold": 1.0,
+  "matrix_threshold": 1.0,
+  "tolerance": 1e-06,
+  "vessel_failure_rule": "either",
+  "step_name": "Step-1",
+  "pressure_at_step_start_mpa": 0.0,
+  "pressure_at_step_end_mpa": 110.70312559604645,
+  "step_duration": 0.4428125023841858,
+  "pressure_assumption": "Rebuild_PDM_B.inp\uff1a*Dsload P=250\u3001\u6b65\u65f6\u957f1\u3001\u65e0\u5e45\u503c\u66f2\u7ebf\uff0c\u7ebf\u6027\u5347\u538b p=250\u00d7t\u3002\u6539\u8f7d\u8377\u6216\u6b65\u957f\u540e\u5fc5\u987b\u540c\u6b65\u672c\u6587\u4ef6\u3002"
+}

@@ -1,0 +1,9 @@
+编号,来源,定位,核实内容,核实方式,核实结果,缺项/备注
+REF1,E:/ABAQUS2025/documention/English/SIMACAESUBRefMap/simasub-c-umat.htm,第844-853行,CELENT为典型单元长度而非所有单元精确体积立方根,本地读取源文件行号,已核实：第844行起为CELENT变量说明,官方定义；候选不替换不截断LC
+REF2,E:/ABAQUS2025/documention/English/SIMACAEMATRefMap/simamat-c-damageevolfibercomposite.htm,官方Hashin演化章节,官方演化属平面应力范围、G为完整OAC面积,本地文件存在性核对（章节级）,存在；未逐行重推,不能直接当三维实体方案已验证
+REF3,references/14_progressive_damage_attachment.pdf,71页课程讲义,长度(16/41-42)、起始回算(17/18/37/38)、能量曲线、作者修订(63-66),pypdf逐页关键词检索,页数71已核实；len=16/41/42、eqv=17/18/37/38命中,非官方原件；26/50/68能量页表述不同未逐条命中，记部分核实
+REF4,references/REF2_Zhang-2024_Materials_等效位移与等效应力公式来源.pdf,pp.5-8,等效位移/等效应力公式、线性软化、特征长度,pypdf关键词检索,equivalent displacement=5/7、equivalent stress=5/7/8、linear softening=6/7、characteristic length=1/3/5-7,当前B保留旧刚度形式并非完整移植该文；公式逐项对照待第二候选阶段
+REF5,references/REF3_朱宁-2023_浙江大学硕士论文_模型铺层与材料参数来源.pdf,第4/6/21/22/24/27页,几何/铺层/材料与Hashin判据（式1.4-1.7）,pypdf关键词检索,Hashin=4/6/21/24/27、演化=4/11/21-23命中,论文未明确的完整演化规律不得补写
+REF6,references/REF4_Wu-2024_Materials_断裂能Gft-Gmc参数来源.pdf,第7页Table 1,T700/epoxy断裂能Gft=133/Gfc=10/Gmt=0.5/Gmc=1.6 N/mm,pypdf全文提取逐值比对,逐值一致；另Gs=1.6、E1=130GPa/Yc=140MPa与当前卡不同,生产P17-20来源成立；正文无完整三维损伤演化验证，不能由参数表推出组合已验证
+REF7,references/REF5_Lin-2021_ComposStruct_Puck刚度折减系数来源.pdf,pp.1-12,Puck刚度折减系数,pp.1-5 Puck、pp.1/2/10-12 degradation命中,区分组分/单层与剩余/损失比例的解释仍未逐条核对,折减数值不当完整能量本构使用
+REF8,references/REF1_Vo-2013_ComposB_3DHashin准则与退化来源.pdf,全文,3D Hashin与退化来源,仅文件存在性核对,未深查（首轮6篇上限）,列为后续候选

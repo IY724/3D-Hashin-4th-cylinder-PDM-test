@@ -1,0 +1,18 @@
+{
+  "hashin_self/hashin.for": {
+    "sha256": "98d4d8a0cf19a06474030ab2d0da6463e7584e8824b3cde79011bc6ac6598f02",
+    "bytes": 14824
+  },
+  "hashin_self/hashin_constant.for": {
+    "sha256": "b37a097918a4c30d7af0f68e98d18229a1f8d8156b48fb1e90bd9b3b530d076b",
+    "bytes": 6341
+  },
+  "Job-hashinnewcdm.inp": {
+    "sha256": "afbbf202d5e1ba491bb223a01508e356b2bda709d11d756f5175171deb97f76a",
+    "bytes": 19763141
+  },
+  "Job-hashinnewconstant.inp": {
+    "sha256": "342e430c5b2ab3277d82ff267fa3f86f4e2b0f84bece2b9c7b231110be43797b",
+    "bytes": 19760381
+  }
+}

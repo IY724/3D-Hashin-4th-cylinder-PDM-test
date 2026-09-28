@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "A",
+    "suite": "elastic",
+    "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\abaqus_elastic_A_20260925_231347_582130",
+    "umat_sha256": "a1ede1871f34a5428b4b11fe5a5bbd20c095c873ff527139fadd8c500be5aca8",
+    "passed": true,
+    "max_elastic_error": 4.4964391633255464e-08
+  },
+  {
+    "variant": "B",
+    "suite": "elastic",
+    "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\abaqus_elastic_B_20260925_231357_556688",
+    "umat_sha256": "747d3e27bcc073741192ff09c3c80f0a5fc5fb0e008800222f6ced9589f1d3e7",
+    "passed": true,
+    "max_elastic_error": 4.4964391633255464e-08
+  }
+]

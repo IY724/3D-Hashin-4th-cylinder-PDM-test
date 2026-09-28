@@ -1,0 +1,18 @@
+test_90_degree_fiber_not_matrix (run_tests.MaterialTests.test_90_degree_fiber_not_matrix) ... ok
+test_actual_fortran_all_elastic_angles_and_weights (run_tests.MaterialTests.test_actual_fortran_all_elastic_angles_and_weights) ... ok
+test_caps_and_no_healing (run_tests.MaterialTests.test_caps_and_no_healing) ... ok
+test_converter_rejects_missing_angle_and_repeat (run_tests.MaterialTests.test_converter_rejects_missing_angle_and_repeat) ... ok
+test_current_update_A (run_tests.MaterialTests.test_current_update_A) ... ok
+test_current_update_B_tangent (run_tests.MaterialTests.test_current_update_B_tangent) ... ok
+test_full_input_and_actual_fortran_all_bins (run_tests.MaterialTests.test_full_input_and_actual_fortran_all_bins) ... ok
+test_independent_families_and_coupling (run_tests.MaterialTests.test_independent_families_and_coupling) ... ok
+test_initiation_asymmetry (run_tests.MaterialTests.test_initiation_asymmetry) ... ok
+test_input_validation_and_energy_condition (run_tests.MaterialTests.test_input_validation_and_energy_condition) ... ok
+test_original_files_unchanged (run_tests.MaterialTests.test_original_files_unchanged) ... ok
+test_original_formula_and_history_regression (run_tests.MaterialTests.test_original_formula_and_history_regression) ... ok
+test_rotation_and_power (run_tests.MaterialTests.test_rotation_and_power) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.271s
+
+OK

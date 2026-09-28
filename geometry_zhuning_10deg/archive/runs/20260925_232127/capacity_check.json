@@ -1,0 +1,9 @@
+{
+  "geometric_cavity_litre": 75.56315282166217,
+  "paper_nominal_litre": 78.0,
+  "difference_litre": -2.4368471783378283,
+  "difference_percent": -3.124163049151063,
+  "definition": "两端瓶口平面封闭后的基体内部容积；未扣除实际瓶阀/盲堵占据体积。",
+  "status": "NOT_A_NOMINAL_CAPACITY_CERTIFICATION",
+  "note": "论文仅给部分接头尺寸，本模型优先满足已标注尺寸。拟合接头侵入容腔使实际几何容积与78 L公称值存在差异；因此不能宣称已完全复现论文或满足国标公称容积要求。"
+}

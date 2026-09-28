@@ -1,0 +1,42 @@
+[
+  {
+    "variant": "B",
+    "suite": "damage",
+    "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\abaqus_damage_B_20260927_184429_341105",
+    "umat_sha256": "a939d61230dba5d5192b9a2af90f63debef833fb767c088d1dc09912b251b147",
+    "passed": true,
+    "sdv_names": [
+      "SDV1",
+      "SDV10",
+      "SDV2",
+      "SDV3",
+      "SDV4",
+      "SDV5",
+      "SDV6",
+      "SDV7",
+      "SDV8",
+      "SDV9"
+    ],
+    "damage_checked_elements": 14
+  },
+  {
+    "variant": "B",
+    "suite": "damage",
+    "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\abaqus_damage_B_20260927_194820_099822",
+    "umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121",
+    "passed": true,
+    "sdv_names": [
+      "SDV1",
+      "SDV10",
+      "SDV2",
+      "SDV3",
+      "SDV4",
+      "SDV5",
+      "SDV6",
+      "SDV7",
+      "SDV8",
+      "SDV9"
+    ],
+    "damage_checked_elements": 14
+  }
+]

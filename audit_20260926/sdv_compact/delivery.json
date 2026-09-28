@@ -1,0 +1,22 @@
+{
+  "A": {
+    "depvar": 18,
+    "output_count": 6,
+    "protected_input_equal": true,
+    "material_count": 131,
+    "files": {
+      "Job2_PDM_A.inp": "1082dcdd53424e1c73c27d8f99874a5c9aa29c86bf43a29645e09e60cc4090cc",
+      "hashin_constant_wcm.for": "635f8575f5548786922b6a9f3206d87e870788e3e24da1a89bceae9849c33f88"
+    }
+  },
+  "B": {
+    "depvar": 60,
+    "output_count": 8,
+    "protected_input_equal": true,
+    "material_count": 131,
+    "files": {
+      "Job2_PDM_B.inp": "d285eabadb560de32c12fac440160c7f31e92af1748f9ecaf9f0be063c73e610",
+      "hashin_energy_wcm.for": "9b7afb5245d3cf5e8d1f76234fd499bebf0a506a35dc453c0a2a5cc0f71bd8bd"
+    }
+  }
+}

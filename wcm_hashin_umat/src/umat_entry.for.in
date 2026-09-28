@@ -1,0 +1,160 @@
+C=======================================================================
+C @VERSION@ UMAT: local +/-theta plies, 3D Hashin damage.
+C Material slots are read and checked by WCM_CHECK below.
+C @PROPS_LAYOUT@
+C=======================================================================
+      SUBROUTINE UMAT(STRESS,STATEV,DDSDDE,SSE,SPD,SCD,
+     1 RPL,DDSDDT,DRPLDE,DRPLDT,
+     2 STRAN,DSTRAN,TIME,DTIME,TEMP,DTEMP,PREDEF,DPRED,CMNAME,
+     3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
+     4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,JSTEP,KINC)
+      INCLUDE 'ABA_PARAM.INC'
+      CHARACTER*80 CMNAME
+      INTEGER NDI,NSHR,NTENS,NSTATV,NPROPS,NOEL,NPT,LAYER
+      INTEGER KSPT,JSTEP(4),KINC,J,IERR,IADV,MODE,IREASON,NREQ
+      PARAMETER (MODE=@MODE@)
+      DOUBLE PRECISION STRESS(NTENS),STATEV(NSTATV)
+      DOUBLE PRECISION DDSDDE(NTENS,NTENS),DDSDDT(NTENS)
+      DOUBLE PRECISION DRPLDE(NTENS),STRAN(NTENS),DSTRAN(NTENS)
+      DOUBLE PRECISION TIME(2),PREDEF(*),DPRED(*),PROPS(NPROPS)
+      DOUBLE PRECISION COORDS(3),DROT(3,3),DFGRD0(3,3)
+      DOUBLE PRECISION DFGRD1(3,3),SSE,SPD,SCD,RPL,DRPLDT
+      DOUBLE PRECISION DTIME,TEMP,DTEMP,PNEWDT,CELENT
+      DOUBLE PRECISION NEW(84),OLD(84),S(6),C(6,6)
+      DOUBLE PRECISION SOLD(6),UOLD,WORK
+C--- Abaqus outputs and interface check.
+      RPL=0D0
+      DRPLDT=0D0
+      DDSDDT=0D0
+      DRPLDE=0D0
+      SCD=0D0
+      NREQ=20
+      IF(MODE.EQ.2) NREQ=62
+      IF(NDI.NE.3.OR.NSHR.NE.3.OR.NTENS.NE.6.OR.
+     1   NSTATV.NE.NREQ) THEN
+          WRITE(7,*) 'WCM_ERROR dimensions: ',NDI,NSHR,NTENS,
+     1                NSTATV
+          CALL XIT
+          RETURN
+      END IF
+      SOLD=STRESS
+      UOLD=SSE
+      IADV=1
+      IF(KINC.EQ.0.OR.DTIME.EQ.0D0) IADV=0
+C--- Restore the two independent angle-family histories.
+      CALL WCM_UNPACK(MODE,STATEV,NSTATV,OLD)
+C--- Stress, failure criteria, damage, and DDSDDE.
+      CALL WCM_UPDATE(MODE,PROPS,NPROPS,OLD,STRAN,DSTRAN,
+     1                DTIME,CELENT,IADV,NEW,S,C,IERR)
+      IF(IERR.NE.0) THEN
+C--- B softening endpoint error: request a smaller increment.
+          WRITE(7,*) 'WCM_ERROR code/mode/element/point: ',
+     1               IERR,MODE,NOEL,NPT
+          WRITE(7,*) 'WCM_ERROR material/length: ',CMNAME,CELENT
+          IREASON=MOD(IERR,1000)
+          IF(IERR.GE.1000.AND.IREASON.GE.21.AND.
+     1       IREASON.LE.34.AND.DTIME.GT.0D0) THEN
+              PNEWDT=MIN(PNEWDT,0.5D0)
+              CALL WCM_UPDATE(MODE,PROPS,NPROPS,OLD,STRAN,
+     1             DSTRAN,DTIME,CELENT,0,NEW,S,C,IERR)
+              IF(IERR.EQ.0) THEN
+                  DDSDDE=C
+                  STRESS=S
+                  RETURN
+              END IF
+          END IF
+          CALL XIT
+          RETURN
+      END IF
+C--- Return stress and the material Jacobian.
+      STRESS=S
+      DDSDDE=C
+C--- NLGEOM tangent correction.
+      IF(JSTEP(3).EQ.1) THEN
+          DO J=1,3
+              DDSDDE(:,J)=DDSDDE(:,J)+STRESS
+          END DO
+      END IF
+C--- Save damage histories and numbered SDV results.
+      IF(IADV.EQ.1) THEN
+          CALL WCM_PACK(MODE,PROPS,NPROPS,OLD,NEW,STATEV,NSTATV)
+          SSE=0.5D0*DOT_PRODUCT(STRESS,STRAN+DSTRAN)
+C--- Signed stress-work diagnostic.
+          WORK=0.5D0*DOT_PRODUCT(SOLD+STRESS,DSTRAN)
+          SPD=SPD+WORK-(SSE-UOLD)
+      END IF
+      RETURN
+      END
+
+C Persistent history is separate for the two weighted families.
+      SUBROUTINE WCM_UNPACK(MODE,STATE,NS,OLD)
+      IMPLICIT NONE
+      INTEGER MODE,NS
+      DOUBLE PRECISION STATE(NS),OLD(84)
+      OLD=0D0
+      IF(MODE.EQ.1) THEN
+          OLD(7:10)=STATE(9:12)
+          OLD(47:50)=STATE(13:16)
+      ELSE
+          OLD(1:24)=STATE(11:34)
+          OLD(41:64)=STATE(35:58)
+      END IF
+      OLD(81:84)=STATE(NS-3:NS)
+      END
+
+C Combine modes within a family before taking family maxima.
+      SUBROUTINE WCM_PACK(MODE,P,NP,OLD,NEW,STATE,NS)
+      IMPLICIT NONE
+      INTEGER MODE,NP,NS,K,IB,IT,IUP,IUSED
+      DOUBLE PRECISION P(NP),OLD(84),NEW(84),STATE(NS),W
+      DOUBLE PRECISION D(4),V(4),U(4),DF,DM,UF,UM
+      STATE=0D0
+      STATE(1:4)=-1D100
+      IT=23
+      IUP=25
+      IUSED=7
+      IF(MODE.EQ.1) THEN
+          STATE(9:12)=NEW(7:10)
+          STATE(13:16)=NEW(47:50)
+      ELSE
+          IT=26
+          IUP=30
+          IUSED=9
+          STATE(11:34)=NEW(1:24)
+          STATE(35:58)=NEW(41:64)
+      END IF
+      STATE(NS-3:NS)=NEW(81:84)
+      DO K=1,2
+          IB=40*(K-1)
+          W=P(IT+1)
+          IF(K.EQ.2) W=1D0-W
+          IF(W.EQ.0D0) CYCLE
+          STATE(1:4)=MAX(STATE(1:4),NEW(IB+25:IB+28))
+          IF(MODE.EQ.1) THEN
+              D=NEW(IB+7:IB+10)
+              U=OLD(IB+7:IB+10)*P(17:20)
+              IF(NINT(P(IUP)).EQ.1) U=D*P(17:20)
+          ELSE
+              D=NEW(IB+1:IB+4)
+              V=NEW(IB+21:IB+24)
+              STATE(7)=MAX(STATE(7),
+     1                    1D0-(1D0-V(1))*(1D0-V(2)))
+              STATE(8)=MAX(STATE(8),
+     1                    1D0-(1D0-V(3))*(1D0-V(4)))
+              U=OLD(IB+21:IB+24)
+              IF(NINT(P(IUP)).EQ.1) U=V
+          END IF
+          DF=1D0-(1D0-D(1))*(1D0-D(2))
+          DM=1D0-(1D0-D(3))*(1D0-D(4))
+          UF=1D0-(1D0-U(1))*(1D0-U(2))
+          UM=1D0-(1D0-U(3))*(1D0-U(4))
+          IF(MODE.EQ.2) THEN
+              UF=MIN(UF,P(28))
+              UM=MIN(UM,P(29))
+          END IF
+          STATE(5)=MAX(STATE(5),DF)
+          STATE(6)=MAX(STATE(6),DM)
+          STATE(IUSED)=MAX(STATE(IUSED),UF)
+          STATE(IUSED+1)=MAX(STATE(IUSED+1),UM)
+      END DO
+      END

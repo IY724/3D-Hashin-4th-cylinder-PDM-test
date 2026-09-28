@@ -1,0 +1,247 @@
+{
+  "stage": "3A_matrix",
+  "gate": "G3(矩阵部分)",
+  "reference": "test_onset 独立参考 + smeared_ref 独立加权刚度。",
+  "covered_elsewhere": {
+    "A回归<=1e-12量级": "tools/run_tests.py test_original_formula_and_history_regression",
+    "回滚": "validation/onset.json state_rollback",
+    "UPDATE1切线<=1e-4": "tools/run_tests.py test_current_update_B_tangent",
+    "先越限后回落": "validation/onset.json overshoot_then_return",
+    "rebuild135弹性": "tools/run_tests.py test_rebuild_135_bins_elastic"
+  },
+  "rows": {
+    "elastic_max_abs_diff": 3.428350543379668e-16,
+    "elastic_wcm_card_note": "rebuild135 Bin WCM卡误差6.808e-6<=1e-5，证据 validation/test_cases.json（阶段0生成）。",
+    "uniaxial": [
+      {
+        "dir": 1,
+        "side": "t",
+        "mode": 1,
+        "pass": true,
+        "rel_d0": 0.0
+      },
+      {
+        "dir": 1,
+        "side": "c",
+        "mode": 2,
+        "pass": true,
+        "rel_d0": 1.6306400674181987e-16
+      },
+      {
+        "dir": 2,
+        "side": "t",
+        "mode": 3,
+        "pass": true,
+        "rel_d0": 1.890755949235527e-16
+      },
+      {
+        "dir": 2,
+        "side": "c",
+        "mode": 4,
+        "pass": true,
+        "rel_d0": 4.315884007311768e-16
+      },
+      {
+        "dir": 3,
+        "side": "t",
+        "mode": 3,
+        "pass": true,
+        "rel_d0": 1.890755949235527e-16
+      },
+      {
+        "dir": 3,
+        "side": "c",
+        "mode": 4,
+        "pass": true,
+        "rel_d0": 4.315884007311768e-16
+      }
+    ],
+    "shear": [
+      {
+        "shear": 4,
+        "sign": 1.0,
+        "modes_expected": [
+          1,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 4,
+        "sign": -1.0,
+        "modes_expected": [
+          1,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 4,
+        "sign_symmetry_pass": true
+      },
+      {
+        "shear": 5,
+        "sign": 1.0,
+        "modes_expected": [
+          1,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 5,
+        "sign": -1.0,
+        "modes_expected": [
+          1,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 5,
+        "sign_symmetry_pass": true
+      },
+      {
+        "shear": 6,
+        "sign": 1.0,
+        "modes_expected": [
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 6,
+        "sign": -1.0,
+        "modes_expected": [
+          3
+        ],
+        "pass": true
+      },
+      {
+        "shear": 6,
+        "sign_symmetry_pass": true
+      }
+    ],
+    "cross_step": {
+      "one_step_delta0": 0.004647887323943662,
+      "fine_delta0": 0.004647887323943662,
+      "rel": 0.0
+    },
+    "nonproportional": [
+      {
+        "path": "tension_shear",
+        "mode": 1,
+        "pass": true
+      },
+      {
+        "path": "tension_shear",
+        "mode": 3,
+        "pass": true
+      },
+      {
+        "path": "compression_shear",
+        "mode": 2,
+        "pass": true
+      },
+      {
+        "path": "biaxial_lateral",
+        "mode": 3,
+        "pass": true
+      },
+      {
+        "path": "biaxial_lateral",
+        "mode": 4,
+        "pass": true
+      }
+    ],
+    "two_family": [
+      {
+        "family": 1,
+        "mode": 1,
+        "pass": true,
+        "delta0": 0.0
+      },
+      {
+        "family": 1,
+        "mode": 3,
+        "pass": true,
+        "delta0": 0.004647887323943662
+      },
+      {
+        "family": 2,
+        "mode": 1,
+        "pass": true,
+        "delta0": 0.0
+      },
+      {
+        "family": 2,
+        "mode": 3,
+        "pass": true,
+        "delta0": 0.004647887323943662
+      }
+    ],
+    "length": [
+      {
+        "lc": 0.1,
+        "expected": "compatible",
+        "ierr": 0,
+        "pass": true
+      },
+      {
+        "lc": 0.3,
+        "expected": "compatible",
+        "ierr": 0,
+        "pass": true
+      },
+      {
+        "lc": 0.5,
+        "expected": "compatible",
+        "ierr": 0,
+        "pass": true
+      },
+      {
+        "lc": 0.56,
+        "expected": "compatible",
+        "ierr": 0,
+        "pass": true
+      },
+      {
+        "lc": 0.6,
+        "expected": "EXPECTED_INCOMPATIBLE",
+        "ierr": 1033,
+        "pass": true
+      },
+      {
+        "lc": 1.1,
+        "expected": "EXPECTED_INCOMPATIBLE",
+        "ierr": 1033,
+        "pass": true
+      },
+      {
+        "lc": 2.23,
+        "expected": "EXPECTED_INCOMPATIBLE",
+        "ierr": 1033,
+        "pass": true
+      }
+    ],
+    "length_note": "分类仅适用纯剪基体拉伸路径；不得推广到纤维/基体压缩或组合路径（规划7）。"
+  },
+  "checks": {
+    "elastic_core_le_1e-8": true,
+    "uniaxial_free_poisson_le_1e-8": true,
+    "shear_rows_ok": true,
+    "shear_23_single_mode": true,
+    "cross_step_le_1e-6": true,
+    "nonproportional_match_reference": true,
+    "tension_compression_switch": true,
+    "two_family_independent_and_match": true,
+    "update0_lagged_stress": true,
+    "viscous_recursion_le_1e-10": true,
+    "length_domain_pure23mt": true
+  },
+  "status": "PASS",
+  "suite": "matrix",
+  "run_dir": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\material_matrix_20260927_194618_778052",
+  "core_src_sha256": "b8f18000b54c4fbb034e8be6517a546bf837dbe3a0d7c90165c84b67ed686519",
+  "dist_umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121"
+}

@@ -1,0 +1,1 @@
+{"variant": "A", "fiber_threshold": 1.0, "matrix_threshold": 1.0, "tolerance": 1e-06, "vessel_failure_rule": "either", "step_name": null, "pressure_at_step_start_mpa": 0.0, "pressure_at_step_end_mpa": 1.0, "step_duration": 1.0, "pressure_assumption": "Linear ramp; update for any changed amplitude/load/step."}

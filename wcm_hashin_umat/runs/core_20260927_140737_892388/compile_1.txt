@@ -1,0 +1,85 @@
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:86:13:
+
+   86 |           IF(PROPS(I).NE.PROPS(I).OR.
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:90:13:
+
+   90 |           IF(OLD(I).NE.OLD(I).OR.ABS(OLD(I)).GT.1D100) IERR=3
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:148:13:
+
+  148 |           IF(ALPHA.NE.ALPHA) IERR=2
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:149:13:
+
+  149 |           IF(LC.NE.LC.OR.LC.LE.0D0.OR.LC.GT.1D100) IERR=10
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:153:27:
+
+  153 |       IF(UPDATE.NE.0D0.AND.UPDATE.NE.1D0) IERR=8
+      |                           1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:153:9:
+
+  153 |       IF(UPDATE.NE.0D0.AND.UPDATE.NE.1D0) IERR=8
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:154:9:
+
+  154 |       IF(DT.NE.DT.OR.DT.LT.0D0.OR.DT.GT.1D100) IERR=10
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:155:10:
+
+  155 |       IF (OLD(84).NE.0D0) THEN
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:156:37:
+
+  156 |           IF (OLD(84).NE.202609D0.OR.OLD(83).NE.DBLE(MODE))
+      |                                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:156:14:
+
+  156 |           IF (OLD(84).NE.202609D0.OR.OLD(83).NE.DBLE(MODE))
+      |              1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:160:19:
+
+  160 |       ELSE IF (ANY(OLD(1:80).NE.0D0)) THEN
+      |                   1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:168:42:
+
+  168 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                                          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:168:21:
+
+  168 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:178:42:
+
+  178 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                                          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:178:21:
+
+  178 |                   IF(OLD(IB+I).NE.0D0.AND.OLD(IB+I).NE.1D0)
+      |                     1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:27:13:
+
+   27 |           IF(E1(I).NE.E1(I).OR.ABS(E1(I)).GT.1D10) THEN
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\src\wcm_core.for:350:13:
+
+  350 |           IF(W.EQ.0D0) CYCLE
+      |             1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]

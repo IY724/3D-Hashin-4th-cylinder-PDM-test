@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "variants": [
+    "A",
+    "B"
+  ],
+  "checks": [
+    "delivery hashes",
+    "dist synchronization",
+    "131 material state allocations",
+    "exact numbered output names",
+    "datacheck input hashes",
+    "A/B protected model equality"
+  ]
+}

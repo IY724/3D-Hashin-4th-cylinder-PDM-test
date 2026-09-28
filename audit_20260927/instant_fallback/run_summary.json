@@ -1,0 +1,23 @@
+{
+  "job": "B_20260927_153131_fallback",
+  "last_converged_step_time": 0.4428125023841858,
+  "last_converged_pressure_mpa": 110.70312559604645,
+  "completed": false,
+  "fallback_records": 709867,
+  "fallback_unique_elements": 28393,
+  "fallback_unique_element_points": 30000,
+  "fallback_modes": {
+    "3": 406901,
+    "4": 302966
+  },
+  "umat_error_codes": {
+    "1022": 20857
+  },
+  "too_many_attempts": true,
+  "msg_bytes": 207121037,
+  "committed_sdv6_at_one_in_last_frame": 14378,
+  "committed_sdv_points_in_last_frame": 56016,
+  "partial_odb_matrix_completion_mpa": 35.468749701976776,
+  "partial_odb_matrix_completion_is_burst_pressure": false,
+  "fallback_record_scope": "UMAT trial calls, including rejected increments; repeated calls are counted"
+}

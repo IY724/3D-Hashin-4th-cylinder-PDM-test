@@ -1,0 +1,140 @@
+{
+  "status": "VERIFIED",
+  "cae_file": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_10deg\\runs\\20260925_232127\\zhuning_base_10deg.cae",
+  "save_in_place": true,
+  "new_section_assignments": false,
+  "new_layups": false,
+  "analysis_submitted": false,
+  "cae_sha256_before": "56d2b2f8554b883661bac96b15cfceff866855fffe9f0109deacc0e04075c879",
+  "created_materials": [
+    "Liner",
+    "al-6061",
+    "t-700"
+  ],
+  "materials": {
+    "Liner": {
+      "elastic": [
+        [
+          1880.0,
+          0.4
+        ]
+      ],
+      "plastic": [
+        [
+          47.0,
+          0.0
+        ],
+        [
+          51.0,
+          0.005
+        ],
+        [
+          55.0,
+          0.01
+        ],
+        [
+          60.0,
+          0.02
+        ],
+        [
+          65.0,
+          0.03
+        ],
+        [
+          71.5,
+          0.045
+        ],
+        [
+          78.0,
+          0.06
+        ],
+        [
+          85.0,
+          0.08
+        ],
+        [
+          92.0,
+          0.1
+        ],
+        [
+          98.5,
+          0.125
+        ],
+        [
+          105.0,
+          0.15
+        ]
+      ],
+      "elastic_type": "ISOTROPIC"
+    },
+    "al-6061": {
+      "density": [
+        [
+          2.7e-09
+        ]
+      ],
+      "elastic": [
+        [
+          70000.0,
+          0.32
+        ]
+      ],
+      "plastic": [
+        [
+          306.0,
+          0.0
+        ]
+      ],
+      "elastic_type": "ISOTROPIC"
+    },
+    "t-700": {
+      "density": [
+        [
+          1.75e-09
+        ]
+      ],
+      "elastic": [
+        [
+          141000.0,
+          11400.0,
+          11400.0,
+          0.28,
+          0.28,
+          0.28,
+          7100.0,
+          7100.0,
+          7100.0
+        ]
+      ],
+      "elastic_type": "ENGINEERING_CONSTANTS",
+      "failStress": [
+        [
+          2080.0,
+          60.0,
+          1250.0,
+          290.0,
+          110.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "failStrain": [
+        [
+          0.01475,
+          0.00887,
+          0.00526,
+          0.02544,
+          0.01549
+        ]
+      ]
+    }
+  },
+  "preserved_existing_materials": [
+    "Al6061_T6",
+    "PA6"
+  ],
+  "geometry_and_configuration_unchanged": true,
+  "round_trip_reopen_verified": true,
+  "source_inputs_unchanged": true,
+  "cae_sha256_after": "f803d9ae7da37f54a626099155499657e5503b44be65ba6efe29b7ea8ddefbff"
+}

@@ -1,0 +1,12 @@
+{
+  "tests_run": 13,
+  "passed": true,
+  "failures": [],
+  "errors": [],
+  "build_directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\core_20260927_154122_547880",
+  "metrics": {
+    "bin_count_each": 138,
+    "max_wcm_elastic_error": 6.808461904109211e-06
+  },
+  "scope": "实际Fortran核心及原版回归，非Abaqus求解验证"
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "comparisons": 480,
+  "max_stress_difference": 0.0,
+  "max_tangent_difference": 0.0,
+  "scope": "Compiled prior vs current WCM core using equivalent active material cards; A/B, both update modes, four angles and cyclic load paths",
+  "directory": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat\\runs\\props_equivalence_20260927_141025"
+}

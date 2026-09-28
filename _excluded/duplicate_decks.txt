@@ -1,0 +1,6 @@
+14.7MB test\B_energy_softening\runs\B_20260927_150554\Rebuild_PDM_B.inp  ==  test\B_energy_softening\Rebuild_PDM_B.inp
+14.7MB test\B_energy_softening\runs\B_20260927_153131_fallback\Rebuild_PDM_B.inp  ==  test\B_energy_softening\Rebuild_PDM_B.inp
+17.7MB remesh_energy_tests_20260927\runs\B_remesh_M21_20260927_214056\B_remesh_M21.inp  ==  remesh_energy_tests_20260927\runs\B_remesh_M21_20260927_215350\B_remesh_M21.inp
+14.7MB wcm_hashin_umat_B_candidate\package\Rebuild_PDM_B.inp  ==  test\B_energy_softening\Rebuild_PDM_B.inp
+14.7MB wcm_hashin_umat_B_candidate\generated\B_energy_softening\Rebuild_PDM_B.inp  ==  test\B_energy_softening\Rebuild_PDM_B.inp
+14.7MB wcm_hashin_umat_B_candidate\generated\A_stiffness_reduction\Rebuild_PDM_A.inp  ==  test\A_stiffness_reduction\Rebuild_PDM_A.inp

@@ -1,0 +1,32 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB WCM_Job
+Abaqus 2025
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 14 tokens from Flexnet server localhost.
+<9985 out of 9999 licenses remain available>.
+Begin Compiling Abaqus/Standard User Subroutines
+2026/9/27 13:03:07
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0 Build 20220726_000000
+Copyright (C) 1985-2022 Intel Corporation.  All rights reserved.
+
+End Compiling Abaqus/Standard User Subroutines
+Begin Linking Abaqus/Standard User Subroutines
+  正在创建库 standardU.lib 和对象 standardU.exp
+End Linking Abaqus/Standard User Subroutines
+2026/9/27 13:03:07
+Begin Analysis Input File Processor
+2026/9/27 13:03:08
+Run pre.exe
+2026/9/27 13:03:15
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+2026/9/27 13:03:16
+Run standard.exe
+2026/9/27 13:05:57
+End Abaqus/Standard Analysis
+Begin SIM Wrap-up
+2026/9/27 13:05:58
+Run SMASimUtility.exe
+2026/9/27 13:05:58
+End SIM Wrap-up
+Abaqus JOB WCM_Job COMPLETED

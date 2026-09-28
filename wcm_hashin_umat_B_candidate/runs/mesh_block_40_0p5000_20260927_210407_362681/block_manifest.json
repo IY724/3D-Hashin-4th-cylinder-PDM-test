@@ -1,0 +1,28 @@
+{
+  "h_requested": 0.5,
+  "h_effective": 0.5,
+  "n_elements_per_side": 4,
+  "bin": 40,
+  "mode": "MC",
+  "theta": 35.0,
+  "element_survey": 2260,
+  "rho_survey": 0.1911,
+  "eps_target": [
+    0.0044286069460213184,
+    0.008114058524370193,
+    -0.038558997213840485,
+    4.770123407382698e-09,
+    -2.3084506040049746e-07,
+    3.2595821597425356e-09
+  ],
+  "umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121",
+  "command": [
+    "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "job=block",
+    "input=block.inp",
+    "user=hashin_energy_wcm.for",
+    "cpus=1",
+    "scratch=F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\mesh_block_40_0p5000_20260927_210407_362681\\scratch",
+    "interactive"
+  ]
+}

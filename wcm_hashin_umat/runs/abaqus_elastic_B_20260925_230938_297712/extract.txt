@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "F:\abaqus_temp\3D-Hashin-4th-cylinder-PDM\wcm_hashin_umat\tests\extract_odb.py", line 27, in <module>
+    with open(sys.argv[2], 'w') as handle:
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "E:\ABAQUS2025\products\win_b64\tools\SMApy\python3.10\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ndarray is not JSON serializable

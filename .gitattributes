@@ -1,0 +1,17 @@
+# 本项目大量产物的 SHA-256 被写入校验清单（baseline/source_manifest.json、
+# wcm_hashin_umat/validation/test_cases.json、remesh_energy_tests_*/latest_run.json、
+# *_candidate/package/README.md 等），任何换行归一化都会使清单失效，
+# 因此默认一律按字节存储，不做文本转换。
+* -text
+
+# 仅说明类文档允许统一为 LF（不参与哈希校验）
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# 明确的二进制
+*.pdf binary
+*.png binary
+*.bmp binary
+*.dll binary
+*.odb binary

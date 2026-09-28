@@ -1,0 +1,98 @@
+{
+  "stage": "1_reproduce",
+  "gate": "G1",
+  "build_note": "候选版重跑：起始量应沿路径定位（步长无关）；修正前的端点起始证据存档于 validation/reproduction_prefix_G1.json。",
+  "compiler": "gfortran（版本见validation/environment.json与编译日志）",
+  "dll_note": "本套件在唯一运行目录重新编译候选src/wcm_core.for与baseline/hashin.for，未加载任何历史DLL。",
+  "analytic": {
+    "gamma0_23shear": 0.015492957746478873,
+    "gamma0_reference": 0.015492957746478873,
+    "lc_crit_mt_pure_shear_mm": 0.5867768595041323,
+    "lc_crit_reference": 0.5867768595041323,
+    "note": "Lc_crit 是纯剪基体拉伸路径的条件，不是全瓶网格建议。"
+  },
+  "paths": {
+    "single_increment_gamma12_0.0155": {
+      "ierr": 1033,
+      "expected_ierr": 1033,
+      "ply_forensics": {
+        "ierr": 33,
+        "init_FT": 1.0,
+        "init_MT": 1.0,
+        "delta0_FT_mm": 0.03454929577464789,
+        "delta0_MT_mm": 0.03454929577464789,
+        "sigma0_FT_mpa": 110.0,
+        "sigma0_MT_mpa": 110.0,
+        "kappa_MT_mm": 0.0,
+        "tau_mpa": 110.05
+      },
+      "sigma0_mt_mpa": 110.0,
+      "delta0_mt_mm": 0.03454929577464789,
+      "deltaf_mt_mm": 0.00909090909090909,
+      "onset_located_at_path_point": true
+    },
+    "ramp_gamma12_0.006": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": null,
+      "rows": "运行目录 material_reproduce_20260927_194735_260724/ramp_gamma12_0.006.csv"
+    },
+    "ramp_gamma12_0.01": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": null,
+      "rows": "运行目录 material_reproduce_20260927_194735_260724/ramp_gamma12_0.01.csv"
+    },
+    "ramp_gamma12_0.0155": {
+      "increments_requested": 20,
+      "accepted_points": 20,
+      "ierr_final": 1033,
+      "rows": "运行目录 material_reproduce_20260927_194735_260724/ramp_gamma12_0.0155.csv"
+    },
+    "fine_ramp_gamma12_onset_location": {
+      "increments": 2000,
+      "ierr_final": 1033,
+      "first_crossing_increment": 1937,
+      "gamma_at_error": 0.015496,
+      "gamma0": 0.015492957746478873,
+      "onset_located_at_threshold": true
+    },
+    "legacy_silent_skip_gamma12_0.0155": {
+      "legacy_d_mt": 0.0,
+      "legacy_init_mt": 1.0,
+      "legacy_delta0_mt": 0.034565,
+      "legacy_sigma0_mt": 110.05,
+      "legacy_kappa_mt": 0.034565,
+      "legacy_tau": 110.05,
+      "silent_skip": true
+    },
+    "endpoint_onset_step_dependence": {
+      "1_step": {
+        "delta0_mt_mm": 0.004647887323943662,
+        "sigma0_mt_mpa": 110.0,
+        "d_mt": 0.46109510086455346,
+        "ierr": 0
+      },
+      "20_step": {
+        "delta0_mt_mm": 0.004647887323943662,
+        "sigma0_mt_mpa": 110.0,
+        "d_mt": 0.4610951008645541,
+        "ierr": null
+      },
+      "onset_differs": false
+    }
+  },
+  "checks": {
+    "strict_1033_reproduced_with_path_onset": true,
+    "onset_located_at_analytic_gamma0": true,
+    "legacy_silent_skip_confirmed": true,
+    "onset_step_independent": true,
+    "analytic_baselines_exact": true
+  },
+  "unresolved_1022": "见validation/forensics_1022.json：实际失败试算状态不可从现有ODB/日志取得，保持UNRESOLVED_1022。",
+  "status": "PASS",
+  "suite": "reproduce",
+  "run_dir": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\wcm_hashin_umat_B_candidate\\runs\\material_reproduce_20260927_194735_260724",
+  "core_src_sha256": "b8f18000b54c4fbb034e8be6517a546bf837dbe3a0d7c90165c84b67ed686519",
+  "dist_umat_sha256": "48148693270ee5175187020b397136b12766fc6cfaf52c8a38a08ff7e3f35121"
+}

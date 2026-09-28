@@ -1,0 +1,71 @@
+{
+  "variant": "B",
+  "step": "Step-1",
+  "configuration": {
+    "variant": "B",
+    "fiber_threshold": 1.0,
+    "matrix_threshold": 1.0,
+    "tolerance": 1e-06,
+    "vessel_failure_rule": "either",
+    "step_name": "Step-1",
+    "pressure_at_step_start_mpa": 0.0,
+    "pressure_at_step_end_mpa": 110.70312559604645,
+    "step_duration": 0.4428125023841858,
+    "pressure_assumption": "Rebuild_PDM_B.inp：*Dsload P=250、步时长1、无幅值曲线，线性升压 p=250×t。改载荷或步长后必须同步本文件。"
+  },
+  "events": {
+    "fiber_initiation": {
+      "step_time": 0.3178125023841858,
+      "pressure_mpa": 79.45312559604645,
+      "previous_below_threshold_pressure_mpa": 54.45312336087226,
+      "sdv": "SDV1",
+      "value": 1.769663691520691,
+      "threshold": 1.0,
+      "tolerance": 0.0,
+      "instance": "TANK-1",
+      "element": 4954,
+      "integration_point": 1
+    },
+    "matrix_initiation": {
+      "step_time": 0.09125000238418579,
+      "pressure_mpa": 22.812500596046448,
+      "previous_below_threshold_pressure_mpa": 14.375000260770323,
+      "sdv": "SDV3",
+      "value": 1.0458964109420776,
+      "threshold": 1.0,
+      "tolerance": 0.0,
+      "instance": "TANK-1",
+      "element": 4563,
+      "integration_point": 1
+    },
+    "fiber_completion": null,
+    "matrix_completion": {
+      "step_time": 0.1418749988079071,
+      "pressure_mpa": 35.468749701976776,
+      "previous_below_threshold_pressure_mpa": 22.812500596046448,
+      "sdv": "SDV6",
+      "value": 1.0,
+      "threshold": 1.0,
+      "tolerance": 1e-06,
+      "instance": "TANK-1",
+      "element": 4487,
+      "integration_point": 1
+    }
+  },
+  "vessel_failure": {
+    "step_time": 0.1418749988079071,
+    "pressure_mpa": 35.468749701976776,
+    "previous_below_threshold_pressure_mpa": 22.812500596046448,
+    "sdv": "SDV6",
+    "value": 1.0,
+    "threshold": 1.0,
+    "tolerance": 1e-06,
+    "instance": "TANK-1",
+    "element": 4487,
+    "integration_point": 1,
+    "criterion": "matrix_completion"
+  },
+  "status": "THRESHOLD_REACHED",
+  "pressure_assumption": "User-configured linear ramp; not inferred from ODB",
+  "scope": "Recorded integration-point threshold events; not experimental burst validation"
+}

@@ -1,0 +1,62 @@
+{
+  "source": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\geometry_zhuning_joint_rebuild\\Job-remesh.inp",
+  "source_sha256": "273f387dfcfb49b420296593e30f0b148c8d4b07a0728de32669a2b681d64b53",
+  "inp_sha256": "c6c4967c6d73d2503935c76b34cac1db1907ce1ba1bfaf44d2b1f520a00aecff",
+  "umat_sha256": "eaafa00f1ea9949bc797ab43b2d907af6ea4e111a676231d2d06b12143ca44bd",
+  "post_onset_energies_N_per_mm": [
+    300.0,
+    40.0,
+    0.6,
+    2.1
+  ],
+  "softening_law": "deltaf=delta0+2G/sigma0",
+  "state_schema_B": 20260927,
+  "energy_meaning": "G为理想单模式峰后软化功；无黏性且无残余刚度时总耗散为G+sigma0*delta0/2。",
+  "reference_fracture_energies_N_per_mm": [
+    133.0,
+    40.0,
+    0.6,
+    2.1
+  ],
+  "energy_source": "数值沿用上一轮300/40/0.6/2.1；本轮经用户确认改为峰后软化功，原文献仅作数值来源，不代表已完成新口径标定。",
+  "doi": "10.3969/j.issn.1007-2012.2021.12.028",
+  "source_url": "https://qikan.cmes.org/sxgcxb/EN/PDF/10.3969/j.issn.1007-2012.2021.12.028",
+  "limitation": "峰后跨度方案改变总耗散；Gft=300仍为未标定敏感性值，不保证收敛或设计爆压。",
+  "smt_smc": [
+    0.9,
+    0.5
+  ],
+  "viscosity": [
+    0.0001,
+    0.005
+  ],
+  "static": [
+    0.01,
+    1.0,
+    1e-20,
+    0.1
+  ],
+  "stabilize": 0.002,
+  "pressure_mpa": 250.0,
+  "update": 0,
+  "caps": [
+    0.95,
+    0.85
+  ],
+  "material_bins": 135,
+  "controlled_sections": 434,
+  "max_elastic_error": 6.808461904109211e-06,
+  "command": [
+    "E:\\ABAQUS2025\\Commands\\abaqus.BAT",
+    "job=B_remesh_span_stab",
+    "input=B_remesh_span_stab.inp",
+    "user=hashin_energy_wcm.for",
+    "cpus=12",
+    "scratch=F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_span_stab_20260927_233211_029718\\scratch",
+    "interactive"
+  ],
+  "cwd": "F:\\abaqus_temp\\3D-Hashin-4th-cylinder-PDM\\remesh_energy_tests_20260927\\runs\\B_remesh_span_stab_20260927_233211_029718",
+  "status": "STOPPED_CHECK_LOG",
+  "launcher_pid": 31184,
+  "returncode": 0
+}
